@@ -1,9 +1,9 @@
 import { ConfigEnv, defineConfig, UserConfigExport, loadEnv } from 'vite';
-import createVitePlugins from './vite-config/plugin/index';
-import { configCss } from './vite-config/css/index'
-import { configServer } from './vite-config/server/index'
+import createVitePlugins from './build/plugin/index';
+import { configCss } from './build/css/index'
+import { configServer } from './build/server/index'
 import { resolve } from 'path';
-import setProBuild from './vite-config/pro'
+import setProBuild from './build/pro'
 
 //配制
 const config: UserConfigExport = {
