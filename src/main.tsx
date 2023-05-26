@@ -18,6 +18,5 @@ if (process.env.NODE_ENV === 'development') {
 //console.log(' process.env: ', process.env);
 
 console.log(import.meta.env.VITE_APP_TITLE);
-console.log(import.meta.env.VITE_APP_PORT);
-console.log(import.meta.env.VITE_APP_API_BASEUR);
+console.log(import.meta.env);
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(<App />);
