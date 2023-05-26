@@ -16,13 +16,17 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./",
+    "types": ["vite/client"],
     "paths": {
-      "@/*": ["src/*"]
+      "@config/*": ["vite-config/*"],
+      "@/*": ["src/*"],
+
+      "__ROOT__/*": ["*"]
     },
     "noImplicitAny": false // 未声明类型的变量自动默认为any类型
   },
   //"include": ["src"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["src/**/*", "vite-config/**/*", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
