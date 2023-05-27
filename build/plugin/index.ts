@@ -2,7 +2,7 @@ import type { Plugin } from 'vite';
 import react from '@vitejs/plugin-react';// 单文件组件支持
 import legacy from '@vitejs/plugin-legacy';
 import vitePluginImp from 'vite-plugin-imp';
-//import { configStyleImport } from './style-import';
+
 //import { configViteComponents } from './components';
 //import { configViteCompression } from './compression';
 //import { configWindiCSS } from './windicss';
@@ -29,7 +29,8 @@ export default function createVitePlugins({ variables }: { variables: any }) {
           libDirectory: 'es'
         }
       ]
-    })
+    }),
+
 
   ]
 

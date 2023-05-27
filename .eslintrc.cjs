@@ -2,9 +2,11 @@ module.exports = {
   root: true,
   env: {
     node: true,
+    'jest/globals': true,
   },
   extends: [
     'eslint:recommended', // 使用推荐的eslint
+    'plugin:jest/recommended', //使用推荐的 jest 语法
     'plugin:react/recommended', // 使用插件支持react
     'plugin:prettier/recommended', // Make sure this is always the last element in the array.
     'plugin:@typescript-eslint/eslint-recommended',

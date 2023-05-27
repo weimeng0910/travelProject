@@ -72,3 +72,11 @@ Vite 内置了 dotenv 这个第三方库， dotenv 会自动读取.env 文件
 
 .env # 所有情况下都会加载
 .env.[mode] # 只在指定模式下加载
+
+### Setup Jest with Vite
+
+```
+yarn add --dev @testing-library/react @testing-library/jest-dom
+yarn add --dev jest jest-environment-jsdom
+
+```

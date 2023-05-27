@@ -1,14 +1,12 @@
-/**
- * @author meng
- * @version 1.0
- * @date 2022/12/23
- * @description 返回页面url中，指定銉的参数值
- */
+
 
 import React from 'react';
 //引入检查render的库
 import whyDidYouRender from '@welldone-software/why-did-you-render';
-
+/**
+ * @date 2022/12/23
+ * @description React 开发性能监测插件
+ */
 //如果是开发环境下运行
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line unicorn/prefer-module
