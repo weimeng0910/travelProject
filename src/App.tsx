@@ -1,11 +1,11 @@
-import React from 'react';
-
-import Root from '@/router';
+import { GlobalStyles } from '@/styles/global-styles'; //引入全局样式
+import { Homepage } from '@/pages/Home';
 
 const App = () => {
   return (
     <>
-      <Root />
+      <GlobalStyles />
+      <Homepage />
     </>
   );
 };

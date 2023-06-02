@@ -2,7 +2,7 @@ import type { Plugin } from 'vite';
 import react from '@vitejs/plugin-react';// 单文件组件支持
 import legacy from '@vitejs/plugin-legacy';
 import vitePluginImp from 'vite-plugin-imp';
-
+import macrosPlugin from "vite-plugin-babel-macros"
 //import { configViteComponents } from './components';
 //import { configViteCompression } from './compression';
 //import { configWindiCSS } from './windicss';
@@ -14,7 +14,25 @@ import vitePluginImp from 'vite-plugin-imp';
 export default function createVitePlugins({ variables }: { variables: any }) {
   const opt = { variables: variables };
   const vitePlugins: (Plugin | Plugin[])[] = [
-    react() as Plugin[],
+    macrosPlugin(),
+    react({
+      babel: {
+        //presets: ['@babel/preset-typescript'],
+        plugins: [
+          //'@babel/plugin-transform-typescript',
+          [
+            'babel-plugin-styled-components',
+            {
+              ssr: false,
+              pure: true,
+              displayName: true,
+              fileName: false,
+            },
+          ],
+        ],
+      },
+    }) as Plugin[],
+
     //兼容旧的浏览器
     legacy({
       targets: ['Android >= 39', 'Chrome >= 39', 'Safari >= 10.1', 'iOS >= 10', '> 0.5%'],

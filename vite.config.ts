@@ -12,6 +12,7 @@ const config: UserConfigExport = {
   base: '/',
   // 需要用到的插件数组。Falsy 虚值的插件将被忽略，插件数组将被扁平化（flatten）
   plugins: createVitePlugins({ variables: process.env }),
+
   /**
     * 该目录中的文件在开发期间在 / 处提供，并在构建期间复制到 outDir 的根目录，并且始终按原样提供或复制而无需进行转换。
     * 该值可以是文件系统的绝对路径，也可以是相对于项目的根目录的相对路径。
@@ -36,6 +37,7 @@ const config: UserConfigExport = {
   css: configCss(),
   //server
   server: configServer(),
+
 }
 /**
  * mode：根据环境区分配置
@@ -54,6 +56,7 @@ export default defineConfig(async ({ mode }: ConfigEnv) => {
     outDir: process.env.VITE_DIST_NAME, //打包文件名称
     assetsDir: 'assets', //打包静态文件的存储地址
     chunkSizeWarningLimit: 500,
+
 
   }
   if (mode === 'development') {

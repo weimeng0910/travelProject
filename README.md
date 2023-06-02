@@ -76,7 +76,13 @@ Vite 内置了 dotenv 这个第三方库， dotenv 会自动读取.env 文件
 ### Setup Jest with Vite
 
 ```
-yarn add --dev @testing-library/react @testing-library/jest-dom
-yarn add --dev jest jest-environment-jsdom
+yarn add @testing-library/jest-dom @testing-library/react @testing-library/user-event --save-dev
+yarn add @swc/core @swc/jest --save-dev
 
+```
+
+### To Use Media Queries in React
+
+```
+yarn add @mantine/hooks
 ```
