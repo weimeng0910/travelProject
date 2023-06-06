@@ -28,42 +28,6 @@ export const Container = styled.div`
   `}
 `;
 
-export const Header = styled.header`
-  grid-area: header;
-  /* grid中的子元素设置弹性盒子flex */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  border-bottom: solid 5px #16a085;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  
-`;
-export const HeaderLeft = styled.h2`
-  color: #16a085;
-  font-weight: bold;
-  margin-left: 20px;
-  ${media.sm`
-    color: #8e44ad;
-    
-  `}
-`;
-export const HeaderCenter = styled.div`
-  display: flex;
-  margin: 0 auto; //居中对齐
-  align-items: center;
-  ${media.sm`
-    display: none;
-    
-  `}
-`;
-export const HeaderRight = styled.div`
-  display: flex;
-  
-  margin-right: 40px;
-  align-items: center;
-`;
 export const Main = styled.main`
   grid-area: main;
   height: 200px;
@@ -92,20 +56,7 @@ export const Footer = styled.footer`
   grid-area: foorer;
   display: flex;
   border-bottom: solid 5px #16a085;
-  background-color: #f1c40f;
+  background-color: #fff;
 `;
 
-export const Links = styled.ul`
-  display: flex;
-  margin: 0 auto; //居中对齐
-  .li {
-    color: #4b4949;
-    &:hover {
-      color: red; // <Thing> when hovered
-    }
-    
-    font-weight: bold;
 
-    margin-right: 20px;
-  }
-`;
