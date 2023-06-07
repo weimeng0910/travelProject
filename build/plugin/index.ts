@@ -42,8 +42,8 @@ export default function createVitePlugins({ variables }: { variables: any }) {
     vitePluginImp({
       libList: [
         {
-          libName: 'antd-mobile',
-          style: (name) => `antd-mobile/es/${name}/style`,
+          libName: 'antd',
+          style: (name) => `antd/es/${name}/style`,
           libDirectory: 'es'
         }
       ]

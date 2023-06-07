@@ -1,6 +1,7 @@
 import './wdyr'; // <--- first import
 import { mocker } from '@/mocks/browser';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
+//import { AppProviders } from '@/context';
 import App from './App';
 /**
  * @data 24.05.2023
@@ -17,4 +18,8 @@ if (process.env.NODE_ENV === 'development') {
     onUnhandledRequest: 'bypass',
   });
 }
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(<App />);
+const rootElement = document.querySelector('#root');
+if (!rootElement) throw new Error('Failed to find the root element');
+const root = createRoot(rootElement);
+
+root.render(<App />);

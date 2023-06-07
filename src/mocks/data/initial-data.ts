@@ -3,26 +3,37 @@
 * @file  data
 */
 export interface MenuNode {
-
-  name: string;
+  id: number;
+  label: string;
+  key: string;
 
 }
 export const menu: Array<MenuNode> = [
   {
-    name: "home",
+    id: 1,
+    label: "home",
+    key: "1"
   },
   {
-    name: "Review",
+    id: 2,
+    label: "Review",
+    key: "2"
 
   },
   {
-    name: "Trips",
+    id: 3,
+    label: "Trips",
+    key: "3"
   },
   {
-    name: "Sitemap",
+    id: 4,
+    label: "Sitemap",
+    key: "4"
   },
   {
-    name: "Cart",
+    id: 5,
+    label: "Cart",
+    key: "5"
   },
 ];
 

@@ -86,3 +86,11 @@ yarn add @swc/core @swc/jest --save-dev
 ```
 yarn add @mantine/hooks
 ```
+
+### React Query
+
+```
+ yarn add @tanstack/react-query
+  yarn add @tanstack/react-query-devtools
+
+```

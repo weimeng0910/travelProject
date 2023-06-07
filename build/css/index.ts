@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 export function configCss() {
   return {
     preprocessorOptions: {
@@ -8,6 +9,14 @@ export function configCss() {
         modifyVars: {
           '@fill-body': '#fff'
         }
+      },
+      resolve: {
+        alias: [
+          {
+            find: /^~/,
+            replacement: '',
+          }
+        ],
       }
     }
   }
