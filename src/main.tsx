@@ -1,7 +1,8 @@
 import './wdyr'; // <--- first import
 import { mocker } from '@/mocks/browser';
 import { createRoot } from 'react-dom/client';
-//import { AppProviders } from '@/context';
+import { AppProviders } from '@/context';
+
 import App from './App';
 /**
  * @data 24.05.2023
@@ -22,4 +23,8 @@ const rootElement = document.querySelector('#root');
 if (!rootElement) throw new Error('Failed to find the root element');
 const root = createRoot(rootElement);
 
-root.render(<App />);
+root.render(
+  <AppProviders>
+    <App />
+  </AppProviders>
+);

@@ -14,17 +14,17 @@ export const Container = styled.div`
   /*行间距*/
   grid-row-gap: 24px;
   /*列间距*/
-  grid-column-gap: 24px;
+  grid-column-gap: 20px;
   justify-content: center;
   /* 定义网格布局中网格区域(Grid Area)，一个网格区域由单个或多个单元格组成，重复网格区域的名称可让区域内容跨越这些单元格。 */
   grid-template-areas:
     'header header header'
-    'nav main aside'
+    'main main aside'
     'foorer foorer foorer';
      ${media.sm`
      /* 栅格的列 */
   grid-template-columns: 1fr 1fr;
-    
+    grid-column-gap: 0px;
   `}
 `;
 
@@ -58,5 +58,3 @@ export const Footer = styled.footer`
   border-bottom: solid 5px #16a085;
   background-color: #fff;
 `;
-
-
