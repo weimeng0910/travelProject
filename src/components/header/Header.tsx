@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Container, HeaderLeft, HeaderCenter, HeaderRight, Links } from './header.module';
+import { Link } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 import {
   HomeOutlined,
   UserOutlined,
@@ -7,45 +8,45 @@ import {
   BellOutlined,
   ShoppingCartOutlined,
 } from '@ant-design/icons';
+
+import { Container, HeaderLeft, HeaderCenter, HeaderRight, Links } from './header.module';
+import { useMenu } from '@/utils/menu'; //data
+import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
 /**
  * @date 2023/05/30
  * @description Header
  */
+
+//创建图标列表数据
+const iconList = {
+  '/home': <HomeOutlined />,
+  '/detail': <UserOutlined />,
+  '/tickets': <EditOutlined />,
+  '/placeOrder': <BellOutlined />,
+  '/shoppingCart': <ShoppingCartOutlined />,
+  '/favoritet': <ShoppingCartOutlined />,
+};
+//Header
 export const Header: FC = () => {
+  const { data: menuList } = useMenu(); //获取菜单数据
   return (
     <>
       <Container>
-        <HeaderLeft>Tarvenly</HeaderLeft>
+        <HeaderLeft>
+          <Softwarelogo width="35px" height="36px" />
+          <span>Travenly</span>
+        </HeaderLeft>
         <HeaderCenter>
           <Links>
-            <li className="li">
-              <HomeOutlined />
-            </li>
-            <li className="li">Home</li>
-            <li className="li">
-              <EditOutlined />
-            </li>
-            <li className="li">Review</li>
-            <li className="li">
-              <UserOutlined />
-            </li>
-            <li className="li">Trips</li>
-            <li className="li">
-              <UserOutlined />
-            </li>
-            <li className="li">Sitemap</li>
-            <li className="li">
-              <BellOutlined />
-            </li>
-            <li className="li">My Order</li>
-            <li className="li">
-              <ShoppingCartOutlined />
-            </li>
-            <li className="li">Cart</li>
+            {menuList?.map(item => (
+              <li className="li" key={nanoid()}>
+                {iconList[item.key]}
+                <Link to={item.key}>{item.label}</Link>
+              </li>
+            ))}
           </Links>
         </HeaderCenter>
         <HeaderRight>
-          <a href="">Register</a>
           <a href="">Login</a>
         </HeaderRight>
       </Container>

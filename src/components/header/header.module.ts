@@ -17,8 +17,10 @@ export const Container = styled.header`
   
 `;
 export const HeaderLeft = styled.h2`
+display: flex;
   color: #16a085;
   font-weight: bold;
+  margin: 0 auto; //居中对齐
   margin-left: 20px;
 `;
 export const HeaderCenter = styled.div`

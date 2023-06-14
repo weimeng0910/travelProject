@@ -32,7 +32,7 @@ export const Main = styled.main`
   grid-area: main;
   height: 200px;
   /*display: flex;*/
-  background-color: #1abc9c;
+  background-color: #fff;
    
 `;
 export const Nav = styled.nav`
@@ -46,7 +46,7 @@ export const Aside = styled.aside`
   grid-area: aside;
   display: flex;
   height: 200px;
-  background-color: #3498db;
+  background-color: #1abc9c;
   ${media.sm`
     display: none;
     

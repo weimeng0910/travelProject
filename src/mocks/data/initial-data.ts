@@ -11,29 +11,34 @@ export interface MenuNode {
 export const menu: Array<MenuNode> = [
   {
     id: 1,
-    label: "home",
-    key: "1"
+    label: "Home",
+    key: "/home"
   },
   {
     id: 2,
-    label: "Review",
-    key: "2"
+    label: "Detail",
+    key: "/detail"
 
   },
   {
     id: 3,
-    label: "Trips",
-    key: "3"
+    label: "Tickets",
+    key: "/Tickets"
   },
   {
     id: 4,
-    label: "Sitemap",
-    key: "4"
+    label: "Favorite",
+    key: "/favorite"
   },
   {
     id: 5,
+    label: "My Order",
+    key: "/placeOrder"
+  },
+  {
+    id: 6,
     label: "Cart",
-    key: "5"
+    key: "/shoppingCart"
   },
 ];
 export const sideMenuList = [

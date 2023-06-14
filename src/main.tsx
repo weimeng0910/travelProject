@@ -1,6 +1,7 @@
 import './wdyr'; // <--- first import
 import { mocker } from '@/mocks/browser';
 import { createRoot } from 'react-dom/client';
+//import { BrowserRouter } from 'react-router-dom';
 import { AppProviders } from '@/context';
 
 import App from './App';

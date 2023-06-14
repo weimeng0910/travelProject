@@ -94,3 +94,9 @@ yarn add @mantine/hooks
   yarn add @tanstack/react-query-devtools
 
 ```
+
+### How to Import SVGs Using the Vite Plugin for SVGR
+
+```
+yarn add vite-plugin-svgr
+```

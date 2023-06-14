@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';// 单文件组件支持
 import legacy from '@vitejs/plugin-legacy';
 import vitePluginImp from 'vite-plugin-imp';
 import macrosPlugin from "vite-plugin-babel-macros"
+import svgr from "vite-plugin-svgr";
 //import { configViteComponents } from './components';
 //import { configViteCompression } from './compression';
 //import { configWindiCSS } from './windicss';
@@ -32,7 +33,7 @@ export default function createVitePlugins({ variables }: { variables: any }) {
         ],
       },
     }) as Plugin[],
-
+    svgr(),
     //兼容旧的浏览器
     legacy({
       targets: ['Android >= 39', 'Chrome >= 39', 'Safari >= 10.1', 'iOS >= 10', '> 0.5%'],
