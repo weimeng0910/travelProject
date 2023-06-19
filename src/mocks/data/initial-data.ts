@@ -16,14 +16,14 @@ export const menu: Array<MenuNode> = [
   },
   {
     id: 2,
-    label: "Detail",
+    label: "Discover",
     key: "/detail"
 
   },
   {
     id: 3,
     label: "Tickets",
-    key: "/Tickets"
+    key: "/tickets"
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ export const menu: Array<MenuNode> = [
   },
   {
     id: 5,
-    label: "My Order",
+    label: "Transaction",
     key: "/placeOrder"
   },
   {

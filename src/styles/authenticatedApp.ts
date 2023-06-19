@@ -21,9 +21,9 @@ export const Container = styled.div`
     'header header header'
     'main main aside'
     'foorer foorer foorer';
-     ${media.sm`
+     ${media.md`
      /* 栅格的列 */
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-gap: 0px;
   `}
 `;
@@ -33,23 +33,29 @@ export const Main = styled.main`
   height: 200px;
   /*display: flex;*/
   background-color: #fff;
-   
+   ${media.md`
+    margin-top:200px
+    
+  `}
 `;
 export const Nav = styled.nav`
   grid-area: nav;
   display: flex;
   height: 200px;
   background-color: #ecf0f1;
- 
+ ${media.md`
+    margin-top:200px
+    
+  `}
 `;
 export const Aside = styled.aside`
   grid-area: aside;
   display: flex;
   height: 200px;
   background-color: #1abc9c;
-  ${media.sm`
+  ${media.md`
     display: none;
-    
+    margin-top:200px
   `}
 `;
 export const Footer = styled.footer`

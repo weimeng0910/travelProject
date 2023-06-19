@@ -27,7 +27,7 @@
     "@types/qs": "^6.9.7",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-legacy": "^4.0.3",
-    "antd": "^5.0.7",
+    "antd": "4.22.5",
     "camelcase": "6",
     "dotenv": "^16.0.3",
     "eslint-plugin-jsx-a11y": "^6.6.1",

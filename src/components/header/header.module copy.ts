@@ -1,20 +1,11 @@
 import styled from 'styled-components/macro';
-//import media from "@/styles/media";
+import media from "@/styles/media";
 
 /**
  * @date 2023/05/30
  * @description Header-css
  */
 
-const customMediaQuery = (maxWidth: number) =>
-  `@media (max-width: ${maxWidth}px)`;
-
-const media = {
-  custom: customMediaQuery,
-  desktop: customMediaQuery(922),
-  tablet: customMediaQuery(768),
-  phone: customMediaQuery(576)
-};
 export const Container = styled.header`
   grid-area: header;
   /* grid中的子元素设置弹性盒子flex */
@@ -32,27 +23,27 @@ export const Navbar = styled.div`
   margin: 0 auto; //居中对齐
   padding: 15px 0;
   align-items: center;
-
-   ${media.tablet} {
-    flex-flow: row wrap;
+  ${media.md`
+  flex-flow: row wrap;
     width: 90%;
     padding: 15px 0;
-  }
-  
+  `}
 `;
 export const HeaderLeft = styled.h2`
   display: flex;
   color: #16a085;
   font-weight: bold;
   margin: 0 auto; //居中对齐
- ${media.tablet} {
+ 
+ 
+  ${media.md`
+    
      flex:1;
      text-align:left;
      margin-right: auto;
      padding: .5rem;
-  }
-
-  
+   
+  `}
 `;
 export const MenuButton = styled.label`
   display: none;
@@ -60,15 +51,15 @@ export const MenuButton = styled.label`
   padding: .5rem 1rem;
   color: #16a085;
   cursor: pointer;
- ${media.tablet} {
+
+  ${media.md`
     display: block;  
     border: solid 1px #16a085;
 		padding: 1.5px 12px;
 		color: #16a085;
 		cursor: pointer;
 		border-radius: 5px;
-  }
-  
+  `}
 `;
 type VisibleProps = {
   visible: boolean;
@@ -76,13 +67,14 @@ type VisibleProps = {
 export const HeaderCenter = styled.div<VisibleProps>`
  	display: flex;
 	flex-grow: 1;
-  ${media.tablet} {
+  @media (max-width: 768px) {
     position: absolute;
     left: 0px;
     top: 6rem;
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
     flex-flow:column;
+    weight:100%;
     margin-bottom:1rem;
   }
   
@@ -94,8 +86,8 @@ export const HeaderRight = styled.div<VisibleProps>`
   margin: 0 auto; //居中对齐
   align-items: center;
   padding-right: 40px;
-
-  ${media.tablet} {
+  
+  @media (max-width: 768px) {
     position: absolute;
     left: 40px;
     top: 16rem;
@@ -103,18 +95,16 @@ export const HeaderRight = styled.div<VisibleProps>`
     props.visible ? "block" : "none"};
   }
   
-
-
+  
 `;
 export const Links = styled.ul`
   display: flex;
-
- ${media.tablet} {
+ 
+  ${media.md`
     flex-direction: column;
 		margin: 8px, 0;
     margin-right: 30px;
-  }
-  
+  `}
   
 
 `;
@@ -123,27 +113,24 @@ export const Li = styled.li`
   color: #4b4949;
   font-weight: bold;
   margin-right: 20px;
-  &:hover {
-      color: hotpink; // <Thing> when hovered
-    } 
-   
-  ${media.tablet} {
+    &:hover {
+      color: red; // <Thing> when hovered
+    }  
+  ${media.md`
     
 		margin: 8px, 0;
    
-  }
-  
+  `}
 `;
 export const SpanIcon = styled.span`
   display: block;
   margin: 0 auto; //居中对齐
   margin-right: 10px;
-  ${media.tablet} {
-
-	margin: 0 10px;
-
-  }
-  
+  ${media.md`
+    margin: 0 10px;
+    /*margin-left:40px;*/
+    
+  `}
 `;
 export const UserRegister = styled.div`
   font-size: 14px;

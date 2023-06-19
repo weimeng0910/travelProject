@@ -16,7 +16,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: sans-serif;
    
   }
-
+  :root{
+  font-size: 15px;
+  }
   p, h1, h2, h3, h4 {
     margin-bottom: 0;
   }
