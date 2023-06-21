@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Container, Main, Aside, Footer } from '@/styles/authenticatedApp';
+import { Container, Main, Aside, Footer } from '@/styles/authenticatedApp.module';
 import { Header } from '@/components/header';
 import {
   HomePage,

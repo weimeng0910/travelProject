@@ -7,7 +7,10 @@ export function configCss() {
         javascriptEnabled: true,
         // antd 定制主题样式
         modifyVars: {
-          '@fill-body': '#fff'
+          '@fill-body': '#fff',
+          'primary-color': '#1DA57A',
+          'link-color': '#1DA57A',
+          'border-radius-base': '2px',
         }
       },
       resolve: {

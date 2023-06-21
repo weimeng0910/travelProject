@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import media from "@/styles/media";
 /**
  * @date 2023/05/30
- * @description Homepage-css
+ * @description authenticatedApp-css
  */
 
 export const Container = styled.div`
@@ -21,42 +21,47 @@ export const Container = styled.div`
     'header header header'
     'main main aside'
     'foorer foorer foorer';
-     ${media.md`
-     /* 栅格的列 */
+    ${media.tablet} {
+    /* 栅格的列 */
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 0px;
-  `}
+  }
+     
 `;
 
 export const Main = styled.main`
   grid-area: main;
-  height: 200px;
+ 
   /*display: flex;*/
   background-color: #fff;
-   ${media.md`
-    margin-top:200px
-    
-  `}
+  ${media.tablet} {
+    /* 栅格的列 */
+    margin-top:12rem;
+  }
+   
 `;
 export const Nav = styled.nav`
   grid-area: nav;
   display: flex;
-  height: 200px;
+  
   background-color: #ecf0f1;
- ${media.md`
-    margin-top:200px
-    
-  `}
+  ${media.tablet} {
+    /* 栅格的列 */
+     margin-top:200px
+  }
+ 
 `;
 export const Aside = styled.aside`
   grid-area: aside;
   display: flex;
   height: 200px;
   background-color: #1abc9c;
-  ${media.md`
+  ${media.tablet} {
+    /* 栅格的列 */
     display: none;
     margin-top:200px
-  `}
+  }
+  
 `;
 export const Footer = styled.footer`
   grid-area: foorer;

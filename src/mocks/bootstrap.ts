@@ -1,5 +1,5 @@
 import * as initalData from './data/initial-data';
-import { menuDB } from '@/config'
+import { menuDB, sideMenuDB } from '@/config'
 /**
  * 初始化数据
  * LocalStorage 本地存储兼容函数
@@ -14,5 +14,6 @@ const persist = (storageKey: string, data: any[]) =>
 //写入数据
 export const bootstrap = () => {
   persist(menuDB, initalData.menu);
+  persist(sideMenuDB, initalData.sideMenuList);
 };
 

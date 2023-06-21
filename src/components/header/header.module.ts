@@ -1,20 +1,12 @@
 import styled from 'styled-components/macro';
-//import media from "@/styles/media";
-
+import media from "@/styles/media";
 /**
  * @date 2023/05/30
  * @description Header-css
  */
 
-const customMediaQuery = (maxWidth: number) =>
-  `@media (max-width: ${maxWidth}px)`;
 
-const media = {
-  custom: customMediaQuery,
-  desktop: customMediaQuery(922),
-  tablet: customMediaQuery(768),
-  phone: customMediaQuery(576)
-};
+
 export const Container = styled.header`
   grid-area: header;
   /* grid中的子元素设置弹性盒子flex */
@@ -24,6 +16,7 @@ export const Container = styled.header`
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   position: fixed;//元素的位置相对于浏览器窗口是固定位置
   align-items: center;
+  
 
 `;
 export const Navbar = styled.div`
@@ -32,6 +25,7 @@ export const Navbar = styled.div`
   margin: 0 auto; //居中对齐
   padding: 15px 0;
   align-items: center;
+  
 
    ${media.tablet} {
     flex-flow: row wrap;
@@ -108,7 +102,7 @@ export const HeaderRight = styled.div<VisibleProps>`
 `;
 export const Links = styled.ul`
   display: flex;
-
+  margin: 0 auto; //居中对齐
  ${media.tablet} {
     flex-direction: column;
 		margin: 8px, 0;
