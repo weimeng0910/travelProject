@@ -25,14 +25,24 @@ import {
   Li,
   UserRegister,
   MenuButton,
+  LogoFont,
 } from './header.module';
 import { useMenu } from '@/utils/menu'; //data
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
+import { ButtonNoPadding, Row } from '@/components/lib/lib';
+//导入logo跳转回根路由的方法
+import resetRoute from '@/utils/resetRoute';
 /**
  * @date 2023/05/30
  * @description Header
  */
+//定义类型
+interface VisibleProps {
+  //通过utiltype和list组件中的类型保持一致
+  visible: boolean;
 
+  handleClick: () => void;
+}
 //创建图标列表数据
 const iconList = {
   '/home': <HomeTwoTone twoToneColor="#27ae60" />,
@@ -74,26 +84,26 @@ const User = () => {
 };
 
 //Header
-export const Header: FC = () => {
+export const Header = ({ visible, handleClick }: VisibleProps) => {
   const { data: menuList } = useMenu(); //获取菜单数据
-  const [visible, setVisible] = useState(false);
-  const handleClick = () => {
-    setVisible(visible => !visible);
-    console.log(visible, '001');
-  };
+
   return (
     <>
       <Container>
         <Navbar>
           <HeaderLeft>
-            <Softwarelogo width="35px" height="36px" />
-            <span>Travenly</span>
+            <ButtonNoPadding type="link" onClick={resetRoute}>
+              <Row>
+                <Softwarelogo width="2.5rem" height="2.5rem" />
+                <LogoFont>Travenly</LogoFont>
+              </Row>
+            </ButtonNoPadding>
           </HeaderLeft>
 
           <MenuButton onClick={handleClick}>
             <ProfileOutlined />
           </MenuButton>
-          <HeaderCenter visible={visible || false}>
+          <HeaderCenter visible={visible}>
             <Links>
               {menuList?.map(item => (
                 <Li key={nanoid()}>
@@ -103,7 +113,7 @@ export const Header: FC = () => {
               ))}
             </Links>
           </HeaderCenter>
-          <HeaderRight visible={visible || false}>
+          <HeaderRight visible={visible}>
             <User />
           </HeaderRight>
         </Navbar>

@@ -11,50 +11,75 @@ export const WelcomeText = styled.h1`
   font-size: 40px;
   color: #7f8c8d;
   width: 100%; 
+ 
   ${media.tablet} {
 
-   font-size: 20px;
+   font-size: 30px;
 
+  }
+  ${media.phone} {
+
+  font-size: 20px;
   }
 `;
 
 export const Container = styled.div`
+  
   display: flex;
-  margin: 0 auto; //居中对齐
   align-items: center;
-  width: 100%; 
+  width: 100%;
+  
+`;
+export const SearchInputBox = styled.div`
+  
+  display: grid;
+  grid-template-columns: auto 100px;
+  align-items: center;
+  width: 100%;
   
 `;
 export const WorldText = styled.h1`
+
   font-size: 50px;
-  color: #21BA71;
+  color: #16a085;
   margin-right: 20px;
   ${media.tablet} {
 
-   font-size: 20px;
+   font-size: 30px;
 
   }
+  ${media.phone} {
 
+  font-size: 20px;
+  }
 `;
 export const NewInput: typeof Input = styled(Input) <InputProps>`
-  border: 0;
+
   outline: 0;
-  width: 600px;
   text-decoration: 4px solid underline;
   line-height: 2;
   text-underline-offset: 10px;
-  border: 0.5px solid #21BA71;
+  border: 0.5px solid  #16a085;
+  
   ${media.tablet} {
-    
-    width: 90%;
+  
    
+   line-height: 1;
   }
+  ${media.phone} {
 
+   line-height: 1;
+  }
 `as any;
+
 export const NewButton: typeof Button = styled(Button) <ButtonProps>`
-  background-color: #21BA71;
+  
+  background-color: #16a085;
+  margin-left: 20px;
   &:hover {
       background-color: #2ecc71; 
     } 
+
   
 `as any;
+

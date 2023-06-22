@@ -48,12 +48,27 @@ export const HeaderLeft = styled.h2`
 
   
 `;
+export const LogoFont = styled.h1`
+  display: flex;
+  color: #16a085;
+  font-weight: bold;
+  margin: 0 auto; //居中对齐
+ ${media.tablet} {
+     flex:1;
+     text-align:left;
+     margin-right: auto;
+     padding: .5rem;
+  }
+
+  
+`;
 export const MenuButton = styled.label`
   display: none;
   border: solid 1px #ddd;
   padding: .5rem 1rem;
   color: #16a085;
   cursor: pointer;
+
  ${media.tablet} {
     display: block;  
     border: solid 1px #16a085;
@@ -70,6 +85,7 @@ type VisibleProps = {
 export const HeaderCenter = styled.div<VisibleProps>`
  	display: flex;
 	flex-grow: 1;
+
   ${media.tablet} {
     position: absolute;
     left: 0px;
@@ -132,6 +148,7 @@ export const SpanIcon = styled.span`
   display: block;
   margin: 0 auto; //居中对齐
   margin-right: 10px;
+  
   ${media.tablet} {
 
 	margin: 0 10px;

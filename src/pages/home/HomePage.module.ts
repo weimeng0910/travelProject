@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-
+import media from "@/styles/media";
 /**
  * @date 2023/06/30
  * @description Homepage-css
@@ -16,10 +16,12 @@ export const MenuLayout = styled.div`
   margin-left: 10px;
   border-radius: 25px;
   padding: 4px 14px;
-  width: 400px;
+  width: 40%;
   height: 400px;
   background-color: #f5f6fa;
-     
+  ${media.tablet} {
+   display: none;
+  }
 `;
 
 export const MainLayout = styled.div`

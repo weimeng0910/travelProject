@@ -28,38 +28,39 @@ export const Container = styled.div`
   }
      
 `;
-
-export const Main = styled.main`
+type VisibleProps = {
+  visible: boolean;
+}
+export const Main = styled.main<VisibleProps>`
   grid-area: main;
  
   /*display: flex;*/
   background-color: #fff;
   ${media.tablet} {
     /* 栅格的列 */
-    margin-top:12rem;
+    margin-top:${(props: VisibleProps) =>
+    props.visible ? "12rem" : "0"};;
   }
-   
+
 `;
 export const Nav = styled.nav`
   grid-area: nav;
   display: flex;
   
   background-color: #ecf0f1;
-  ${media.tablet} {
-    /* 栅格的列 */
-     margin-top:200px
-  }
+ 
  
 `;
 export const Aside = styled.aside`
   grid-area: aside;
   display: flex;
+  
   height: 200px;
   background-color: #1abc9c;
   ${media.tablet} {
     /* 栅格的列 */
     display: none;
-    margin-top:200px
+    
   }
   
 `;
