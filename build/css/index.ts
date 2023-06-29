@@ -3,6 +3,8 @@ export function configCss() {
   return {
     preprocessorOptions: {
       less: {
+        math: "always",
+        relativeUrls: true,
         // 支持内联 JavaScript
         javascriptEnabled: true,
         // antd 定制主题样式

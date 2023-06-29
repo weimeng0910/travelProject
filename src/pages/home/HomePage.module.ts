@@ -6,18 +6,21 @@ import media from "@/styles/media";
  */
 
 export const Container = styled.div`
-  display: flex;
-  margin-left: 10px;
-  width: 100%;
+  /*display: flex;*/
+  margin-top: 10px;
+  /*width: 100%;
   border-radius: 25px;
-  background: #ecf0f1;
+  background: #ecf0f1;*/
 `;
 export const MenuLayout = styled.div`
+  
+  
   margin-left: 10px;
   border-radius: 25px;
   padding: 4px 14px;
+  
   width: 40%;
-  height: 400px;
+  height: 800px;
   background-color: #f5f6fa;
   ${media.tablet} {
    display: none;
@@ -25,11 +28,31 @@ export const MenuLayout = styled.div`
 `;
 
 export const MainLayout = styled.div`
+  flex-flow: row wrap;
   margin-left: 10px;
   border-radius: 25px;
   padding: 4px 14px;
   width: 100%;
-  height: 400px;
+  height:800px;
   background-color: #F5FAF8;
+     
+`;
+export const SwiperBox = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  margin: 0 auto;
+  height: 200px;
+  ${media.tablet} {
+    /* 栅格的列 */
+    margin-top:20px;
+  }
+
+`;
+export const CarouselBox = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+  
      
 `;

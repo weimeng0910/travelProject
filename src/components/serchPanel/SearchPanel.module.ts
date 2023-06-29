@@ -29,6 +29,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   
+  
 `;
 export const SearchInputBox = styled.div`
   
@@ -36,13 +37,15 @@ export const SearchInputBox = styled.div`
   grid-template-columns: auto 100px;
   align-items: center;
   width: 100%;
-  
+  flex-shrink: 1;
 `;
 export const WorldText = styled.h1`
 
   font-size: 50px;
   color: #16a085;
   margin-right: 20px;
+  flex-shrink: 1;
+
   ${media.tablet} {
 
    font-size: 30px;
@@ -60,6 +63,7 @@ export const NewInput: typeof Input = styled(Input) <InputProps>`
   line-height: 2;
   text-underline-offset: 10px;
   border: 0.5px solid  #16a085;
+  flex-shrink: 1;
   
   ${media.tablet} {
   

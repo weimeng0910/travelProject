@@ -158,7 +158,7 @@ export const SpanIcon = styled.span`
 `;
 export const UserRegister = styled.div`
   font-size: 14px;
-  border: solid 1px #16a085;
+  /*border: solid 1px #16a085;*/
   border-radius: .3rem;//圆角
   color: #16a085;
   padding: .3rem 1rem;
