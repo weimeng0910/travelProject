@@ -1,7 +1,7 @@
 /**
  * @file logo跳转函数
  */
-export default function resetRoute() {
+export const resetRoute = () => {
   window.location.href = window.location.origin;
   return (
     window.location.href

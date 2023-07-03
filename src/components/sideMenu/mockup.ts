@@ -1,49 +1,6 @@
-/** 
-* @date 06.06.2023
-* @file  data
-*/
-export interface MenuNode {
-  id: number;
-  label: string;
-  key: string;
-
-}
-export const menu: Array<MenuNode> = [
-  {
-    id: 1,
-    label: "Home",
-    key: "/home"
-  },
-  {
-    id: 2,
-    label: "Discover",
-    key: "/detail"
-
-  },
-  {
-    id: 3,
-    label: "Tickets",
-    key: "/tickets"
-  },
-  {
-    id: 4,
-    label: "Favorite",
-    key: "/favorite"
-  },
-  {
-    id: 5,
-    label: "Transaction",
-    key: "/placeOrder"
-  },
-  {
-    id: 6,
-    label: "Cart",
-    key: "/shoppingCart"
-  },
-];
 export const sideMenuList = [
   {
-    title: "Destination deals",
+    title: "主题旅游",
     subMenu: [
       {
         title: "爸妈游",
@@ -60,7 +17,7 @@ export const sideMenuList = [
     ],
   },
   {
-    title: "Top hotel beach destinations",
+    title: "周边游",
     subMenu: [
       {
         title: "周边目的地",
@@ -73,7 +30,7 @@ export const sideMenuList = [
     ],
   },
   {
-    title: "Top hotel city destinations",
+    title: "国内游",
     subMenu: [
       {
         title: "广东",
@@ -90,7 +47,7 @@ export const sideMenuList = [
     ],
   },
   {
-    title: "Top vacation destinations",
+    title: "东南亚",
     subMenu: [
       {
         title: "热门目的地",
@@ -103,24 +60,7 @@ export const sideMenuList = [
     ],
   },
   {
-    title: "Top flight destinations",
-    subMenu: [
-      {
-        title: "热门邮轮航线",
-        subMenu: ["欧洲河轮", "北欧邮轮", "爱琴海邮轮", "英伦三岛"],
-      },
-      {
-        title: "热门景点",
-        subMenu: ["贝加尔湖", "普罗旺斯", "阿尔卑斯", "圣托里尼岛"],
-      },
-      {
-        title: "蜜月游",
-        subMenu: ["极光中心", "俄罗斯远东地区", "英格兰少女峰", "玻璃海滩"],
-      },
-    ],
-  },
-  {
-    title: "Top car rental destinations in America",
+    title: "欧洲",
     subMenu: [
       {
         title: "热门邮轮航线",
@@ -137,6 +77,7 @@ export const sideMenuList = [
     ],
   },
 ];
+
 /**
  * 首页推荐产品数据
  * */

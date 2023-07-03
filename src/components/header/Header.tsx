@@ -27,11 +27,11 @@ import {
   MenuButton,
   LogoFont,
 } from './header.module';
-import { useMenu } from '@/utils/menu'; //data
+import { useMenu } from '@/utils'; //data
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
 import { ButtonNoPadding, Row } from '@/components/lib/lib';
 //导入logo跳转回根路由的方法
-import resetRoute from '@/utils/resetRoute';
+import { resetRoute } from '@/utils';
 /**
  * @date 2023/05/30
  * @description Header
