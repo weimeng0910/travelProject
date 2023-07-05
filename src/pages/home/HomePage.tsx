@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { MenuLayout, MainLayout, SwiperBox, CarouselBox, Container } from './HomePage.module';
+import { MenuLayout, MainLayout, SwiperBox, CarouselBox, FontBox } from './HomePage.module';
 import { Row } from '@/components/lib/lib';
 import { SideMenu } from '@/components/sideMenu';
 import { SearchPanel } from '@/components/serchPanel';
@@ -21,6 +21,9 @@ export const HomePage: FC = () => {
     <Row>
       <MenuLayout>
         <SideMenu />
+        <FontBox>
+          <h1>We Are The Best Travel Agent</h1>
+        </FontBox>
       </MenuLayout>
       <MainLayout>
         <SearchPanel />

@@ -16,7 +16,6 @@ import {
   WhiteMith,
   TextDescription,
 } from './Carousel.module';
-import { ReactComponent as Binoculars } from '@/assets/icon/binoculars.svg';
 
 /**
  * @date 2023/06/22

@@ -6,11 +6,9 @@ import media from "@/styles/media";
  */
 
 export const Container = styled.div`
-  /*display: flex;*/
+  
   margin-top: 10px;
-  /*width: 100%;
-  border-radius: 25px;
-  background: #ecf0f1;*/
+  
 `;
 export const MenuLayout = styled.div`
   
@@ -52,7 +50,18 @@ export const CarouselBox = styled.div`
   margin-top: 20px;
   width: 100%;
   margin: 0 auto;
+  border-radius: 25px;
   height: 300px;
   
+     
+`;
+export const FontBox = styled.div`
+  padding-top: 20px;
+  width: 100%;
+  margin: 0 auto;
+  height: 130px;
+  border-radius: 25px;
+  color:#fff;
+  background-color:#F5FAF8;
      
 `;

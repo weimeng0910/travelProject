@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 import { bootstrap } from './bootstrap';
-import { getMenuHandlers } from './domains/menu-handlers';
+import { getMenuHandlers, getSideMenuHandlers } from './domains';
 /** 
 * @data 24.05.2023
 * @file Respond to API requests
@@ -15,5 +15,6 @@ export const handlers = [
   rest.get('/hello', (req, res, ctx) => {
     return res(ctx.json({ greeting: 'hello there' }))
   }),
-  ...getMenuHandlers
+  ...getMenuHandlers,
+  ...getSideMenuHandlers
 ]

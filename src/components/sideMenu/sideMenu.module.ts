@@ -70,4 +70,5 @@ export const StyledMenu = styled(Menu)`
       }
     }
   }
+
 `;

@@ -1,4 +1,4 @@
-import * as initalData from './data/initial-data';
+import * as initalData from './data/initialData';
 import { menuDB, sideMenuDB } from '@/config'
 /**
  * 初始化数据
