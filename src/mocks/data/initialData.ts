@@ -245,54 +245,92 @@ export const sideMenuList = [
   },
 ];
 /**
- * 首页推荐产品数据
+ * 产品数据
  * */
-// 爆款推荐
-export const productList1 = [
+
+export const productList = [
   {
     id: 1,
-    title:
-      "埃及阿斯旺+卢克索+红海Red Sea+开罗+亚历山大12日跟团游(5钻)·【官方旗舰明星纯玩团】25人封顶|含签证小费全程餐|3晚尼罗河游轮+3晚红海全包度假村+1晚底比斯古都|升级内陆飞机|优质中文导游队伍|七大神庙+赠项目",
-    price: "11990",
+    name:
+      "Boston: Duck Tours",
+    goods_sn: 1,
+    category_id: 1,
+    brand_id: 2,
+    keywords: 'US',
+    brief: 'super touristy',
+    is_on_sale: true,
+    sort_order: 9,
+    pic_url: '/details/img/2023-001.png',
+    is_new: true,
+    is_hot: true,
+    retail_price: "11990",
+    counter_price: "13000",
+    add_time: "",
+    update_tiem: "",
+    deleted_tiem: "",
+    detail: "When you’re in Boston, history lessons are inevitable. Every corner of the city practically marks a spot where something significant in American history happened. And if you’re going to learn about the glory days of the Revolutionary War, you might has well have some laughs at the same time. Enter this Duck Tour, where you board an amphibious World War II vehicle and a tour guide takes you through the city and eventually onto the Charles River. The guides here are also comedians, which has the potential to induce groans instead of laughs, but trust us: These guys are hilarious and really know the city."
   },
   {
     id: 2,
-    title: "摩洛哥撒哈拉沙漠+卡萨布兰卡+马拉喀什+舍夫沙...",
-    price: "13290",
+    name:
+      "Chicago: Architectural Boat Tour",
+    goods_sn: 1,
+    category_id: 1,
+    brand_id: 2,
+    keywords: 'US',
+    brief: 'super touristy',
+    is_on_sale: true,
+    sort_order: 9,
+    pic_url: '/details/img/2023-002.png',
+    is_new: true,
+    is_hot: true,
+    retail_price: "11990",
+    counter_price: "13000",
+    add_time: "",
+    update_tiem: "",
+    deleted_tiem: "",
+    detail: "The Windy City has one of the most enviable skylines in the world, and the best way to learn about it is via a boat that winds through the Chicago River. Informative tour guides (who usually double as architecture buffs) share the city’s colorful history as you get up close and personal with some of Chicago’s famous skyscrapers. If you never considered architecture to be a particularly interesting subject, this Architecture Tour will definitely change your mind."
   },
   {
     id: 3,
-    title: "越南胡志明市+美奈+芽庄+河内7日6晚跟团游(4钻)...",
-    price: "4000",
+    name:
+      "New York City: Full Island Sightseeing Cruise",
+    goods_sn: 1,
+    category_id: 1,
+    brand_id: 2,
+    keywords: 'US',
+    brief: 'super touristy',
+    is_on_sale: true,
+    sort_order: 9,
+    pic_url: '/details/img/2023-003.png',
+    is_new: true,
+    is_hot: true,
+    retail_price: "11990",
+    counter_price: "13000",
+    add_time: "",
+    update_tiem: "",
+    deleted_tiem: "",
+    detail: "Even though Manhattan isn’t that big of an island (it’s just a little over 13 miles long), the city provides a lot of ground to cover. And it’s practically impossible to see the major parts of the city by foot. That’s why it’s a smart idea to hop on a boat. This full island sightseeing cruise circles around all of Manhattan, which means in just under three hours, you’ll see parts of downtown, the Bronx, go under all the major bridges, and even get some glimpses of the Statue of Liberty. Bonus: There’s an onboard bar for drinks and snacks, too."
   },
   {
     id: 4,
-    title: "迪拜+阿布扎比6日跟团游(5钻)·【携程国旅纯玩...",
-    price: "7399",
-  },
-  {
-    id: 5,
-    title: "泰国曼谷+芭堤雅6日5晚跟团游(5钻)·【纯玩】『可...",
-    price: "3499",
-  },
-  {
-    id: 6,
-    title: "日本大阪+京都+箱根+东京6日5晚跟团游(4钻)·【浪...",
-    price: "5999",
-  },
-  {
-    id: 7,
-    title: "新加坡+马来西亚6日5晚跟团游(5钻)·【纯玩无购物...",
-    price: "6199",
-  },
-  {
-    id: 8,
-    title: "法国+德国+意大利+瑞士12日跟团游(4钻)·【匠心定...",
-    price: "13699",
-  },
-  {
-    id: 9,
-    title: "印度尼西亚巴厘岛7日5晚私家团(5钻)·A线独栋泳...",
-    price: "5021",
+    name:
+      "Miami: Helicopter tour",
+    goods_sn: 4,
+    category_id: 4,
+    brand_id: 2,
+    keywords: 'US',
+    brief: 'super touristy',
+    is_on_sale: true,
+    sort_order: 9,
+    pic_url: '/details/img/2023-004.png',
+    is_new: true,
+    is_hot: true,
+    retail_price: "11990",
+    counter_price: "13000",
+    add_time: "",
+    update_tiem: "",
+    deleted_tiem: "",
+    detail: "It’s time to channel the exuberance of your inner Tony Montana, because you’re about to hop around the city in a helicopter. If you want to see everything Miami has to offer, the best way to do it is from up above. And this helicopter tour takes you over the city’s famous football stadiums, glistening beaches, and the chain of islands leading to Key West. You’ve never seen Miami Beach quite like this, and if you want to feel like a baller on your vacay, a helicopter is definitely the way to go."
   },
 ];

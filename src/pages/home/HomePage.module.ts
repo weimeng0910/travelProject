@@ -36,6 +36,7 @@ export const MainLayout = styled.div`
      
 `;
 export const SwiperBox = styled.div`
+perspective: 25px;
   margin-top: 20px;
   width: 100%;
   margin: 0 auto;
@@ -52,16 +53,32 @@ export const CarouselBox = styled.div`
   margin: 0 auto;
   border-radius: 25px;
   height: 300px;
-  
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
      
 `;
 export const FontBox = styled.div`
-  padding-top: 20px;
-  width: 100%;
-  margin: 0 auto;
-  height: 130px;
-  border-radius: 25px;
-  color:#fff;
-  background-color:#F5FAF8;
+    perspective: 25px;
+    width: 100%;
+    height: 130px;
+    background: red;
+    
      
+`;
+export const InnerH3 = styled.h3`
+   width: 20em;
+  height: 18em;
+  background-color: white;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
 `;

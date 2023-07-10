@@ -38,6 +38,7 @@ export const HomePage: FC = () => {
   const updatePosition = (e: MouseEvent<HTMLElement>) => {
     mouse.x = e.clientX - mouse.px;
     mouse.y = (e.clientY - mouse.py) * -1;
+    console.log(mouse.x, mouse.y);
   };
 
   //setOrigin(): 设置鼠标的初始坐标，即把#container的中心位置设为(0,0)。
@@ -59,7 +60,7 @@ export const HomePage: FC = () => {
     let style = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
     if (innerRef.current != undefined) {
       innerRef.current.style.transform = style;
-      //innerRef.current.style['transform'] = style;
+      innerRef.current.style['transform'] = style;
       //innerRef.current.style.webkitTransform = style;
       //innerRef.current.style.mozTransform = style;
       //innerRef.current.style.msTransform = style;
@@ -90,9 +91,9 @@ export const HomePage: FC = () => {
     update(event, innerRef.current!);
   };
   //定义鼠标离开进的事件
-  const onMouseLeaveHandler = (event: MouseEvent<HTMLElement>) => {
-    if (innerRef.current != undefined) {
-      const inner = innerRef.current as any;
+  const onMouseLeaveHandler = (ref: HTMLElement) => {
+    if (ref != undefined) {
+      const inner = ref as any;
       inner.style = '';
     }
   };
@@ -107,21 +108,21 @@ export const HomePage: FC = () => {
     <Row>
       <MenuLayout>
         <SideMenu />
-        <FontBox>
-          <InnerH3>
+        <FontBox
+          ref={containerRef}
+          onMouseOver={onMouseEnterHandler}
+          onMouseMove={onMouseMoveHandler}
+          onMouseOut={onMouseLeaveHandler(innerRef.current!)!}
+        >
+          <InnerH3 ref={innerRef}>
             <span>Here to help keep you on the move</span>{' '}
           </InnerH3>
         </FontBox>
       </MenuLayout>
       <MainLayout>
         <SearchPanel />
-        <SwiperBox
-          ref={containerRef}
-          onMouseOver={onMouseEnterHandler}
-          onMouseMove={onMouseMoveHandler}
-          onMouseOut={onMouseLeaveHandler}
-        >
-          <CarouselBox ref={innerRef}>
+        <SwiperBox>
+          <CarouselBox>
             <CarouselPage width={'650px'} height={'300px'}>
               {imageList.map((item: string, index: number) => (
                 <CarouselItemPage key={index}>

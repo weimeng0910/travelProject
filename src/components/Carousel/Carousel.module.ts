@@ -90,6 +90,7 @@ const innerFrame = keyframes`
 `;
 export const SwiperBox = styled.div`
   display: flex;
+  
   ${media.tablet} {
     width: 80%;
     height: 60%;
