@@ -6,34 +6,32 @@ import media from "@/styles/media";
  */
 
 export const Container = styled.div`
+  display: flex;
   
-  margin-top: 10px;
   
 `;
 export const MenuLayout = styled.div`
-  
-  
   margin-left: 10px;
   border-radius: 25px;
   padding: 4px 14px;
-  
-  width: 40%;
-  height: 800px;
+  height: 90vh;
   background-color: #f5f6fa;
-  ${media.tablet} {
+  ${media.phone} {
    display: none;
   }
 `;
 
 export const MainLayout = styled.div`
-  flex-flow: row wrap;
+   
   margin-left: 10px;
+  margin-right: 10px;
+  flex-grow:1;
   border-radius: 25px;
   padding: 4px 14px;
-  width: 100%;
-  height:800px;
+  height:100vh;
   background-color: #F5FAF8;
-     
+ 
+
 `;
 export const SwiperBox = styled.div`
 perspective: 25px;
@@ -41,7 +39,8 @@ perspective: 25px;
   width: 100%;
   margin: 0 auto;
   height: 200px;
-  ${media.tablet} {
+ 
+  ${media.phone} {
     /* 栅格的列 */
     margin-top:20px;
   }
@@ -63,22 +62,33 @@ export const CarouselBox = styled.div`
      
 `;
 export const FontBox = styled.div`
-    perspective: 25px;
-    width: 100%;
-    height: 130px;
-    background: red;
+   
+    width: 150px;
     
+    background: red;
+    cursor: pointer;
+    height: 300px;
+    transition:all 0.4s;
+  
+  
+    &:hover {
+       box-shadow: 0 8px 8px 0  gray;
+       transform: translate(0,-10px);
+       }
      
 `;
 export const InnerH3 = styled.h3`
-   width: 20em;
-  height: 18em;
-  background-color: white;
-  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  transform-origin: 50% 50%;
-  -webkit-transition: transform 0.5s;
-  -moz-transition: transform 0.5s;
-  -o-transition: transform 0.5s;
+      
+      background: #fff;
+      
+      
+       /*& img{
+        width: 100%;
+        height: 100%;
+       transition: all 0.6s; //设置动画执行的时间为0.6s
+       cursor: pointer;
+       }
+        & img:hover {
+        transform: scale(1.3); //设置图片按照比例放大1.3倍
+       }*/
 `;

@@ -146,7 +146,7 @@ export const CarouselPage: React.FC<CarouselProps> = ({
                 <h4>Rafting</h4>
               </span>
               <span>
-                <h5>Clmbing the tallest mountain in erurope</h5>
+                <h5>Clmbing the </h5>
               </span>
             </div>
             <div>
@@ -154,15 +154,12 @@ export const CarouselPage: React.FC<CarouselProps> = ({
                 <h4>Windsurfing</h4>
               </span>
               <span>
-                <h5>Clmbing the tallest mountain in erurope</h5>
+                <h5>Clmbing the </h5>
               </span>
             </div>
             <div>
               <span>
                 <h4>Paragliding</h4>
-              </span>
-              <span>
-                <h5>Clmbing the tallest mountain in erurope</h5>
               </span>
             </div>
           </TextDescription>

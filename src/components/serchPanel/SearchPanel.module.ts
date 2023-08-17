@@ -46,7 +46,7 @@ export const WorldText = styled.h1`
   margin-right: 20px;
   flex-shrink: 1;
 
-  ${media.tablet} {
+  ${media.phone} {
 
    font-size: 30px;
 
@@ -65,7 +65,7 @@ export const NewInput: typeof Input = styled(Input) <InputProps>`
   border: 0.5px solid  #16a085;
   flex-shrink: 1;
   
-  ${media.tablet} {
+  ${media.phone} {
   
    
    line-height: 1;

@@ -10,6 +10,7 @@ import {
   HeartTwoTone,
   UserOutlined,
   ProfileOutlined,
+  MenuOutlined,
 } from '@ant-design/icons';
 import { Dropdown, Menu } from 'antd';
 import type { MenuProps } from 'antd';
@@ -99,10 +100,11 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
               </Row>
             </ButtonNoPadding>
           </HeaderLeft>
-
+          {/* 折叠 */}
           <MenuButton onClick={handleClick}>
-            <ProfileOutlined />
+            <MenuOutlined style={{ fontSize: '22px' }} />
           </MenuButton>
+
           <HeaderCenter visible={visible}>
             <Links>
               {menuList?.map(item => (

@@ -8,29 +8,36 @@ import media from "@/styles/media";
 
 
 export const Container = styled.header`
+  /*position: sticky;*/
   grid-area: header;
+  z-index: 1;
+  background-color: #fff;
   /* grid中的子元素设置弹性盒子flex */
   top:0;
   width: 100%;
   border-bottom: solid 5px #16a085;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   position: fixed;//元素的位置相对于浏览器窗口是固定位置
-  align-items: center;
+  align-items: center;//让盒子中的弹性元素居中对齐
   
 
 `;
 export const Navbar = styled.div`
-  display: flex;//弹性盒
-  width:1180px;//设定宽度让导航在页面居中
+  display: flex;
+  width:100vw;//设定宽度让导航在页面居中
+  /*height: 80px;*/
   margin: 0 auto; //居中对齐
   padding: 15px 0;
-  align-items: center;
+  /*align-items: center;*/
+  text-align: center;
+  line-height: 3rem;
+  
   
 
-   ${media.tablet} {
-    flex-flow: row wrap;
+   ${media.phone} {
+    /*flex-flow: row wrap;//让盒子内的弹性元素换行*/
     width: 90%;
-    padding: 15px 0;
+    padding: 25px 0;
   }
   
 `;
@@ -39,11 +46,12 @@ export const HeaderLeft = styled.h2`
   color: #16a085;
   font-weight: bold;
   margin: 0 auto; //居中对齐
- ${media.tablet} {
+  margin-left: 20px;
+ ${media.phone} {
      flex:1;
      text-align:left;
      margin-right: auto;
-     padding: .5rem;
+     /*padding: .5rem;*/
   }
 
   
@@ -53,29 +61,27 @@ export const LogoFont = styled.h1`
   color: #16a085;
   font-weight: bold;
   margin: 0 auto; //居中对齐
- ${media.tablet} {
+ ${media.phone} {
      flex:1;
      text-align:left;
      margin-right: auto;
-     padding: .5rem;
+   
   }
 
   
 `;
 export const MenuButton = styled.label`
   display: none;
-  border: solid 1px #ddd;
-  padding: .5rem 1rem;
+ 
   color: #16a085;
   cursor: pointer;
 
- ${media.tablet} {
+ ${media.phone} {
     display: block;  
-    border: solid 1px #16a085;
-		padding: 1.5px 12px;
 		color: #16a085;
 		cursor: pointer;
-		border-radius: 5px;
+    margin-right: 20px;
+		
   }
   
 `;
@@ -85,11 +91,11 @@ type VisibleProps = {
 export const HeaderCenter = styled.div<VisibleProps>`
  	display: flex;
 	flex-grow: 1;
-
-  ${media.tablet} {
+  
+  ${media.phone} {
     position: absolute;
     left: 0px;
-    top: 6rem;
+    top: 7rem;
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
     flex-flow:column;
@@ -103,12 +109,12 @@ export const HeaderRight = styled.div<VisibleProps>`
   display: flex; 
   margin: 0 auto; //居中对齐
   align-items: center;
-  padding-right: 40px;
+  padding-right: 10px;
 
-  ${media.tablet} {
+  ${media.phone} {
     position: absolute;
-    left: 40px;
-    top: 16rem;
+    left: 30px;
+    top: 24rem;
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
   }
@@ -119,6 +125,8 @@ export const HeaderRight = styled.div<VisibleProps>`
 export const Links = styled.ul`
   display: flex;
   margin: 0 auto; //居中对齐
+  
+  justify-content:space-evenly;//盒子内元素平均分配
  ${media.tablet} {
     flex-direction: column;
 		margin: 8px, 0;
@@ -132,6 +140,8 @@ export const Li = styled.li`
   display: flex;
   color: #4b4949;
   font-weight: bold;
+  text-align: center;
+  line-height: 3rem;
   margin-right: 20px;
   &:hover {
       color: hotpink; // <Thing> when hovered
@@ -149,9 +159,9 @@ export const SpanIcon = styled.span`
   margin: 0 auto; //居中对齐
   margin-right: 10px;
   
-  ${media.tablet} {
+  ${media.phone} {
 
-	margin: 0 10px;
+	margin: 0 5px;
 
   }
   

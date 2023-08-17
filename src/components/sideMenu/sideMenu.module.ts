@@ -7,7 +7,7 @@ import { Menu } from 'antd';
 export const StyledMenu = styled(Menu)`
   margin-top: 10px;
   border-radius: 25px;
-  width: 100%;
+  width: 50%;
   background: #f9fbfb;
   .ant-menu-submenu-title {
     color: #95a5a6;
