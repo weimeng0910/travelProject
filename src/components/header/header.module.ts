@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
+import { Link } from 'react-router-dom';
 import media from "@/styles/media";
+import { link } from 'fs';
 /**
  * @date 2023/05/30
  * @description Header-css
@@ -8,61 +10,62 @@ import media from "@/styles/media";
 
 
 export const Container = styled.header`
-  /*position: sticky;*/
+  
   grid-area: header;
+  position: fixed;//元素的位置相对于浏览器窗口是固定位置
+  /*display: flex;*/
   z-index: 1;
-  background-color: #fff;
-  /* grid中的子元素设置弹性盒子flex */
-  top:0;
   width: 100%;
+  background-color: #fff;
   border-bottom: solid 5px #16a085;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  position: fixed;//元素的位置相对于浏览器窗口是固定位置
-  align-items: center;//让盒子中的弹性元素居中对齐
-  
 
 `;
 export const Navbar = styled.div`
   display: flex;
-  width:100vw;//设定宽度让导航在页面居中
-  /*height: 80px;*/
-  margin: 0 auto; //居中对齐
-  padding: 15px 0;
-  /*align-items: center;*/
-  text-align: center;
-  line-height: 3rem;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+ 
   
   
-
    ${media.phone} {
-    /*flex-flow: row wrap;//让盒子内的弹性元素换行*/
-    width: 90%;
+    flex-flow: row wrap;//让盒子内的弹性元素换行
+   
     padding: 25px 0;
+     align-items: center;
   }
   
 `;
-export const HeaderLeft = styled.h2`
+export const HeaderLeft = styled.div`
   display: flex;
-  color: #16a085;
+  width: 300px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  /*color: #16a085;*/
   font-weight: bold;
-  margin: 0 auto; //居中对齐
+  /*margin: 0 auto; //居中对齐*/
   margin-left: 20px;
- ${media.phone} {
+  &:hover {
+      cursor: pointer;
+      color: hotpink; // <Thing> when hovered
+    } 
+  ${media.phone} {
      flex:1;
      text-align:left;
      margin-right: auto;
-     /*padding: .5rem;*/
+     
   }
-
-  
 `;
+
 export const LogoFont = styled.h1`
   display: flex;
   color: #16a085;
   font-weight: bold;
-  margin: 0 auto; //居中对齐
+
  ${media.phone} {
-     flex:1;
+    
      text-align:left;
      margin-right: auto;
    
@@ -72,11 +75,11 @@ export const LogoFont = styled.h1`
 `;
 export const MenuButton = styled.label`
   display: none;
- 
   color: #16a085;
   cursor: pointer;
+  margin: auto;
 
- ${media.phone} {
+ ${media.tablet} {
     display: block;  
 		color: #16a085;
 		cursor: pointer;
@@ -90,9 +93,14 @@ type VisibleProps = {
 }
 export const HeaderCenter = styled.div<VisibleProps>`
  	display: flex;
-	flex-grow: 1;
+  flex: 1;
+  justify-content:space-between;
+  align-items: center;
+  box-sizing: border-box;
   
-  ${media.phone} {
+  
+  
+  ${media.tablet} {
     position: absolute;
     left: 0px;
     top: 7rem;
@@ -107,11 +115,12 @@ export const HeaderCenter = styled.div<VisibleProps>`
 
 export const HeaderRight = styled.div<VisibleProps>`
   display: flex; 
-  margin: 0 auto; //居中对齐
-  align-items: center;
+  width: 300px;
+  justify-content: center;
+  align-content: center;
   padding-right: 10px;
 
-  ${media.phone} {
+  ${media.tablet} {
     position: absolute;
     left: 30px;
     top: 24rem;
@@ -124,9 +133,19 @@ export const HeaderRight = styled.div<VisibleProps>`
 `;
 export const Links = styled.ul`
   display: flex;
-  margin: 0 auto; //居中对齐
+  justify-content:space-between;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
   
-  justify-content:space-evenly;//盒子内元素平均分配
+  transform: translate(-50%, -50%);
+
+  /*margin: 0;*/
+  /*flex: 1 1 auto;*/
+ 
+  
  ${media.tablet} {
     flex-direction: column;
 		margin: 8px, 0;
@@ -138,20 +157,51 @@ export const Links = styled.ul`
 `;
 export const Li = styled.li`
   display: flex;
-  color: #4b4949;
+  
+  color: #16a085;
   font-weight: bold;
-  text-align: center;
-  line-height: 3rem;
-  margin-right: 20px;
-  &:hover {
-      color: hotpink; // <Thing> when hovered
-    } 
-   
+  text-align: center;//文本居中
+  
+  margin:0 20px;
+
+  position: relative;
+  padding: 0 8px;
+  font-size: 18px;
+  line-height: 3rem;//3倍字高
+  transition: 0.2s all linear;
+
+  /*cursor: pointer;*/
+    &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 40%;
+            width: 0;
+            height: 100%;
+            border-bottom: 2px solid #118060;
+            transition: 0.2s all linear;
+        }
+
+        &:hover{
+           color: #95a5a6;
+         ::before {
+            
+            width: 100%;
+            top: 0;
+            left: 0;
+            transition-delay: 0.1s;
+            border-bottom-color: #2ecc71;
+        }
+  }
   ${media.tablet} {
     
 		margin: 8px, 0;
    
   }
+  
+`;
+export const NavbarLink = styled(Link)`
+  
   
 `;
 export const SpanIcon = styled.span`
@@ -171,6 +221,7 @@ export const UserRegister = styled.div`
   /*border: solid 1px #16a085;*/
   border-radius: .3rem;//圆角
   color: #16a085;
+  font-weight: bold;
   padding: .3rem 1rem;
  
 `;

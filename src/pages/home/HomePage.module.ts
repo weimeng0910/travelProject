@@ -6,15 +6,19 @@ import media from "@/styles/media";
  */
 
 export const Container = styled.div`
+
   display: flex;
-  
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: flex-start;
   
 `;
 export const MenuLayout = styled.div`
   margin-left: 10px;
-  border-radius: 25px;
   padding: 4px 14px;
-  height: 90vh;
+  /*height: 100vh;*/
+  flex: 0;
+  border-radius: 25px;
   background-color: #f5f6fa;
   ${media.phone} {
    display: none;
@@ -22,13 +26,13 @@ export const MenuLayout = styled.div`
 `;
 
 export const MainLayout = styled.div`
-   
+  flex:1;
+  
   margin-left: 10px;
   margin-right: 10px;
-  flex-grow:1;
-  border-radius: 25px;
   padding: 4px 14px;
-  height:100vh;
+  border-radius: 25px;
+  /*height:100vh;*/
   background-color: #F5FAF8;
  
 

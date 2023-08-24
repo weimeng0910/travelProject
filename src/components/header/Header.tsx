@@ -9,7 +9,6 @@ import {
   ShoppingTwoTone,
   HeartTwoTone,
   UserOutlined,
-  ProfileOutlined,
   MenuOutlined,
 } from '@ant-design/icons';
 import { Dropdown, Menu } from 'antd';
@@ -27,10 +26,11 @@ import {
   UserRegister,
   MenuButton,
   LogoFont,
+  NavbarLink,
 } from './header.module';
 import { useMenu } from '@/utils'; //data
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
-import { ButtonNoPadding, Row } from '@/components/lib/lib';
+import { ButtonNoPadding } from '@/components/lib/lib';
 //导入logo跳转回根路由的方法
 import { resetRoute } from '@/utils';
 /**
@@ -93,12 +93,8 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
       <Container>
         <Navbar>
           <HeaderLeft>
-            <ButtonNoPadding type="link" onClick={resetRoute}>
-              <Row>
-                <Softwarelogo width="2.5rem" height="2.5rem" />
-                <LogoFont>Travenly</LogoFont>
-              </Row>
-            </ButtonNoPadding>
+            <Softwarelogo width="2.5rem" height="2.5rem" onClick={resetRoute} />
+            <LogoFont onClick={resetRoute}>Travenly</LogoFont>
           </HeaderLeft>
           {/* 折叠 */}
           <MenuButton onClick={handleClick}>
@@ -108,12 +104,19 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
           <HeaderCenter visible={visible}>
             <Links>
               {menuList?.map(item => (
-                <Li key={nanoid()}>
-                  <SpanIcon>{iconList[item.key]}</SpanIcon>
-                  <Link to={item.key}>{item.label}</Link>
-                </Li>
+                <Link to={item.key}>
+                  <Li key={nanoid()}>
+                    <SpanIcon>{iconList[item.key]}</SpanIcon>
+                    {item.label}
+                  </Li>
+                </Link>
               ))}
             </Links>
+            {/*<div>1ggggg</div>
+            <div>2gggg</div>
+            <div>3ggg</div>
+            <div>4ggg</div>
+            <div>5ggg</div>*/}
           </HeaderCenter>
           <HeaderRight visible={visible}>
             <User />

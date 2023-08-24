@@ -8,7 +8,7 @@ import {
   FontBox,
   InnerH3,
 } from './HomePage.module';
-import { Row } from '@/components/lib/lib';
+
 import { SideMenu } from '@/components/sideMenu';
 import { SearchPanel } from '@/components/serchPanel';
 import { CarouselPage, CarouselItemPage } from '@/components/Carousel';
@@ -26,7 +26,7 @@ const imageList = [SideImage1, SideImage2, SideImage3, SideImage4];
 
 export const HomePage: FC = () => {
   return (
-    <Row>
+    <Container>
       <MenuLayout>
         <SideMenu />
         <FontBox>
@@ -39,6 +39,6 @@ export const HomePage: FC = () => {
       <MainLayout>
         <SearchPanel />
       </MainLayout>
-    </Row>
+    </Container>
   );
 };
