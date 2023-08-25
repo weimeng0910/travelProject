@@ -3,15 +3,14 @@ import {
   Container,
   MenuLayout,
   MainLayout,
-  SwiperBox,
-  CarouselBox,
   FontBox,
+  CarouselBox,
   InnerH3,
 } from './HomePage.module';
 
 import { SideMenu } from '@/components/sideMenu';
 import { SearchPanel } from '@/components/serchPanel';
-import { CarouselPage, CarouselItemPage } from '@/components/Carousel';
+
 import SideImage1 from '@/assets/images/2023-001.png';
 import SideImage2 from '@/assets/images/2023-002.png';
 import SideImage3 from '@/assets/images/2023-003.png';
@@ -38,6 +37,7 @@ export const HomePage: FC = () => {
 
       <MainLayout>
         <SearchPanel />
+        <CarouselBox>轮播图</CarouselBox>
       </MainLayout>
     </Container>
   );

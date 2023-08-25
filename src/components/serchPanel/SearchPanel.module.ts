@@ -26,6 +26,7 @@ export const WelcomeText = styled.h1`
 export const Container = styled.div`
   
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   
@@ -40,11 +41,12 @@ export const SearchInputBox = styled.div`
   flex-shrink: 1;
 `;
 export const WorldText = styled.h1`
-
+  
   font-size: 50px;
   color: #16a085;
-  margin-right: 20px;
-  flex-shrink: 1;
+  text-align: center;
+  margin:0 20px 0 0;
+ 
 
   ${media.phone} {
 

@@ -21,7 +21,7 @@ export const SearchPanel: React.FC = () => {
         <WorldText>World</WorldText>
         <SearchInputBox>
           <NewInput
-            prefix={<SearchOutlined />}
+            prefix={<SearchOutlined rev={undefined} />}
             placeholder="Search Destination"
             allowClear
             bordered

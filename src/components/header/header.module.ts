@@ -43,18 +43,18 @@ export const HeaderLeft = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-  /*color: #16a085;*/
+  
   font-weight: bold;
-  /*margin: 0 auto; //居中对齐*/
   margin-left: 20px;
   &:hover {
       cursor: pointer;
       color: hotpink; // <Thing> when hovered
     } 
-  ${media.phone} {
+  ${media.tablet} {
      flex:1;
      text-align:left;
      margin-right: auto;
+     width: 50%;
      
   }
 `;
@@ -63,7 +63,7 @@ export const LogoFont = styled.h1`
   display: flex;
   color: #16a085;
   font-weight: bold;
-
+  margin: 0;
  ${media.phone} {
     
      text-align:left;
@@ -122,7 +122,7 @@ export const HeaderRight = styled.div<VisibleProps>`
 
   ${media.tablet} {
     position: absolute;
-    left: 30px;
+    left: 25px;
     top: 24rem;
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
@@ -137,13 +137,12 @@ export const Links = styled.ul`
   align-items: center;
 
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  
   transform: translate(-50%, -50%);
 
-  /*margin: 0;*/
-  /*flex: 1 1 auto;*/
+  padding: 0;
+  flex: 1 1 auto;
  
   
  ${media.tablet} {
@@ -151,21 +150,20 @@ export const Links = styled.ul`
 		margin: 8px, 0;
     margin-right: 30px;
   }
-  
-  
 
 `;
+
 export const Li = styled.li`
   display: flex;
-  
+ 
   color: #16a085;
   font-weight: bold;
   text-align: center;//文本居中
   
-  margin:0 20px;
+  margin:0;
 
   position: relative;
-  padding: 0 8px;
+  padding: 0 10px;
   font-size: 18px;
   line-height: 3rem;//3倍字高
   transition: 0.2s all linear;

@@ -53,16 +53,17 @@ perspective: 25px;
 export const CarouselBox = styled.div`
   margin-top: 20px;
   width: 100%;
-  margin: 0 auto;
   border-radius: 25px;
   height: 300px;
+  text-align: center;
+  line-height: 300px;
   box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.1);
-  transition: transform 0.5s;
+  /*transition: transform 0.5s;
   transform-style: preserve-3d;
   transform-origin: 50% 50%;
   -webkit-transition: transform 0.5s;
   -moz-transition: transform 0.5s;
-  -o-transition: transform 0.5s;
+  -o-transition: transform 0.5s;*/
      
 `;
 export const FontBox = styled.div`
@@ -84,15 +85,5 @@ export const FontBox = styled.div`
 export const InnerH3 = styled.h3`
       
       background: #fff;
-      
-      
-       /*& img{
-        width: 100%;
-        height: 100%;
-       transition: all 0.6s; //设置动画执行的时间为0.6s
-       cursor: pointer;
-       }
-        & img:hover {
-        transform: scale(1.3); //设置图片按照比例放大1.3倍
-       }*/
+     
 `;
