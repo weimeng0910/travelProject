@@ -46,12 +46,12 @@ interface VisibleProps {
 }
 //创建图标列表数据
 const iconList = {
-  '/home': <HomeTwoTone twoToneColor="#27ae60" />,
-  '/detail': <GiftTwoTone twoToneColor="#27ae60" />,
-  '/tickets': <PropertySafetyTwoTone twoToneColor="#27ae60" />,
-  '/placeOrder': <BellTwoTone twoToneColor="#27ae60" />,
-  '/shoppingCart': <ShoppingTwoTone twoToneColor="#27ae60" />,
-  '/favorite': <HeartTwoTone twoToneColor="#f41f07" />,
+  '/home': <HomeTwoTone twoToneColor="#27ae60" rev={undefined} />,
+  '/detail': <GiftTwoTone twoToneColor="#27ae60" rev={undefined} />,
+  '/tickets': <PropertySafetyTwoTone twoToneColor="#27ae60" rev={undefined} />,
+  '/placeOrder': <BellTwoTone twoToneColor="#27ae60" rev={undefined} />,
+  '/shoppingCart': <ShoppingTwoTone twoToneColor="#27ae60" rev={undefined} />,
+  '/favorite': <HeartTwoTone twoToneColor="#f41f07" rev={undefined} />,
 };
 //Antd的menu下拉
 const menuItems: MenuProps['items'] = [
@@ -76,7 +76,7 @@ const User = () => {
     <Dropdown overlay={<Menu items={menuItems} />}>
       <UserRegister>
         <span>
-          <UserOutlined style={{ paddingRight: '10px' }} />
+          <UserOutlined style={{ paddingRight: '10px' }} rev={undefined} />
         </span>
         My travel
       </UserRegister>
@@ -98,7 +98,7 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
           </HeaderLeft>
           {/* 折叠 */}
           <MenuButton onClick={handleClick}>
-            <MenuOutlined style={{ fontSize: '22px' }} />
+            <MenuOutlined style={{ fontSize: '22px' }} rev={undefined} />
           </MenuButton>
 
           <HeaderCenter visible={visible}>
@@ -112,11 +112,6 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
                 </Link>
               ))}
             </Links>
-            {/*<div>1ggggg</div>
-            <div>2gggg</div>
-            <div>3ggg</div>
-            <div>4ggg</div>
-            <div>5ggg</div>*/}
           </HeaderCenter>
           <HeaderRight visible={visible}>
             <User />

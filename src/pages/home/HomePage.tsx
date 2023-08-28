@@ -1,4 +1,4 @@
-import { FC, useLayoutEffect, useRef, MouseEvent } from 'react';
+import { FC } from 'react';
 import {
   Container,
   MenuLayout,
@@ -10,7 +10,7 @@ import {
 
 import { SideMenu } from '@/components/sideMenu';
 import { SearchPanel } from '@/components/serchPanel';
-
+import { Carousel } from '@/components/Carousel';
 import SideImage1 from '@/assets/images/2023-001.png';
 import SideImage2 from '@/assets/images/2023-002.png';
 import SideImage3 from '@/assets/images/2023-003.png';
@@ -29,15 +29,15 @@ export const HomePage: FC = () => {
       <MenuLayout>
         <SideMenu />
         <FontBox>
-          <InnerH3>
-            <span>Here to help keep you on the move</span>
-          </InnerH3>
+          <InnerH3>Here to help keep you on the move</InnerH3>
         </FontBox>
       </MenuLayout>
 
       <MainLayout>
         <SearchPanel />
-        <CarouselBox>轮播图</CarouselBox>
+        <CarouselBox>
+          <Carousel />
+        </CarouselBox>
       </MainLayout>
     </Container>
   );

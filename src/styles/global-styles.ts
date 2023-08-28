@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
-   
+    box-sizing: border-box;
   }
   :root{
   font-size: 15px;

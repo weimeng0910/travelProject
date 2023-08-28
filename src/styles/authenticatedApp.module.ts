@@ -39,6 +39,7 @@ export const Main = styled.main<VisibleProps>`
   grid-area: main;
   display: flex;
   flex-grow: 1;
+ 
   flex-direction: column;//盒子中元素按列排列
   align-content: flex-start;
   background-color: #fff;
@@ -57,7 +58,7 @@ export const Aside = styled.aside`
   display: flex;
   flex: 1;
   background-color: #1abc9c;
-
+  
   ${media.phone} {
     /* 栅格的列 */
     display: none;

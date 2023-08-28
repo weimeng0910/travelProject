@@ -26,6 +26,7 @@
     "@tanstack/react-query-devtools": "^4.29.12",
     "@testing-library/user-event": "^14.4.3",
     "@types/qs": "^6.9.7",
+    "@types/react-slick": "^0.23.10",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-legacy": "^4.0.3",
     "antd": "4.22.5",
@@ -42,7 +43,9 @@
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.5.0",
+    "react-slick": "^0.29.0",
     "react-swipeable": "^7.0.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.10",
     "vite-plugin-svgr": "^3.2.0"
   },

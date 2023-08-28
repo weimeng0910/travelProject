@@ -9,14 +9,16 @@ export const Container = styled.div`
 
   display: flex;
   margin-top: 10px;
+  
   flex-direction: row;
   justify-content: flex-start;
   
 `;
 export const MenuLayout = styled.div`
+ 
   margin-left: 10px;
   padding: 4px 14px;
-  /*height: 100vh;*/
+  
   flex: 0;
   border-radius: 25px;
   background-color: #f5f6fa;
@@ -26,10 +28,12 @@ export const MenuLayout = styled.div`
 `;
 
 export const MainLayout = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: stretch;
   flex:1;
+  margin:0 10px;
   
-  margin-left: 10px;
-  margin-right: 10px;
   padding: 4px 14px;
   border-radius: 25px;
   /*height:100vh;*/
@@ -37,33 +41,17 @@ export const MainLayout = styled.div`
  
 
 `;
-export const SwiperBox = styled.div`
-perspective: 25px;
-  margin-top: 20px;
-  width: 100%;
-  margin: 0 auto;
-  height: 200px;
- 
-  ${media.phone} {
-    /* 栅格的列 */
-    margin-top:20px;
-  }
 
-`;
 export const CarouselBox = styled.div`
-  margin-top: 20px;
-  width: 100%;
-  border-radius: 25px;
-  height: 300px;
-  text-align: center;
-  line-height: 300px;
-  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.1);
-  /*transition: transform 0.5s;
-  transform-style: preserve-3d;
-  transform-origin: 50% 50%;
-  -webkit-transition: transform 0.5s;
-  -moz-transition: transform 0.5s;
-  -o-transition: transform 0.5s;*/
+   display: flex;
+   margin: 0px;
+   justify-content: center;
+   align-content: stretch;
+  /*width: 100%;*/
+   /*background-color: #fff;*/
+  /*height: 300px;*/
+  
+
      
 `;
 export const FontBox = styled.div`
