@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -19,13 +19,14 @@ import carouselImage5 from '@/assets/images/2023-005.png';
  * @date 2023/08/24
  * @description CarouselPage
  */
-//创建图像列表数据
-const imgList = [carouselImage1, carouselImage2, carouselImage3, carouselImage4, carouselImage5];
 
 export const Carousel: React.FC = React.memo(() => {
+  const [option, setOption] = useState(Images);
+  //创建图像列表数据
+  const imgList = [carouselImage1, carouselImage2, carouselImage3, carouselImage4, carouselImage5];
   const settings = {
     rows: 1,
-    dots: true,
+    dots: true, //圆点显示（false隐藏）
     infinite: true, //布尔值，确定到达最后一项时轮播是否继续循环
     speed: 3000,
     slidesToShow: 3, //用于确定要保留在视图中的幻灯片数量的数字
@@ -48,7 +49,7 @@ export const Carousel: React.FC = React.memo(() => {
   return (
     <Container>
       <Slider {...settings}>
-        {Images.map(item => (
+        {option.map(item => (
           <CarouseFont key={item.id}>
             <CarouseImg src={imgList[item.id]} alt={item.alt} />
             <CarouseTitle>{item.title}</CarouseTitle>

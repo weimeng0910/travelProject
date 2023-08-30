@@ -101,9 +101,9 @@ export const HeaderCenter = styled.div<VisibleProps>`
   
   
   ${media.tablet} {
-    position: absolute;
-    left: 0px;
-    top: 7rem;
+    /*position: absolute;
+    left: 50px;
+    top: 15rem;*/
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
     flex-flow:column;
@@ -147,7 +147,8 @@ export const Links = styled.ul`
   
  ${media.tablet} {
     flex-direction: column;
-		margin: 8px, 0;
+
+		justify-content: center;
     margin-right: 30px;
   }
 

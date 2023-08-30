@@ -1,15 +1,27 @@
-import styled from 'styled-components';
-
+import styled, { keyframes } from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import media from "@/styles/media";
 /**
- * @date 2023/08/24
- * @description Carousel Css
+ * @date 2023/06/22
+ * @description Swiper Css
  */
+type OffsetProps = {
+  offset: string;
+}
+export const MaskingLeft = styled.div<OffsetProps>`
+left: ${(props: OffsetProps) => `${-props.offset}px`};
+`
 
+export const MySwiper = styled(Swiper)`
+   width:100%;
+`
+export const MySwiperSlide = styled(SwiperSlide)`
+   width:100%;
+`
 export const Container = styled.div`
   display: flex;
   position:absolute;
-  width:50%;
+  width:60%;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -17,9 +29,12 @@ export const Container = styled.div`
   /*max-width: 50vw;*/
   /*width: auto !important;*/
   /*width: 100%;*/
-  /*overflow: hidden !important;*/
+  overflow: hidden !important;
   border-color: white;
-
+  ${media.tablet} {
+   
+    width: 70%;
+  }
 `
 export const CarouseImg = styled.img`
   display: flex;
@@ -31,7 +46,7 @@ export const CarouseImg = styled.img`
   border-radius: 5%;
  ${media.tablet} {
     height: 50%;
-    width: 70%;
+    width: 80%;
   }
 
 `

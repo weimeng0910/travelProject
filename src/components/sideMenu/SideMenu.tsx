@@ -62,7 +62,7 @@ const createMenu = (list: SideMenuType[]) => {
 
 export const SideMenu: React.FC = () => {
   const { isLoading, error, data: list } = useSideMenu();
-  console.log(list);
+  //console.log(list);
   const items: MenuItem[] = createMenu(list as SideMenuType[]);
   return <StyledMenu onClick={onClick} style={{ width: 240 }} mode="vertical" items={items} />;
 };

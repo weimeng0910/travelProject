@@ -47,7 +47,7 @@ export const CarouselBox = styled.div`
    margin: 0px;
    justify-content: center;
    align-content: stretch;
-  /*width: 100%;*/
+   width: 100%;
    /*background-color: #fff;*/
   /*height: 300px;*/
   

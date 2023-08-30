@@ -104,7 +104,7 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
           <HeaderCenter visible={visible}>
             <Links>
               {menuList?.map(item => (
-                <Link to={item.key}>
+                <Link key={item.id} to={item.key}>
                   <Li key={nanoid()}>
                     <SpanIcon>{iconList[item.key]}</SpanIcon>
                     {item.label}
