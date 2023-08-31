@@ -41,12 +41,12 @@ export const CarouseImg = styled.img`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 50%;
-  width: 70%;
-  border-radius: 5%;
+ 
+  width: 100%;
+  border-radius: 8%;
  ${media.tablet} {
-    height: 50%;
-    width: 80%;
+    /*height: 50%;*/
+    width: 100%;
   }
 
 `
@@ -55,7 +55,7 @@ export const CarouseFont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
 `
 export const CarouseTitle = styled.h2`
   display: flex;
@@ -66,7 +66,9 @@ export const CarouseTitle = styled.h2`
   text-align: center;
   
   ${media.tablet} {
-    font-size: 12px;
+    margin-bottom: 30px;
+    /*overflow: hidden !important;*/
+    font-size: 8px;
   }
 
 `
@@ -77,6 +79,8 @@ export const CarouselDescription = styled.div`
   /*margin: 0 20px ;*/
   width: 90%;
   font-size: 12px;
+  text-align: center;
+  margin-bottom:30px;
   ${media.tablet} {
     display: none;
   }

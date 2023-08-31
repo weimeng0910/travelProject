@@ -47,8 +47,9 @@ export const Main = styled.main<VisibleProps>`
   ${media.phone} {
     
     /* 栅格的列 */
+    
     margin-top:${(props: VisibleProps) =>
-    props.visible ? "23rem" : "0"};;
+    props.visible ? "18rem" : "0"};;
   }
 
 `;

@@ -26,7 +26,6 @@ import {
   UserRegister,
   MenuButton,
   LogoFont,
-  NavbarLink,
 } from './header.module';
 import { useMenu } from '@/utils'; //data
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';

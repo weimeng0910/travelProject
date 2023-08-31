@@ -13,8 +13,8 @@ export const Container = styled.header`
   
   grid-area: header;
   position: fixed;//元素的位置相对于浏览器窗口是固定位置
-  /*display: flex;*/
-  z-index: 1;
+  
+  z-index: 7;
   width: 100%;
   background-color: #fff;
   border-bottom: solid 5px #16a085;
@@ -27,13 +27,10 @@ export const Navbar = styled.div`
   justify-content: center;
   align-items: center;
  
-  
-  
    ${media.phone} {
+    height: 80px;
     flex-flow: row wrap;//让盒子内的弹性元素换行
-   
-    padding: 25px 0;
-     align-items: center;
+    align-items: center;
   }
   
 `;
@@ -101,13 +98,11 @@ export const HeaderCenter = styled.div<VisibleProps>`
   
   
   ${media.tablet} {
-    /*position: absolute;
-    left: 50px;
-    top: 15rem;*/
+    
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
     flex-flow:column;
-    margin-bottom:1rem;
+    margin-top:1rem;
   }
   
 `;
@@ -122,8 +117,8 @@ export const HeaderRight = styled.div<VisibleProps>`
 
   ${media.tablet} {
     position: absolute;
-    left: 25px;
-    top: 24rem;
+    left: 35px;
+    top: 23rem;
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
   }
@@ -135,13 +130,8 @@ export const Links = styled.ul`
   display: flex;
   justify-content:space-between;
   align-items: center;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  padding: 0;
+  margin: 0;
+  padding: 20px auto;
   flex: 1 1 auto;
  
   
@@ -149,7 +139,7 @@ export const Links = styled.ul`
     flex-direction: column;
 
 		justify-content: center;
-    margin-right: 30px;
+    /*margin-right: 30px;*/
   }
 
 `;
@@ -199,10 +189,7 @@ export const Li = styled.li`
   }
   
 `;
-export const NavbarLink = styled(Link)`
-  
-  
-`;
+
 export const SpanIcon = styled.span`
   display: block;
   margin: 0 auto; //居中对齐
@@ -216,7 +203,7 @@ export const SpanIcon = styled.span`
   
 `;
 export const UserRegister = styled.div`
-  font-size: 14px;
+  font-size: 18px;
   /*border: solid 1px #16a085;*/
   border-radius: .3rem;//圆角
   color: #16a085;
