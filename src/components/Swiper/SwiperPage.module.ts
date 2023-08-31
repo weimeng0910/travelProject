@@ -21,7 +21,7 @@ export const MySwiperSlide = styled(SwiperSlide)`
 export const Container = styled.div`
   display: flex;
   position:absolute;
-  width:60%;
+  width:50%;
   flex-direction: column;
   justify-content: center;
   align-content: center;

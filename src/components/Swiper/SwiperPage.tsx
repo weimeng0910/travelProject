@@ -10,21 +10,15 @@ import {
   CarouseImg,
   MySwiper,
 } from './SwiperPage.module';
-
+import { Goods } from '@/types/goods';
 /**
  * @date 2023/08/30
  * @description SwiperPage
  */
 SwiperCore.use([Autoplay, Pagination]);
-type Item = {
-  id: number;
-  src: string;
-  alt: string;
-  title: string;
-  description: string;
-};
+
 interface SwiperProps {
-  dataList: Item[];
+  dataList: Partial<Goods>[];
 }
 //轮播组件
 export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
@@ -44,9 +38,9 @@ export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
         {dataList.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <CarouseImg src={item.src} alt={item.alt} />
-              <CarouseTitle>{item.title}</CarouseTitle>
-              <CarouselDescription>{item.description}</CarouselDescription>
+              <CarouseImg src={item.pic_url} />
+              <CarouseTitle>{item.name}</CarouseTitle>
+              <CarouselDescription>{item.detail}</CarouselDescription>
             </SwiperSlide>
           );
         })}

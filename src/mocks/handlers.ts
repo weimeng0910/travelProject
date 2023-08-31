@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 import { bootstrap } from './bootstrap';
-import { getMenuHandlers, getSideMenuHandlers } from './domains';
+import { getMenuHandlers, getSideMenuHandlers, getBannerGoodsHandlers } from './domains';
 /** 
 * @data 24.05.2023
 * @file Respond to API requests
@@ -16,5 +16,6 @@ export const handlers = [
     return res(ctx.json({ greeting: 'hello there' }))
   }),
   ...getMenuHandlers,
-  ...getSideMenuHandlers
+  ...getSideMenuHandlers,
+  ...getBannerGoodsHandlers
 ]
