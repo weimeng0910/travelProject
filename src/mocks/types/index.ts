@@ -27,6 +27,7 @@ export interface GoodsData {
   pic_url: string;
   is_new: boolean;
   is_hot: boolean;
+  Kommentar: number;
   retail_price: number;
   counter_price: number;
   add_time: string;

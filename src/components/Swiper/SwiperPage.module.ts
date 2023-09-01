@@ -26,9 +26,6 @@ export const Container = styled.div`
   justify-content: center;
   align-content: center;
   margin: 10px auto;
-  /*max-width: 50vw;*/
-  /*width: auto !important;*/
-  /*width: 100%;*/
   overflow: hidden !important;
   border-color: white;
   ${media.tablet} {
@@ -43,9 +40,9 @@ export const CarouseImg = styled.img`
   margin: 0 auto;
  
   width: 100%;
-  border-radius: 8%;
+  border-radius: 17px;
  ${media.tablet} {
-    /*height: 50%;*/
+   
     width: 100%;
   }
 
@@ -58,29 +55,63 @@ export const CarouseFont = styled.div`
   width: 100%;
 `
 export const CarouseTitle = styled.h2`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*margin-left: 60px;*/
-  font-size: 18px;
-  text-align: center;
   
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
   ${media.tablet} {
     margin-bottom: 30px;
-    /*overflow: hidden !important;*/
+   
+    font-size: 8px;
+  }
+
+`
+export const CarouseKommentar = styled.h2`
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin:0;
+  font-size: 14px;
+  text-align: center;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  ${media.tablet} {
+    margin-bottom: 30px;
+   
+    font-size: 8px;
+  }
+
+`
+export const CarouseRunden = styled.div`
+  display: grid;
+  border-radius:50%;//圆型
+  width: 16px;
+  height: 16px;
+  background:#00AA6C;
+  opacity:0.6;
+  justify-content: center;
+  align-content: center;
+  ${media.tablet} {
+    margin-bottom: 30px;
+   
     font-size: 8px;
   }
 
 `
 export const CarouselDescription = styled.div`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px 1fr;
+  /*列间距*/
+  grid-column-gap: 10px;
+  justify-items:center;
   align-items: center;
-  /*margin: 0 20px ;*/
-  width: 90%;
-  font-size: 12px;
-  text-align: center;
-  margin-bottom:30px;
+  width: 100%;
+ 
+  margin-bottom:40px;
   ${media.tablet} {
     display: none;
   }

@@ -2,13 +2,15 @@ import { FC, useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
-
+import { Rate } from 'antd';
+import { Pin } from '@/components/pin';
 import {
   Container,
   CarouselDescription,
   CarouseTitle,
   CarouseImg,
   MySwiper,
+  CarouseRunden,
 } from './SwiperPage.module';
 import { Goods } from '@/types/goods';
 /**
@@ -40,7 +42,12 @@ export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
             <SwiperSlide key={index}>
               <CarouseImg src={item.pic_url} />
               <CarouseTitle>{item.name}</CarouseTitle>
-              <CarouselDescription>{item.detail}</CarouselDescription>
+              <CarouselDescription>
+                <CarouseRunden />
+                <CarouseTitle>{item.counter_price}</CarouseTitle>
+                <Pin checked />
+                <CarouseTitle>{item.retail_price}</CarouseTitle>
+              </CarouselDescription>
             </SwiperSlide>
           );
         })}

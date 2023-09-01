@@ -10,6 +10,7 @@ import {
 import { SideMenu } from '@/components/sideMenu';
 import { SearchPanel } from '@/components/serchPanel';
 import { SwiperPage } from '@/components/Swiper';
+
 import { useBannerGoods } from '@/utils'; //data
 /**
  * @date 2023/05/30
@@ -17,7 +18,7 @@ import { useBannerGoods } from '@/utils'; //data
  */
 
 export const HomePage: FC = () => {
-  const { data: bannerList } = useBannerGoods(); //获取菜单数据
+  const { data: bannerList } = useBannerGoods();
   return (
     <Container>
       <MenuLayout>
