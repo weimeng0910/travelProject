@@ -6,19 +6,22 @@ import {
   FontBox,
   CarouselBox,
   InnerH3,
+  SearchlBox,
+  HotGoodslBox,
 } from './HomePage.module';
 import { SideMenu } from '@/components/sideMenu';
 import { SearchPanel } from '@/components/serchPanel';
 import { SwiperPage } from '@/components/Swiper';
-
-import { useBannerGoods } from '@/utils'; //data
+import { ProductCollection } from '@/components/productCollection';
+import { useGoods } from '@/utils'; //data
 /**
  * @date 2023/05/30
  * @description Homepage
  */
 
 export const HomePage: FC = () => {
-  const { data: bannerList } = useBannerGoods();
+  const { data: goodsList } = useGoods();
+
   return (
     <Container>
       <MenuLayout>
@@ -29,10 +32,16 @@ export const HomePage: FC = () => {
       </MenuLayout>
 
       <MainLayout>
-        <SearchPanel />
+        <SearchlBox>
+          <SearchPanel />
+        </SearchlBox>
+
         <CarouselBox>
-          <SwiperPage dataList={bannerList || []} />
+          <SwiperPage dataList={goodsList?.data.banner || []} />
         </CarouselBox>
+        <HotGoodslBox>
+          <ProductCollection hotGoodsData={goodsList?.data.hotGoodsList || []} />
+        </HotGoodslBox>
       </MainLayout>
     </Container>
   );

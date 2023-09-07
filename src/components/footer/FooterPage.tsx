@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Container } from './FooterPage.module';
 export const FooterPage = () => {
-  return <div>FooterPage</div>;
+  return <Container>FooterPage</Container>;
 };

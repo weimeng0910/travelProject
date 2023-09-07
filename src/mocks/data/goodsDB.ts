@@ -8,10 +8,10 @@ import { loadList } from '../utils';
  *  @date 31.08.2023
  */
 
-export const bannerGoodsDB = async (storageKey: string) => {
+export const goodsDB = async (storageKey: string) => {
 
   // 加载localStorage里的项目数据
-  const bannerGoodsDB: Partial<GoodsData>[] = loadList(storageKey);
-  return bannerGoodsDB;
+  const goodsDB: Partial<GoodsData>[] = loadList(storageKey);
+  return goodsDB;
 
 }

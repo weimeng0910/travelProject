@@ -1,4 +1,4 @@
-import { GlobalStyles } from '@/styles/global-styles'; //引入全局样式
+import { GlobalStyles } from '@/styles/base/global-styles'; //引入全局样式
 import { AuthenticatedAPP } from '@/authenticatedApp';
 //错误边界
 import { ErrorBoundary } from '@/components/errorBoundary';

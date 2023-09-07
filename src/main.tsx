@@ -1,7 +1,7 @@
 import './wdyr'; // <--- first import
 import { mocker } from '@/mocks/browser';
 import { createRoot } from 'react-dom/client';
-//import { BrowserRouter } from 'react-router-dom';
+import 'normalize.css/normalize.css'; //浏览器标准化引入
 import { AppProviders } from '@/context';
 
 import App from './App';

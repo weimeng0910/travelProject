@@ -598,7 +598,7 @@ export const goodsData = {
         "brief": "浪漫毛线绣球，简约而不简单",
         "picUrl": "http://yanxuan.nosdn.127.net/5350e35e6f22165f38928f3c2c52ac57.png",
         "isNew": false,
-        "isHot": true,
+        "isHot": false,
         "counterPrice": 319.00,
         "retailPrice": 299.00
       },
@@ -608,7 +608,7 @@ export const goodsData = {
         "brief": "加大加厚，双色精彩",
         "picUrl": "http://yanxuan.nosdn.127.net/0984c9388a2c3fd2335779da904be393.png",
         "isNew": false,
-        "isHot": true,
+        "isHot": false,
         "counterPrice": 219.00,
         "retailPrice": 199.00
       },
@@ -618,7 +618,7 @@ export const goodsData = {
         "brief": "美式提花，温暖舒适",
         "picUrl": "http://yanxuan.nosdn.127.net/cf40c167e7054fe184d49f19121f63c7.png",
         "isNew": false,
-        "isHot": true,
+        "isHot": false,
         "counterPrice": 219.00,
         "retailPrice": 199.00
       }

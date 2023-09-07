@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 import { bootstrap } from './bootstrap';
-import { getMenuHandlers, getSideMenuHandlers, getBannerGoodsHandlers } from './domains';
+import { getMenuHandlers, getSideMenuHandlers, getGoodsHandlers } from './domains';
 /** 
 * @data 24.05.2023
 * @file Respond to API requests
@@ -17,5 +17,5 @@ export const handlers = [
   }),
   ...getMenuHandlers,
   ...getSideMenuHandlers,
-  ...getBannerGoodsHandlers
+  ...getGoodsHandlers
 ]

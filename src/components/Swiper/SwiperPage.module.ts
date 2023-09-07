@@ -115,7 +115,11 @@ export const CarouselDescription = styled.div`
   ${media.tablet} {
     display: none;
   }
-  
- 
+`
+
+export const CarouselMoney = styled.i`
+        font-size: 12px;
+        line-height: 1.2;
+        color: #b2b2b2;
 
 `
