@@ -15,57 +15,57 @@ export const Container = styled.div`
 `
 export const TitleBox = styled.div`
   display: grid;
-  grid-template-columns:250px 1fr 100px;
+  grid-template-columns:15.625rem 1fr 6.25rem;
   align-items: center;
-  border-radius: 8px;
+  border-radius: .5rem;
   background-color:#16A085;
   width: 100%;
-  height: 80px;
+  height: 5rem;
 `
 export const WorldText = styled.h1`
   
-  font-size: 22px;
+  font-size: 1.375rem;
   color: #fff;
   text-align: center;
   /*text-align: center;*/
-  margin:0 20px 0 0;
-  border-right: 0.5px solid #fff;
-  box-shadow: 1px 0 1px -1px #000;
+  margin:0 1.25rem 0 0;
+  border-right: .0313rem solid #fff;
+  box-shadow: .0625rem 0 .0625rem -0.0625rem #000;
   `
 export const DescribeText = styled.h1`
   
-  font-size: 12px;
+  font-size: .75rem;
   color: #FFF;
   /*text-align: center;*/
-  margin:0 20px 0 0;
+  margin:0 1.25rem 0 0;
   `
 export const HotGoodsBox = styled.div`
   display: grid;
   grid-template-columns:1fr 1fr 1fr;
   align-items: center;
-  grid-column-gap: 10px;
+  grid-column-gap: .625rem;
   `
 export const ImgBox = styled.div`
 
     display: grid;
     position: relative;
     grid-template-rows:2fr 1fr;
-    margin-top: 15px;
+    margin-top: .9375rem;
     width: 100%;
-    border-radius: 12px;
+    border-radius: .75rem;
     background: #fff;
     cursor: pointer;
-    height: 300px;
+    height: 18.75rem;
     transition:all 0.4s;
     &:hover {
-       box-shadow: 0 5px 5px 0  gray;
-       transform: translate(0,-10px);
+       box-shadow: 0 .3125rem .3125rem 0  gray;
+       transform: translate(0,-0.625rem);
        }
      
 `;
 export const HotGoodsImg = styled.div`
   
-  border-radius: 12px 12px 0 0;
+  border-radius: .75rem .75rem 0 0;
   background-color: #F5F7FA;
   `
 export const Img = styled.img`

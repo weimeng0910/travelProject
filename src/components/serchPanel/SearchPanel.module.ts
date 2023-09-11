@@ -3,23 +3,23 @@ import media from "@/styles/media";
 import { Input, Button } from 'antd';
 import { InputProps } from 'antd/lib/input';
 import { ButtonProps } from 'antd/lib/button';
+import { Font } from '@/styles/tools/logicalMixins';//通用Mixins
+import { FontColor, FontSizes } from '@/styles/settings/var';//基准变量
 /**
  * @date 2023/05/30
  * @description Homepage-css
  */
 export const WelcomeText = styled.h1`
-  font-size: 40px;
-  color: #7f8c8d;
+  ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXXL })};
   width: 100%; 
  
   ${media.tablet} {
 
-   font-size: 30px;
-
+    ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXL })};
   }
   ${media.phone} {
 
-  font-size: 20px;
+   ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeS })};
   }
 `;
 
@@ -35,36 +35,37 @@ export const Container = styled.div`
 export const SearchInputBox = styled.div`
   
   display: grid;
-  grid-template-columns: auto 100px;
+  grid-template-columns: auto 6.25rem;
   align-items: center;
   width: 100%;
   flex-shrink: 1;
 `;
 export const WorldText = styled.h1`
   
-  font-size: 50px;
+  font-size: 3.125rem;
   color: #16a085;
   text-align: center;
-  margin:0 20px 0 0;
+  margin:0 1.25rem 0 0;
  
 
   ${media.phone} {
 
-   font-size: 30px;
+   font-size: 1.875rem;
 
   }
   ${media.phone} {
 
-  font-size: 20px;
+  font-size: 1.25rem;
   }
 `;
 export const NewInput: typeof Input = styled(Input) <InputProps>`
 
   outline: 0;
-  text-decoration: 4px solid underline;
+  text-decoration: .25rem solid underline;
   line-height: 2;
-  text-underline-offset: 10px;
-  border: 0.5px solid  #16a085;
+  text-underline-offset: .625rem;
+  
+  border: .0313rem solid  #16a085;
   flex-shrink: 1;
   
   ${media.phone} {
@@ -81,7 +82,7 @@ export const NewInput: typeof Input = styled(Input) <InputProps>`
 export const NewButton: typeof Button = styled(Button) <ButtonProps>`
   
   background-color: #16a085;
-  margin-left: 20px;
+  margin-left: 1.25rem;
   &:hover {
       background-color: #2ecc71; 
     } 

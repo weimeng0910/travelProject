@@ -22,10 +22,21 @@ export const FontColor = {
 
 /* Font
 ----------------------- */
+interface IRem {
+  size?: number;
+  base?: number;
+}
+export const rem = ({ size, base = 16 }: IRem) => `
+  font-size: ${size}px;
+  font-size: calc(${size! / base} * 1rem);
+`;
 export const FontSizes = {
-  sizeS: `14px`,
-  sizeM: `16px`,
-  sizeL: `18px`,
+  sizeS: rem({ size: 14 }),
+  sizeM: rem({ size: 16 }),
+  sizeL: rem({ size: 18 }),
+  sizeXL: rem({ size: 20 }),
+  sizeXXL: rem({ size: 30 }),
+  sizeXXXL: rem({ size: 40 }),
 };
 
 /* Background
@@ -34,53 +45,26 @@ export const BackgroundColor = {
   backgroundColorprimary: Color.colorPamary,
   backgroundColorSecondary: `#F5FAF8 `,
   backgroundColorTertiary: `#F5F6FA `,
+  backgroundColorFourth: `#FFF `,
 };
 /* Border
 ----------------------- */
-//export const Border = {
-//  borderWidthBase: `1Px !default`,
-//  borderStyleBase: `solid !default`,
-//  borderColorBase: `#16A085`,
-//};
-interface BorderProps {
-  borderWidthBase: string;
-  borderStyleBase: string;
-  borderColorBase: string;
-}
-
-export default {
-  borderBase: ({ borderWidthBase, borderStyleBase, borderColorBase }: BorderProps) => css`
-    border-style: ${borderWidthBase} ${borderStyleBase} ${borderColorBase};
-  `,
-  //
+export const BorderBase = {
+  borderprimary: `solid 5px #16a085`,
+  borderSecondary: `solid 1px #16a085 `,
+  borderTertiary: `solid 1px #fff `,
 };
-interface IProps {
-  all?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
-  top?: string;
-  x?: string;
-  y?: string;
-}
-
-export const Border = ({
-  all,
-  x = all,
-  y = all,
-  bottom = y,
-  left = x,
-  right = x,
-  top = y,
-}: IProps) => css`
-  border-block-end: ${bottom};
-  border-block-start: ${top};
-  border-inline-end: ${right};
-  border-inline-start: ${left};
-  @supports not (border-block-end: 1px solid #000) {
-    border-bottom: ${bottom};
-    border-left: ${left};
-    border-right: ${right};
-    border-top: ${top};
-  }
-`;
+/* Box-shadow
+----------------------- */
+export const BaseBoxShadow = {
+  boxShadowbase: ` 0 .3125rem .3125rem rgba(0, 0, 0, 0.2)`,
+  boxShadowDark: `0 0 6px rgba(0, 0, 0, .12) `,
+  boxShadowLight: ` 0 2px 12px 0 rgba(0, 0, 0, 0.1) `,
+};
+/* z-index
+-------------------------- */
+export const ZIndex = {
+  indexNormal: `1 !default`,
+  indexTop: `1000 !default`,
+  indexPopper: `2000 !default`,
+};

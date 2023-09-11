@@ -1,5 +1,40 @@
 import { css } from 'styled-components';
 
+/* font
+----------------------- */
+interface IFontProps {
+  color?: string;
+  size?: string;
+  family?: string
+
+}
+export const Font = ({ color, size, family }: IFontProps) => `
+  color: ${color || "#16A085"};
+  font-size: ${size || "1rem"};
+  font-family: ${family || "Helvetica neue"};
+`;
+/* box-shadow
+----------------------- */
+
+export const BaseShadow = (value: string) => `
+  box-shadow: ${value};
+`;
+//export const baseShadow = css`
+//  box-shadow: ${(props: IBoxShadow) => `0 10px 6px -6px ${props.color || "red"}`};
+//`;
+
+interface IRem {
+  size?: number;
+  base?: number;
+}
+export const rem = ({ size, base = 16 }: IRem) => `
+  font-size: ${size}px;
+  font-size: calc(${size! / base} * 1rem);
+`;
+
+/* Border
+----------------------- */
+
 interface IProps {
   all?: string;
   bottom?: string;
@@ -19,7 +54,7 @@ export const Border = ({
   right = x,
   top = y,
 }: IProps) => css`
-  border-block-end: ${bottom};
+  border-block-end: ${bottom} ;
   border-block-start: ${top};
   border-inline-end: ${right};
   border-inline-start: ${left};
@@ -57,7 +92,16 @@ export const BorderRadius = ({
     border-top-right-radius: ${topRight};
   }
 `;
-
+interface BorderProps {
+  borderWidthBase: string;
+  borderStyleBase: string;
+  borderColorBase: string;
+}
+export const borderBase = ({ borderWidthBase, borderStyleBase, borderColorBase }: BorderProps) => css`
+    border-style: ${borderWidthBase} ${borderStyleBase} ${borderColorBase};
+  `;
+/* Margin
+----------------------- */
 export const Margin = ({
   all,
   x = all,
@@ -174,10 +218,12 @@ export const Size = ({
 `;
 
 export default {
+  Font,
   Border,
   BorderRadius,
   Margin,
   Padding,
   Position,
   Size,
+  BaseShadow
 };

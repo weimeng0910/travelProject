@@ -4,11 +4,7 @@ import legacy from '@vitejs/plugin-legacy';
 import vitePluginImp from 'vite-plugin-imp';
 import macrosPlugin from "vite-plugin-babel-macros"
 import svgr from "vite-plugin-svgr";
-//import { configViteComponents } from './components';
-//import { configViteCompression } from './compression';
-//import { configWindiCSS } from './windicss';
-//import { configHtml } from './html';
-//import { visualizer } from 'rollup-plugin-visualizer'
+
 /**
  * vite.config--createVitePlugins
 */
@@ -18,7 +14,7 @@ export default function createVitePlugins({ variables }: { variables: any }) {
     macrosPlugin(),
     react({
       babel: {
-        //presets: ['@babel/preset-typescript'],
+
         plugins: [
           //'@babel/plugin-transform-typescript',
           [
@@ -33,6 +29,8 @@ export default function createVitePlugins({ variables }: { variables: any }) {
         ],
       },
     }) as Plugin[],
+
+
     svgr(),
     //兼容旧的浏览器
     legacy({

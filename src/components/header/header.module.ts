@@ -1,48 +1,46 @@
 import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
 import media from "@/styles/media";
-import { link } from 'fs';
+import { BaseShadow, Border, Margin, Font } from '@/styles/tools/logicalMixins'
+import { BaseBoxShadow, BorderBase, BackgroundColor, FontColor, FontSizes } from '@/styles/settings/var';//Benchmark variable
 /**
  * @date 2023/05/30
  * @description Header-css
  */
 
-
-
 export const Container = styled.header`
-  
   grid-area: header;
   position: fixed;//元素的位置相对于浏览器窗口是固定位置
-  
   z-index: 7;
   width: 100%;
-  background-color: #fff;
-  border-bottom: solid 5px #16a085;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-
+  background-color: ${BackgroundColor.backgroundColorFourth};
+  ${Border({ bottom: BorderBase.borderprimary })}
+  ${BaseShadow(BaseBoxShadow.boxShadowbase)}
 `;
+
 export const Navbar = styled.div`
   display: flex;
-  height: 60px;
+  height: 3.75rem;
   justify-content: center;
   align-items: center;
  
    ${media.phone} {
-    height: 80px;
-    flex-flow: row wrap;//让盒子内的弹性元素换行
+    height: 5rem;
+    flex-flow: row wrap;
     align-items: center;
   }
   
 `;
+
 export const HeaderLeft = styled.div`
   display: flex;
-  width: 300px;
+  width: 18.75rem;
   height: 100%;
   justify-content: center;
   align-items: center;
   
   font-weight: bold;
-  margin-left: 20px;
+  /*margin-left: 1.25rem;*/
+  ${Margin({ left: '20px' })}
   &:hover {
       cursor: pointer;
       color: hotpink; // <Thing> when hovered
@@ -50,17 +48,18 @@ export const HeaderLeft = styled.div`
   ${media.tablet} {
      flex:1;
      text-align:left;
-     margin-right: auto;
+     ${Margin({ right: 'auto' })}
      width: 50%;
-     
+
   }
 `;
 
 export const LogoFont = styled.h1`
   display: flex;
-  color: #16a085;
-  font-weight: bold;
-  margin: 0;
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL })};
+  /*font-weight: bold;*/
+  /*margin: 0;*/
+  ${Margin({ all: '0' })}
  ${media.phone} {
     
      text-align:left;
@@ -72,7 +71,7 @@ export const LogoFont = styled.h1`
 `;
 export const MenuButton = styled.label`
   display: none;
-  color: #16a085;
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeS })};
   cursor: pointer;
   margin: auto;
 
@@ -110,7 +109,7 @@ export const HeaderCenter = styled.div<VisibleProps>`
 
 export const HeaderRight = styled.div<VisibleProps>`
   display: flex; 
-  width: 300px;
+  width: 18.75rem;
   justify-content: center;
   align-content: center;
   padding-right: 10px;
@@ -147,19 +146,18 @@ export const Links = styled.ul`
 export const Li = styled.li`
   display: flex;
  
-  color: #16a085;
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL })};
   font-weight: bold;
   text-align: center;//文本居中
-  
-  margin:0;
 
   position: relative;
   padding: 0 10px;
-  font-size: 18px;
-  line-height: 3rem;//3倍字高
+  margin:0;
+
+  /*line-height: 3rem;//3倍字高*/
   transition: 0.2s all linear;
 
-  /*cursor: pointer;*/
+  
     &::before {
             content: "";
             position: absolute;
@@ -174,7 +172,7 @@ export const Li = styled.li`
         &:hover{
            color: #95a5a6;
          ::before {
-            
+
             width: 100%;
             top: 0;
             left: 0;
@@ -204,10 +202,9 @@ export const SpanIcon = styled.span`
 `;
 export const UserRegister = styled.div`
   font-size: 18px;
-  /*border: solid 1px #16a085;*/
   border-radius: .3rem;//圆角
-  color: #16a085;
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL })}
   font-weight: bold;
   padding: .3rem 1rem;
- 
+
 `;

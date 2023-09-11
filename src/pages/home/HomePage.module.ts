@@ -8,18 +8,18 @@ import media from "@/styles/media";
 export const Container = styled.div`
 
   display: flex;
-  margin-top: 10px;
+  margin-top: .625rem;
   flex-direction: row;
   justify-content: flex-start;
  
 `;
 export const MenuLayout = styled.div`
  
-  margin-left: 10px;
-  padding: 4px 14px;
-  height: 1200px;
+  margin-left: .625rem;
+  padding: .25rem .875rem;
+  height: 75rem;
   flex: 0;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
   background-color: #f5f6fa;
   ${media.phone} {
    display: none;
@@ -34,9 +34,9 @@ export const MainLayout = styled.div`
   align-self:auto;
   /*align-content: stretch;*/
   flex:1;
-  margin:0 10px;
-  padding: 4px 14px;
-  border-radius: 25px;
+  margin:0 .625rem;
+  padding: .25rem .875rem;
+  border-radius: 1.5625rem;
   background-color: #F5FAF8;
   
 `;
@@ -45,31 +45,31 @@ export const SearchlBox = styled.div`
    flex-direction: row;
    flex-wrap: wrap;
    justify-content: flex-start;
-   margin: 0px;
+   margin: 0rem;
    justify-content: center;
    align-content: stretch;
-   /*height: 190px;*/
+   
    width: 100%;    
 `;
 export const CarouselBox = styled.div`
    display: flex;
-   margin: 0px;
+   margin: 0rem;
 
    justify-content: center;
    align-content: stretch;
    width: 100%;    
-   height: 250px;
+   height: 15.625rem
    
 `;
 export const FontBox = styled.div`
-    width: 150px;
+    width: 9.375rem;
     background: red;
     cursor: pointer;
-    height: 300px;
+    height: 15.625rem;
     transition:all 0.4s;
     &:hover {
-       box-shadow: 0 8px 8px 0  gray;
-       transform: translate(0,-10px);
+       box-shadow: 0 .5rem .5rem 0  gray;
+       transform: translate(0,-0.625rem);
        }
      
 `;
@@ -83,5 +83,5 @@ export const HotGoodslBox = styled.div`
    margin: 0px;
    /*background-color: red;*/
    width: 100%;   
-   /*height : 200px;*/
+  
 `;

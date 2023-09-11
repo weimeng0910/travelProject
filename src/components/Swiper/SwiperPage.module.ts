@@ -25,7 +25,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin: 10px auto;
+  margin: .625rem auto;
   overflow: hidden !important;
   border-color: white;
   ${media.tablet} {
@@ -40,7 +40,7 @@ export const CarouseImg = styled.img`
   margin: 0 auto;
  
   width: 100%;
-  border-radius: 17px;
+  border-radius: 1.0625rem;
  ${media.tablet} {
    
     width: 100%;
@@ -56,16 +56,16 @@ export const CarouseFont = styled.div`
 `
 export const CarouseTitle = styled.h2`
   
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   text-align: center;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
   ${media.tablet} {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
    
-    font-size: 8px;
+    font-size: .5rem;
   }
 
 `
@@ -74,51 +74,51 @@ export const CarouseKommentar = styled.h2`
   justify-content: center;
   align-content: center;
   margin:0;
-  font-size: 14px;
+  font-size: .875rem;
   text-align: center;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
   ${media.tablet} {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
    
-    font-size: 8px;
+    font-size: .5rem;
   }
 
 `
 export const CarouseRunden = styled.div`
   display: grid;
   border-radius:50%;//圆型
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   background:#00AA6C;
   opacity:0.6;
   justify-content: center;
   align-content: center;
   ${media.tablet} {
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
    
-    font-size: 8px;
+    font-size: .5rem;
   }
 
 `
 export const CarouselDescription = styled.div`
   display: grid;
-  grid-template-columns: 20px 1fr 20px 1fr;
+  grid-template-columns: 1.25rem 1fr 1.25rem 1fr;
   /*列间距*/
-  grid-column-gap: 10px;
+  grid-column-gap: .625rem;
   justify-items:center;
   align-items: center;
   width: 100%;
  
-  margin-bottom:40px;
+  margin-bottom:2.5rem;
   ${media.tablet} {
     display: none;
   }
 `
 
 export const CarouselMoney = styled.i`
-        font-size: 12px;
+        font-size: .75rem;
         line-height: 1.2;
         color: #b2b2b2;
 

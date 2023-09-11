@@ -34,7 +34,10 @@ const config: UserConfigExport = {
     },
   },
   //css相关
-  css: configCss(),
+  css: {
+
+    ...configCss(),
+  },
   //server
   server: configServer(),
 

@@ -5,7 +5,7 @@ import media from "@/styles/media";
  * @description authenticatedApp-css
  */
 
-export const Container = styled.div`
+export const Layout = styled.div`
   display: grid;
   
   /* 栅格的行 */
@@ -13,7 +13,7 @@ export const Container = styled.div`
   /* 栅格的列 */
   grid-template-columns:  1fr 20rem;
   /*行间距*/
-  grid-row-gap: 12px;
+  grid-row-gap: .75rem;
   /*列间距*/
   /*grid-column-gap: 10px;*/
   justify-content: center;
@@ -28,7 +28,7 @@ export const Container = styled.div`
     /* 栅格的列 */
     
     grid-template-columns: auto 0rem;
-    grid-column-gap: 0px;
+    grid-column-gap: 0rem;
   }
      
 `;
@@ -72,6 +72,6 @@ export const Aside = styled.aside`
 export const Footer = styled.footer`
   grid-area: foorer;
   z-index: -2;
-  border-bottom: solid 5px #16a085;
+  border-bottom: solid .3125rem #16a085;
   background-color: #fff;
 `;

@@ -26,7 +26,15 @@
     "noImplicitAny": false // 未声明类型的变量自动默认为any类型
   },
   //"include": ["src"],
-  "include": ["src/**/*", "build/**/*", "next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.js"],
+  "include": [
+    "src/**/*",
+    "build/**/*",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "jest.config.js",
+    "__postcss.config__.js_.js_.js_.js"
+  ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

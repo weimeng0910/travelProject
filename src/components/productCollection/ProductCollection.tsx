@@ -12,7 +12,7 @@ import {
   HotGoodsWord,
   Hot,
   Img,
-} from './roductCollection.module';
+} from './product.module';
 /**
  * @date 2023/09/04
  * @description ProductCollection

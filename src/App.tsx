@@ -3,6 +3,15 @@ import { AuthenticatedAPP } from '@/authenticatedApp';
 //错误边界
 import { ErrorBoundary } from '@/components/errorBoundary';
 import { FullPageErrorFallback } from '@/components/lib';
+//import { useEffect } from 'react';
+
+//const setRem = async () => {
+//  await require('lib-flexible');
+//};
+//useEffect(() => {
+//  setRem();
+//  window.addEventListener('resize', setRem);
+//});
 const App = () => {
   return (
     <>

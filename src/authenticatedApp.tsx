@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Container, Main, Aside, Footer } from '@/styles/authenticatedApp.module';
+import { Layout, Main, Aside, Footer } from '@/styles/authenticatedApp.module';
 import { Header } from '@/components/header';
 import {
   HomePage,
@@ -26,7 +26,7 @@ export const AuthenticatedAPP: React.FC<VisibleProps> = (props: VisibleProps) =>
   };
 
   return (
-    <Container>
+    <Layout>
       <Router>
         <Header visible={visible} handleClick={handleClick} />
         <Main visible={visible}>
@@ -45,6 +45,6 @@ export const AuthenticatedAPP: React.FC<VisibleProps> = (props: VisibleProps) =>
         <Aside>Aside</Aside>
         <Footer>Trending in Travel Summer</Footer>
       </Router>
-    </Container>
+    </Layout>
   );
 };
