@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Cdn, Mith, Mana, Blz } from '@styled-icons/crypto';
-import media from "@/styles/media";
+import media from "@/styles/tools/media";
 /**
  * @date 2023/06/27
  * @description Carousel Css

@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
-import media from "@/styles/media";
-import { BaseShadow, Border, Margin, Font } from '@/styles/tools/logicalMixins'
+import media from "@/styles/tools/media";
+import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
+import { BaseShadow, Border, Margin, Font, gridBox, Size } from '@/styles/tools/logicalMixins'
 import { BaseBoxShadow, BorderBase, BackgroundColor, FontColor, FontSizes } from '@/styles/settings/var';//Benchmark variable
 /**
  * @date 2023/05/30
@@ -9,136 +10,172 @@ import { BaseBoxShadow, BorderBase, BackgroundColor, FontColor, FontSizes } from
 
 export const Container = styled.header`
   grid-area: header;
-  position: fixed;//元素的位置相对于浏览器窗口是固定位置
   z-index: 7;
   width: 100%;
+  margin: auto ;
+  align-items: center;
   background-color: ${BackgroundColor.backgroundColorFourth};
-  ${Border({ bottom: BorderBase.borderprimary })}
-  ${BaseShadow(BaseBoxShadow.boxShadowbase)}
+  ${Border({ bottom: BorderBase.borderPrimary })}
+  ${BaseShadow(BaseBoxShadow.boxShadowBase)}
+
+  ${media.tablet} {
+   width: 100vw;
+   height:6vw;
+  }
+  ${media.phone} {
+   width: 100vw;
+   height:10vw;
+  }
+
 `;
 
 export const Navbar = styled.div`
-  display: flex;
-  height: 3.75rem;
-  justify-content: center;
-  align-items: center;
- 
-   ${media.phone} {
-    height: 5rem;
-    flex-flow: row wrap;
-    align-items: center;
+  ${gridBox}
+  height: 4.5vw;
+
+  ${media.tablet} { 
+    height: 5vw;
+    ${gridBox({ gridTemplateColumns: '1fr 10vw' })}
+
   }
+  ${media.phone} { 
+    ${gridBox({ gridTemplateColumns: '1fr 20vw' })}
   
+  }
+
 `;
 
 export const HeaderLeft = styled.div`
   display: flex;
-  width: 18.75rem;
-  height: 100%;
   justify-content: center;
   align-items: center;
   
-  font-weight: bold;
-  /*margin-left: 1.25rem;*/
-  ${Margin({ left: '20px' })}
   &:hover {
       cursor: pointer;
       color: hotpink; // <Thing> when hovered
     } 
-  ${media.tablet} {
-     flex:1;
+  ${media.tablet} { 
      text-align:left;
-     ${Margin({ right: 'auto' })}
-     width: 50%;
-
+     ${Margin({ left: '5vw' })}
+  }
+  ${media.phone} { 
+     text-align:left;
+     ${Margin({ left: '5vw' })}
   }
 `;
 
-export const LogoFont = styled.h1`
+export const LogoBox = styled.div`
   display: flex;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL })};
-  /*font-weight: bold;*/
-  /*margin: 0;*/
-  ${Margin({ all: '0' })}
- ${media.phone} {
-    
-     text-align:left;
-     margin-right: auto;
-   
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
+  ${media.tablet} {
+     ${Margin({ right: 'auto' })}
+     ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
+  }
+  ${media.phone} {
+     ${Margin({ right: 'auto' })}
+     ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
   }
 
+`;
+export const Logo = styled(Softwarelogo)`
+  width: 3vw;
+  height: 3vw;
   
+  ${media.tablet} {
+     width: 4vw;
+     height: 4vw;
+    
+  }
+  ${media.phone} {
+     width: 5vw;
+     height: 5vw;
+    
+  }
+
 `;
 export const MenuButton = styled.label`
   display: none;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeS })};
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL })};
   cursor: pointer;
-  margin: auto;
+  ${Margin({ all: 'auto' })}
 
- ${media.tablet} {
-    display: block;  
-		color: #16a085;
+  ${media.tablet} {
+    display: block;
+    ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL })};
 		cursor: pointer;
-    margin-right: 20px;
-		
+    
+
   }
-  
+ ${media.phone} {
+    display: block;  
+		${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL })};
+		cursor: pointer;
+  }
 `;
+
 type VisibleProps = {
   visible: boolean;
 }
+
 export const HeaderCenter = styled.div<VisibleProps>`
  	display: flex;
   flex: 1;
   justify-content:space-between;
   align-items: center;
-  box-sizing: border-box;
-  
-  
-  
+
   ${media.tablet} {
-    
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
     flex-flow:column;
     margin-top:1rem;
   }
-  
+  ${media.phone} {
+    display: ${(props: VisibleProps) =>
+    props.visible ? "block" : "none"};
+    flex-flow:column;
+    margin-top:1rem;
+  } 
 `;
 
 
 export const HeaderRight = styled.div<VisibleProps>`
   display: flex; 
-  width: 18.75rem;
   justify-content: center;
   align-content: center;
-  padding-right: 10px;
-
   ${media.tablet} {
     position: absolute;
-    left: 35px;
-    top: 23rem;
+    left: 5vw;
+    top: 42vw;
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
   }
-  
-
-
+  ${media.phone} {
+    position: absolute;
+    left: 6vw;
+    top: 84vw;
+    display: ${(props: VisibleProps) =>
+    props.visible ? "block" : "none"};
+  }
 `;
 export const Links = styled.ul`
   display: flex;
   justify-content:space-between;
-  align-items: center;
   margin: 0;
-  padding: 20px auto;
+  padding: 0;
   flex: 1 1 auto;
  
-  
- ${media.tablet} {
+  ${media.tablet} {
     flex-direction: column;
 
 		justify-content: center;
-    /*margin-right: 30px;*/
+    align-items: flex-start;
+    ${Margin({ left: '5vw' })}
+  }
+ ${media.phone} {
+    flex-direction: column;
+		justify-content: center;
+   
+     ${Margin({ left: '5vw' })}
   }
 
 `;
@@ -146,18 +183,17 @@ export const Links = styled.ul`
 export const Li = styled.li`
   display: flex;
  
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL })};
-  font-weight: bold;
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })};
+  line-height: 3rem;//3倍字高
+  
   text-align: center;//文本居中
 
   position: relative;
-  padding: 0 10px;
+  /*padding: 0 10px;*/
   margin:0;
-
-  /*line-height: 3rem;//3倍字高*/
+/* 下划线出现动画  */
+  line-height: 3rem;//3倍字高
   transition: 0.2s all linear;
-
-  
     &::before {
             content: "";
             position: absolute;
@@ -165,22 +201,26 @@ export const Li = styled.li`
             left: 40%;
             width: 0;
             height: 100%;
-            border-bottom: 2px solid #118060;
+            ${Border({ bottom: BorderBase.borderFourty })}
             transition: 0.2s all linear;
         }
-
         &:hover{
            color: #95a5a6;
          ::before {
-
             width: 100%;
             top: 0;
             left: 0;
             transition-delay: 0.1s;
             border-bottom-color: #2ecc71;
+            
         }
   }
   ${media.tablet} {
+
+		margin: 8px, 0;
+
+  }
+  ${media.phone} {
     
 		margin: 8px, 0;
    
@@ -201,10 +241,11 @@ export const SpanIcon = styled.span`
   
 `;
 export const UserRegister = styled.div`
-  font-size: 18px;
+  display: flex;
+  align-items: center;
   border-radius: .3rem;//圆角
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL })}
-  font-weight: bold;
-  padding: .3rem 1rem;
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })}
+  
+  /*padding: .3rem 1rem;*/
 
 `;

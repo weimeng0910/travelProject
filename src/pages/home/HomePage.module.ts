@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
-import media from "@/styles/media";
+import media from "@/styles/tools/media";
+import { BorderRadius, BaseShadow } from '@/styles/tools/logicalMixins';
+import { BorderRadiusBase, Color, BackgroundColor, BaseBoxShadow } from '@/styles/settings/var'
 /**
  * @date 2023/06/30
  * @description Homepage-css
@@ -8,19 +10,27 @@ import media from "@/styles/media";
 export const Container = styled.div`
 
   display: flex;
-  margin-top: .625rem;
   flex-direction: row;
   justify-content: flex-start;
- 
+  flex:1;
+  ${media.tablet} {
+    justify-content: space-between;
+
+  }
+
 `;
 export const MenuLayout = styled.div`
  
-  margin-left: .625rem;
-  padding: .25rem .875rem;
-  height: 75rem;
+  margin-left: 1.39vw;
+  padding: 2.1333vw 1.8667vw;
+  height: 160vw;
   flex: 0;
-  border-radius: 1.5625rem;
+  
+  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}
   background-color: #f5f6fa;
+  ${media.tablet} {
+   display:block;
+  }
   ${media.phone} {
    display: none;
   }
@@ -29,16 +39,17 @@ export const MenuLayout = styled.div`
 export const MainLayout = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  
   justify-content: flex-start;
   align-self:auto;
-  /*align-content: stretch;*/
   flex:1;
-  margin:0 .625rem;
-  padding: .25rem .875rem;
-  border-radius: 1.5625rem;
-  background-color: #F5FAF8;
-  
+  margin:0 2.1333vw;
+  padding: .5333vw 1.8667vw;
+  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}
+  background-color:${BackgroundColor.backgroundColorSecondary}
+   ${media.tablet} {
+    justify-content: space-between;
+    
+  }
 `;
 export const SearchlBox = styled.div`
    display: flex;
@@ -58,20 +69,21 @@ export const CarouselBox = styled.div`
    justify-content: center;
    align-content: stretch;
    width: 100%;    
-   height: 15.625rem
+   height:18vw
    
 `;
 export const FontBox = styled.div`
-    width: 9.375rem;
+    width: 20vw;
     background: red;
     cursor: pointer;
-    height: 15.625rem;
+    height: 33.3333vw;
     transition:all 0.4s;
     &:hover {
-       box-shadow: 0 .5rem .5rem 0  gray;
+       /*box-shadow: 0 .5rem .5rem 0  gray;*/
+       ${BaseShadow(BaseBoxShadow.boxShadowDark)}
        transform: translate(0,-0.625rem);
        }
-     
+
 `;
 export const InnerH3 = styled.h3`
       

@@ -25,7 +25,8 @@ import {
   Li,
   UserRegister,
   MenuButton,
-  LogoFont,
+  LogoBox,
+  Logo,
 } from './header.module';
 import { useMenu } from '@/utils'; //data
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
@@ -75,7 +76,7 @@ const User = () => {
     <Dropdown overlay={<Menu items={menuItems} />}>
       <UserRegister>
         <span>
-          <UserOutlined style={{ paddingRight: '10px' }} rev={undefined} />
+          <UserOutlined style={{ paddingRight: '0.625rem' }} rev={undefined} />
         </span>
         My travel
       </UserRegister>
@@ -90,14 +91,14 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
   return (
     <>
       <Container>
-        <Navbar>
+        <Navbar gridTemplateColumns={'20vw auto 20vw'}>
           <HeaderLeft>
-            <Softwarelogo width="2.5rem" height="2.5rem" onClick={resetRoute} />
-            <LogoFont onClick={resetRoute}>Travenly</LogoFont>
+            <Logo onClick={resetRoute} />
+            <LogoBox onClick={resetRoute}>Travenly</LogoBox>
           </HeaderLeft>
           {/* 折叠 */}
           <MenuButton onClick={handleClick}>
-            <MenuOutlined style={{ fontSize: '22px' }} rev={undefined} />
+            <MenuOutlined rev={undefined} />
           </MenuButton>
 
           <HeaderCenter visible={visible}>

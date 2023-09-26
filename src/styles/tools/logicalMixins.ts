@@ -5,13 +5,15 @@ import { css } from 'styled-components';
 interface IFontProps {
   color?: string;
   size?: string;
-  family?: string
+  family?: string;
+  fontWeight?: string
 
 }
-export const Font = ({ color, size, family }: IFontProps) => `
+export const Font = ({ color, size, family, fontWeight }: IFontProps) => `
   color: ${color || "#16A085"};
   font-size: ${size || "1rem"};
-  font-family: ${family || "Helvetica neue"};
+  font-family: ${family || "Lorem Ipsum"};
+  font-weight:${fontWeight || "normal"};
 `;
 /* box-shadow
 ----------------------- */
@@ -122,7 +124,8 @@ export const Margin = ({
     margin-top: ${top};
   }
 `;
-
+/* padding
+----------------------- */
 export const Padding = ({
   all,
   x = all,
@@ -143,7 +146,8 @@ export const Padding = ({
     padding-top: ${top};
   }
 `;
-
+/* Position
+----------------------- */
 interface IPosition {
   bottom?: string | number;
   left?: string | number;
@@ -177,7 +181,8 @@ export const Position = ({ top, right, bottom, left }: IPosition) => css`
     right: ${right};
   }
 `;
-
+/* Size
+----------------------- */
 interface ISize {
   height?: string;
   maxHeight?: string;
@@ -216,6 +221,24 @@ export const Size = ({
     width: ${width};
   }
 `;
+/* GridBox
+----------------------- */
+interface IGridBox {
+  display?: string,
+  gridTemplateColumns?: string,
+  gridColumnGap?: string
+}
+
+export const gridBox = ({
+  display = "grid",
+  gridTemplateColumns = "1fr 1fr 1fr",
+  gridColumnGap = ".5vw"
+}: IGridBox) => css`
+  display: ${display};
+  grid-template-columns: ${gridTemplateColumns};
+  grid-column-gap: ${gridColumnGap};
+`;
+
 
 export default {
   Font,

@@ -1,6 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import media from "@/styles/media";
+import media from "@/styles/tools/media";
 /**
  * @date 2023/06/22
  * @description Swiper Css
@@ -13,15 +13,15 @@ left: ${(props: OffsetProps) => `${-props.offset}px`};
 `
 
 export const MySwiper = styled(Swiper)`
-   width:100%;
+   width:45vw;
 `
 export const MySwiperSlide = styled(SwiperSlide)`
-   width:100%;
+  width:45vw;
 `
 export const Container = styled.div`
   display: flex;
   position:absolute;
-  width:50%;
+  width:45vw;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -39,7 +39,7 @@ export const CarouseImg = styled.img`
   align-items: center;
   margin: 0 auto;
  
-  width: 100%;
+  width:15vw;
   border-radius: 1.0625rem;
  ${media.tablet} {
    

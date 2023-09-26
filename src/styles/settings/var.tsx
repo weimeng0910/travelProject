@@ -50,17 +50,30 @@ export const BackgroundColor = {
 /* Border
 ----------------------- */
 export const BorderBase = {
-  borderprimary: `solid 5px #16a085`,
+  borderPrimary: `solid 5px #16a085`,
   borderSecondary: `solid 1px #16a085 `,
   borderTertiary: `solid 1px #fff `,
+  borderFourty: `solid 2px #118060  `,
 };
+/// borderRadius|1|Radius|0
+export const BorderRadiusBase = {
+  bordeRadiusBase: `1.5625rem `,
+
+  borderRadiusSmall: `.5rem `,
+
+  borderRadiusCircle: `50% `,
+
+  borderRadiusZero: `0`,
+};
+
 /* Box-shadow
 ----------------------- */
 export const BaseBoxShadow = {
-  boxShadowbase: ` 0 .3125rem .3125rem rgba(0, 0, 0, 0.2)`,
-  boxShadowDark: `0 0 6px rgba(0, 0, 0, .12) `,
+  boxShadowBase: ` 0 .3125rem .3125rem rgba(0, 0, 0, 0.2)`,
+  boxShadowDark: `0 .5rem .5rem 0  gray `,
   boxShadowLight: ` 0 2px 12px 0 rgba(0, 0, 0, 0.1) `,
 };
+
 /* z-index
 -------------------------- */
 export const ZIndex = {

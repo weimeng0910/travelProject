@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import media from "@/styles/media";
+import media from "@/styles/tools/media";
 import { Input, Button } from 'antd';
 import { InputProps } from 'antd/lib/input';
 import { ButtonProps } from 'antd/lib/button';
@@ -10,7 +10,7 @@ import { FontColor, FontSizes } from '@/styles/settings/var';//基准变量
  * @description Homepage-css
  */
 export const WelcomeText = styled.h1`
-  ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXXL })};
+  ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXXXL, fontWeight: 'bold' })};
   width: 100%; 
  
   ${media.tablet} {
@@ -41,12 +41,11 @@ export const SearchInputBox = styled.div`
   flex-shrink: 1;
 `;
 export const WorldText = styled.h1`
-  
-  font-size: 3.125rem;
-  color: #16a085;
+ 
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXXL, fontWeight: 'bold' })};
   text-align: center;
   margin:0 1.25rem 0 0;
- 
+
 
   ${media.phone} {
 

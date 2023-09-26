@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import media from "@/styles/media";
+import media from "@/styles/tools/media";
 /**
  * @date 2023/09/04
  * @description ProductCollection Css

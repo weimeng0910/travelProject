@@ -32,7 +32,7 @@ export const HomePage: FC = () => {
       </MenuLayout>
 
       <MainLayout>
-        <SearchlBox>
+        {/*<SearchlBox>
           <SearchPanel />
         </SearchlBox>
 
@@ -41,7 +41,8 @@ export const HomePage: FC = () => {
         </CarouselBox>
         <HotGoodslBox>
           <ProductCollection hotGoodsData={goodsList?.data.hotGoodsList || []} />
-        </HotGoodslBox>
+        </HotGoodslBox>*/}
+        222
       </MainLayout>
     </Container>
   );
