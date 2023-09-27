@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Layout, Main, Aside, Footer } from '@/styles/authenticatedApp.module';
+import { Layout, Main, Footer } from '@/styles/authenticatedApp.module';
 import { Header } from '@/components/header';
 import {
   HomePage,
@@ -42,7 +42,6 @@ export const AuthenticatedAPP: React.FC<VisibleProps> = (props: VisibleProps) =>
             <Route path="/" element={<Navigate to="home" />} />
           </Routes>
         </Main>
-        <Aside>Aside</Aside>
         <Footer>Trending in Travel Summer</Footer>
       </Router>
     </Layout>

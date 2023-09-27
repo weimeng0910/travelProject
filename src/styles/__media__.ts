@@ -1,10 +1,17 @@
 import { css, CSSObject } from 'styled-components/macro'
-
+import styled from 'styled-components';
 /**
  * @date 2023/05/30
  * @description useMediaQuery hook
  */
 //常用断点类型设置
+
+type OffsetProps = {
+  offset: string;
+}
+export const MaskingLeft = styled.div<OffsetProps>`
+left: ${(props: OffsetProps) => `${-props.offset}px`};
+`
 interface ISizes {
   xxs: string //xs(超级小屏)<375px
   xs: string //xs(超小屏)<576px

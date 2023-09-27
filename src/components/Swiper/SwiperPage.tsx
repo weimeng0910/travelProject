@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
@@ -13,7 +13,7 @@ import {
   CarouseRunden,
   CarouselMoney,
 } from './SwiperPage.module';
-import { Goods } from '@/types/goods';
+import { IGoods } from '@/types/goods';
 /**
  * @date 2023/08/30
  * @description SwiperPage
@@ -21,7 +21,7 @@ import { Goods } from '@/types/goods';
 SwiperCore.use([Autoplay, Pagination]);
 
 interface SwiperProps {
-  dataList: Partial<Goods>[];
+  dataList: Partial<IGoods>[];
 }
 //轮播组件
 export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
@@ -34,6 +34,9 @@ export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
       disableOnInteraction: false,
     },
     pagination: { clickable: true },
+    controller: {
+      inverse: true,
+    },
   });
   return (
     <Container>

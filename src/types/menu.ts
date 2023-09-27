@@ -1,4 +1,4 @@
-export interface Menu {
+export interface IMenu {
   id: number;
   label: string;
   key: string;

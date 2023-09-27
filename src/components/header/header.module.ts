@@ -19,11 +19,11 @@ export const Container = styled.header`
   ${BaseShadow(BaseBoxShadow.boxShadowBase)}
 
   ${media.tablet} {
-   width: 100vw;
+   width: 100%;
    height:6vw;
   }
   ${media.phone} {
-   width: 100vw;
+   width: 100%;
    height:10vw;
   }
 
@@ -230,7 +230,7 @@ export const Li = styled.li`
 
 export const SpanIcon = styled.span`
   display: block;
-  margin: 0 auto; //居中对齐
+  margin: 0 auto; 
   margin-right: 10px;
   
   ${media.phone} {
@@ -243,9 +243,9 @@ export const SpanIcon = styled.span`
 export const UserRegister = styled.div`
   display: flex;
   align-items: center;
-  border-radius: .3rem;//圆角
+  border-radius: .3rem;
   ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })}
   
-  /*padding: .3rem 1rem;*/
+ 
 
 `;

@@ -1,11 +1,12 @@
 import React from 'react';
-import { HotGoods } from '@/types/goods';
+import { IHotGoods } from '@/types/goods';
 import { HeartTwoTone } from '@ant-design/icons';
 import {
   Container,
   TitleBox,
-  WorldText,
+  TripText,
   DescribeText,
+  MoreText,
   HotGoodsBox,
   ImgBox,
   HotGoodsImg,
@@ -17,25 +18,20 @@ import {
  * @date 2023/09/04
  * @description ProductCollection
  */
-interface PropTypes {
-  hotGoodsData: HotGoods[];
-}
 
-export const ProductCollection: React.FC<{ hotGoodsData: HotGoods[] }> = ({ hotGoodsData }) => {
-  console.log(hotGoodsData, '001');
-
+export const ProductCollection: React.FC<{ hotGoodsData: IHotGoods[] }> = ({ hotGoodsData }) => {
   return (
     <Container>
       <TitleBox>
-        <WorldText>The Hottest Trip</WorldText>
+        <TripText>The Hottest Trip</TripText>
         <DescribeText>
           The most popular and recommended Destination, bring family now Let's go together and enjoy
           the holiday.
         </DescribeText>
-        <DescribeText>more</DescribeText>
+        <MoreText>more</MoreText>
       </TitleBox>
       <HotGoodsBox>
-        {hotGoodsData.map((item, index) => {
+        {hotGoodsData.map((item, _index) => {
           if (item.isHot) {
             return (
               <ImgBox key={item.id}>

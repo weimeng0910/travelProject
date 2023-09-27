@@ -4,7 +4,7 @@ import legacy from '@vitejs/plugin-legacy';
 import vitePluginImp from 'vite-plugin-imp';
 import macrosPlugin from "vite-plugin-babel-macros"
 import svgr from "vite-plugin-svgr";
-
+import eslintPlugin from 'vite-plugin-eslint';
 /**
  * vite.config--createVitePlugins
 */
@@ -47,7 +47,11 @@ export default function createVitePlugins({ variables }: { variables: any }) {
         }
       ]
     }),
-
+    eslintPlugin({
+      cache: false,
+      include: ['./src/**/*.js', './src/**/*.jsx'],
+      exclude: [],
+    }),
 
   ]
 

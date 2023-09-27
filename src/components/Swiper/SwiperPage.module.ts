@@ -1,27 +1,26 @@
 import styled from 'styled-components';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide ,} from 'swiper/react';
+// import { Scrollbar } from 'swiper';
+
 import media from "@/styles/tools/media";
+import { BorderRadius} from '@/styles/tools/logicalMixins';
+import { BorderRadiusBase} from '@/styles/settings/var'
 /**
  * @date 2023/06/22
  * @description Swiper Css
  */
-type OffsetProps = {
-  offset: string;
-}
-export const MaskingLeft = styled.div<OffsetProps>`
-left: ${(props: OffsetProps) => `${-props.offset}px`};
-`
+
 
 export const MySwiper = styled(Swiper)`
-   width:45vw;
+   width:100%;
 `
 export const MySwiperSlide = styled(SwiperSlide)`
-  width:45vw;
+  width:100%;
 `
 export const Container = styled.div`
   display: flex;
   position:absolute;
-  width:45vw;
+  width:65vw;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -30,20 +29,28 @@ export const Container = styled.div`
   border-color: white;
   ${media.tablet} {
    
-    width: 70%;
+   width:95vw;
+   }
+ ${media.phone} {
+   
+  width:95vw;
   }
+ 
 `
 export const CarouseImg = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
- 
-  width:15vw;
+  width:18vw;
   border-radius: 1.0625rem;
- ${media.tablet} {
+  ${media.tablet} {
    
-    width: 100%;
+   width:28vw;
+   }
+ ${media.phone} {
+   
+  width:28vw;
   }
 
 `
@@ -52,7 +59,7 @@ export const CarouseFont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 65vw;
 `
 export const CarouseTitle = styled.h2`
   
@@ -88,7 +95,7 @@ export const CarouseKommentar = styled.h2`
 `
 export const CarouseRunden = styled.div`
   display: grid;
-  border-radius:50%;//圆型
+  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
   width: 1rem;
   height: 1rem;
   background:#00AA6C;
@@ -109,7 +116,7 @@ export const CarouselDescription = styled.div`
   grid-column-gap: .625rem;
   justify-items:center;
   align-items: center;
-  width: 100%;
+  width: 70%;
  
   margin-bottom:2.5rem;
   ${media.tablet} {

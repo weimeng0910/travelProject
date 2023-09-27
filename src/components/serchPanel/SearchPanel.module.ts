@@ -9,17 +9,17 @@ import { FontColor, FontSizes } from '@/styles/settings/var';//基准变量
  * @date 2023/05/30
  * @description Homepage-css
  */
-export const WelcomeText = styled.h1`
+export const WelcomeText = styled.div`
   ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXXXL, fontWeight: 'bold' })};
   width: 100%; 
  
   ${media.tablet} {
 
-    ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXL })};
+    ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXXL ,fontWeight: 'bold' })};
   }
   ${media.phone} {
 
-   ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeS })};
+   ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXL,fontWeight: 'bold'  })};
   }
 `;
 
@@ -47,14 +47,14 @@ export const WorldText = styled.h1`
   margin:0 1.25rem 0 0;
 
 
-  ${media.phone} {
+  ${media.tablet} {
 
-   font-size: 1.875rem;
+    ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold' })};
 
   }
   ${media.phone} {
 
-  font-size: 1.25rem;
+    ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold' })};
   }
 `;
 export const NewInput: typeof Input = styled(Input) <InputProps>`

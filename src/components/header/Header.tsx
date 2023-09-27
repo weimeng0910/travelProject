@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+//import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import {
@@ -29,7 +29,7 @@ import {
   Logo,
 } from './header.module';
 import { useMenu } from '@/utils'; //data
-import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
+//import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
 
 //导入logo跳转回根路由的方法
 import { resetRoute } from '@/utils';

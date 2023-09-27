@@ -1,5 +1,6 @@
-import styled, { keyframes } from 'styled-components';
-
+import styled from 'styled-components';
+import { BorderRadius, Font } from '@/styles/tools/logicalMixins';
+import { BorderRadiusBase, BackgroundColor, FontColor, FontSizes } from '@/styles/settings/var'
 import media from "@/styles/tools/media";
 /**
  * @date 2023/09/04
@@ -9,35 +10,78 @@ import media from "@/styles/tools/media";
 export const Container = styled.div`
   display: flex;
   flex-flow:column nowrap;
-  width: 100%;
-  
-  /*background-color: red;*/
+  width:67vw;
+  ${media.tablet} {
+    width:90vw; 
+  }
+
+  ${media.phone} {
+    width:90vw;
+    
+  }
+
 `
 export const TitleBox = styled.div`
   display: grid;
-  grid-template-columns:15.625rem 1fr 6.25rem;
+  grid-template-columns:1fr 1fr 5vw;
   align-items: center;
-  border-radius: .5rem;
-  background-color:#16A085;
+  
+  ${BorderRadius({ all: BorderRadiusBase.borderRadiusSmall })};
+  background-color:${BackgroundColor.backgroundColorprimary};
   width: 100%;
-  height: 5rem;
+  height: 10vw;
+  ${media.tablet} {
+   
+   grid-template-columns:30vw 1fr 10vw;
+   height: 10vw;
+  }
+
+  ${media.phone} {
+    height: 10vw;
+    
+  }
 `
-export const WorldText = styled.h1`
-  
-  font-size: 1.375rem;
-  color: #fff;
-  text-align: center;
-  /*text-align: center;*/
-  margin:0 1.25rem 0 0;
-  border-right: .0313rem solid #fff;
+export const TripText = styled.div`
+  display: flex;
+  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXXXL, fontWeight: 'bold' })};
+  margin: auto ;
+  padding-right: 2vw;
+  border-right: .0313rem solid #fff; 
   box-shadow: .0625rem 0 .0625rem -0.0625rem #000;
+  ${media.tablet} {
+
+  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeS, fontWeight: 'bold' })};
+}
+  ${media.phone} {
+
+  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeS, fontWeight: 'bold' })};
+}
   `
-export const DescribeText = styled.h1`
+export const DescribeText = styled.div`
   
-  font-size: .75rem;
-  color: #FFF;
-  /*text-align: center;*/
-  margin:0 1.25rem 0 0;
+  font-size: 1.2vw;
+  color: #fff;
+  margin:0 2.6667vw 0 0;
+  ${media.phone} {
+    width: 80%;
+    margin:0 1vw 0 0;
+    
+    overflow: hidden;
+    /*将对象作为弹性伸缩盒子模型显示*/
+    display: -webkit-box;
+    /*设置子元素排列方式*/
+    -webkit-box-orient: vertical;
+    /*设置显示的行数，多出的部分会显示为...*/
+    -webkit-line-clamp: 2;
+  }
+  `
+export const MoreText = styled.div`
+  display: flex;
+  font-size: 1.5vw;
+  margin: auto ;
+  padding-right: 2vw;
+  color: #fff;
+  
   `
 export const HotGoodsBox = styled.div`
   display: grid;

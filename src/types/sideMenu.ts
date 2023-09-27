@@ -1,4 +1,4 @@
-export interface SideMenu {
+export interface ISideMenu {
   MenuId: number;
   title: string;
   path: string;

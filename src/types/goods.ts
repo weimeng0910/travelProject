@@ -1,4 +1,4 @@
-export interface Goods {
+export interface IGoods {
   id: number;
   goods_sn: number;
   name: string;
@@ -19,7 +19,7 @@ export interface Goods {
   deleted_tiem: string;
   detail: string;
 }
-export interface Banner {
+export interface IBanner {
   id: number;
   name: string;
   goods_sn: number;
@@ -38,7 +38,7 @@ export interface Banner {
   detail: string;
 }
 
-export interface NewGoods {
+export interface INewGoods {
   id: number;
   name: string;
   goods_sn: number;
@@ -59,7 +59,7 @@ export interface NewGoods {
   detail: string;
 }
 
-export interface Coupon {
+export interface ICoupon {
   id: number;
   name: string;
   desc: string;
@@ -69,13 +69,13 @@ export interface Coupon {
   days: number;
 }
 
-export interface Channel {
+export interface IChannel {
   id: number;
   name: string;
   iconUrl: string;
 }
 
-export interface Groupon {
+export interface IGroupon {
   id: number;
   name: string;
   brief: string;
@@ -87,7 +87,7 @@ export interface Groupon {
   grouponMember: number;
 }
 
-export interface Brand {
+export interface IBrand {
   id: number;
   name: string;
   desc: string;
@@ -95,7 +95,7 @@ export interface Brand {
   floorPrice: number;
 }
 
-export interface HotGoods {
+export interface IHotGoods {
   id: number;
   name: string;
   brief: string;
@@ -106,7 +106,7 @@ export interface HotGoods {
   retailPrice: number;
 }
 
-export interface Topic {
+export interface ITopic {
   id: number;
   title: string;
   subtitle: string;
@@ -115,7 +115,7 @@ export interface Topic {
   picUrl: string;
 }
 
-export interface FloorGoods {
+export interface IFloorGoods {
   name: string;
   goodsList: {
     id: number;
@@ -130,18 +130,18 @@ export interface FloorGoods {
 }
 
 export interface Data {
-  banner: Banner[];
-  newGoodsList: NewGoods[];
-  couponList: Coupon[];
-  channel: Channel[];
-  grouponList: Groupon[];
-  brandList: Brand[];
-  hotGoodsList: HotGoods[];
-  topicList: Topic[];
-  floorGoodsList: FloorGoods[];
+  banner: IBanner[];
+  newGoodsList: INewGoods[];
+  couponList: ICoupon[];
+  channel: IChannel[];
+  grouponList: IGroupon[];
+  brandList: IBrand[];
+  hotGoodsList: IHotGoods[];
+  topicList: ITopic[];
+  floorGoodsList: IFloorGoods[];
 }
 
-export interface RootObject {
+export interface IRootObject {
   errno: number;
   data: Data;
 }

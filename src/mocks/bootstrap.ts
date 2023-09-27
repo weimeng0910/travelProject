@@ -1,6 +1,6 @@
 import * as initalData from './data/initialData';
 import { menuDB, sideMenuDB, GoodsDB } from '@/config'
-import { SideMenu, MenuNode, RootObject } from './types'
+import { ISideMenu, IMenuNode, IRootObject } from './types'
 /**
  * 初始化数据
  * LocalStorage 本地存储兼容函数
@@ -8,29 +8,15 @@ import { SideMenu, MenuNode, RootObject } from './types'
  * setItem: 设置属性
  * 将初始化数据存入 window.localStorage
  */
-//interface Data {
-//  errno: 0;
-//  data: {
-//    barner: Banner[];
-//    newGoods: NewGoods[];
-//    coupon: Coupon[];
-//    channel: Channel[];
-//    groupon: Groupon[];
-//    brand: Brand[];
-//    hotGoods: HotGoods[];
-//    topic: Topic[];
-//  }
-//  errmsg: string;
-//}
 
-const persist = (storageKey: string, data: (MenuNode[] | SideMenu[]) | RootObject) =>
+
+const persist = (storageKey: string, data: (IMenuNode[] | ISideMenu[]) | IRootObject) =>
   window.localStorage.getItem(storageKey) || window.localStorage.setItem(storageKey, JSON.stringify(data));
-const persist2 = (storageKey: string, data: any) =>
-  window.localStorage.getItem(storageKey) || window.localStorage.setItem(storageKey, JSON.stringify(data));
+
 //写入数据
 export const bootstrap = () => {
-  persist(menuDB, initalData.menu as MenuNode[]);
-  persist(sideMenuDB, initalData.sideMenuList as SideMenu[]);
+  persist(menuDB, initalData.menu as IMenuNode[]);
+  persist(sideMenuDB, initalData.sideMenuList as ISideMenu[]);
   persist(GoodsDB, initalData.goodsData);
 };
 
