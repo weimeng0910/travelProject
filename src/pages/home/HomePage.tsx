@@ -42,7 +42,6 @@ export const HomePage: FC = () => {
         <HotGoodslBox>
           <ProductCollection hotGoodsData={goodsList?.data.hotGoodsList || []} />
         </HotGoodslBox>
-        
       </MainLayout>
     </Container>
   );

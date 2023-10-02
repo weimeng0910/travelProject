@@ -1,5 +1,3 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
 /**
  * @date 2023/06/13
  * @description CSS Public Variable
@@ -22,21 +20,23 @@ export const FontColor = {
 
 /* Font
 ----------------------- */
-interface IRem {
+interface IVw {
   size?: number;
   base?: number;
 }
-export const rem = ({ size, base = 16 }: IRem) => `
+const vw = ({ size, base = 750 }: IVw) => `
   font-size: ${size}px;
-  font-size: calc(${size! / base} * 1rem);
+  font-size: calc(${size! / base} * 100vw);
 `;
 export const FontSizes = {
-  sizeS: rem({ size: 14 }),
-  sizeM: rem({ size: 16 }),
-  sizeL: rem({ size: 18 }),
-  sizeXL: rem({ size: 20 }),
-  sizeXXL: rem({ size: 30 }),
-  sizeXXXL: rem({ size: 40 }),
+  sizeJ: vw({ size: 8 }),
+  sizeK: vw({ size: 10 }),
+  sizeS: vw({ size: 12 }),
+  sizeM: vw({ size: 14 }),
+  sizeL: vw({ size: 16 }),
+  sizeXL: vw({ size: 18 }),
+  sizeXXL: vw({ size: 20 }),
+  sizeXXXL: vw({ size: 30 }),
 };
 
 /* Background
@@ -46,6 +46,7 @@ export const BackgroundColor = {
   backgroundColorSecondary: `#F5FAF8 `,
   backgroundColorTertiary: `#F5F6FA `,
   backgroundColorFourth: `#FFF `,
+  backgroundColorGrey: `#7f8c8d `,
 };
 /* Border
 ----------------------- */
@@ -53,7 +54,7 @@ export const BorderBase = {
   borderPrimary: `solid 5px #16a085`,
   borderSecondary: `solid 1px #16a085 `,
   borderTertiary: `solid 1px #fff `,
-  borderFourty: `solid 2px #118060  `,
+  borderFourth: `solid 1px #7f8c8d  `,
 };
 /// borderRadius|1|Radius|0
 export const BorderRadiusBase = {
@@ -69,9 +70,9 @@ export const BorderRadiusBase = {
 /* Box-shadow
 ----------------------- */
 export const BaseBoxShadow = {
-  boxShadowBase: ` 0 .3125rem .3125rem rgba(0, 0, 0, 0.2)`,
+  boxShadowBase: ` 0 0.31vw 0.31vw rgba(0, 0, 0, 0.2)`,
   boxShadowDark: `0 .5rem .5rem 0  gray `,
-  boxShadowLight: ` 0 2px 12px 0 rgba(0, 0, 0, 0.1) `,
+  boxShadowLight: ` 0 0.13vw 0.98vw rgba(0, 0, 0, 0.1) `,
 };
 
 /* z-index

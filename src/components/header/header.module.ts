@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
 import media from "@/styles/tools/media";
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
-import { BaseShadow, Border, Margin, Font, gridBox, Size } from '@/styles/tools/logicalMixins'
-import { BaseBoxShadow, BorderBase, BackgroundColor, FontColor, FontSizes } from '@/styles/settings/var';//Benchmark variable
+import { BaseShadow, Border, Margin, Font, gridBox } from '@/styles/tools/logicalMixins'
+import { BaseBoxShadow, BorderBase, BackgroundColor, FontColor, FontSizes } from '@/styles/settings/var';
 /**
  * @date 2023/05/30
  * @description Header-css
@@ -34,13 +34,13 @@ export const Navbar = styled.div`
   height: 4.5vw;
 
   ${media.tablet} { 
-    height: 5vw;
+    height: 6vw;
     ${gridBox({ gridTemplateColumns: '1fr 10vw' })}
 
   }
   ${media.phone} { 
     ${gridBox({ gridTemplateColumns: '1fr 20vw' })}
-  
+  height:10vw;
   }
 
 `;
@@ -52,7 +52,7 @@ export const HeaderLeft = styled.div`
   
   &:hover {
       cursor: pointer;
-      color: hotpink; // <Thing> when hovered
+      color: hotpink; 
     } 
   ${media.tablet} { 
      text-align:left;
@@ -66,7 +66,7 @@ export const HeaderLeft = styled.div`
 
 export const LogoBox = styled.div`
   display: flex;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
   ${media.tablet} {
      ${Margin({ right: 'auto' })}
      ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
@@ -95,7 +95,7 @@ export const Logo = styled(Softwarelogo)`
 `;
 export const MenuButton = styled.label`
   display: none;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL })};
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL })};
   cursor: pointer;
   ${Margin({ all: 'auto' })}
 
@@ -183,16 +183,16 @@ export const Links = styled.ul`
 export const Li = styled.li`
   display: flex;
  
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })};
-  line-height: 3rem;//3倍字高
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeS, fontWeight: 'bold' })};
+  line-height: 3vw;//3倍字高
   
   text-align: center;//文本居中
 
   position: relative;
-  /*padding: 0 10px;*/
+  
   margin:0;
 /* 下划线出现动画  */
-  line-height: 3rem;//3倍字高
+  line-height: 3vw;//3倍字高
   transition: 0.2s all linear;
     &::before {
             content: "";
@@ -201,7 +201,7 @@ export const Li = styled.li`
             left: 40%;
             width: 0;
             height: 100%;
-            ${Border({ bottom: BorderBase.borderFourty })}
+            ${Border({ bottom: BorderBase.borderFourth })}
             transition: 0.2s all linear;
         }
         &:hover{
@@ -243,8 +243,8 @@ export const SpanIcon = styled.span`
 export const UserRegister = styled.div`
   display: flex;
   align-items: center;
-  border-radius: .3rem;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })}
+  border-radius: .64vw;
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeS, fontWeight: 'bold' })}
   
  
 

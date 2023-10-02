@@ -21,9 +21,7 @@ export const Font = ({ color, size, family, fontWeight }: IFontProps) => `
 export const BaseShadow = (value: string) => `
   box-shadow: ${value};
 `;
-//export const baseShadow = css`
-//  box-shadow: ${(props: IBoxShadow) => `0 10px 6px -6px ${props.color || "red"}`};
-//`;
+
 
 interface IRem {
   size?: number;
@@ -238,8 +236,26 @@ export const gridBox = ({
   grid-template-columns: ${gridTemplateColumns};
   grid-column-gap: ${gridColumnGap};
 `;
+/* Ellipsis
+----------------------- */
+interface IEllipsis {
+  display?: string,
+  overflow?: string,
+  webkitBoxOrient?: string,
+  webkitLinCclamp?: string
+}
 
-
+export const Ellipsis = ({
+  display = "-webkit-box",
+  overflow = "hidden",
+  webkitBoxOrient = "vertical",
+  webkitLinCclamp = "1"
+}: IEllipsis) => css`
+   display: ${display};
+   overflow: ${overflow};
+   -webkit-box-orient:${webkitBoxOrient};
+   -webkit-line-clamp:${webkitLinCclamp}
+`
 export default {
   Font,
   Border,
@@ -248,5 +264,6 @@ export default {
   Padding,
   Position,
   Size,
+  Ellipsis,
   BaseShadow
 };

@@ -129,7 +129,7 @@ export interface IFloorGoods {
   }[];
 }
 
-export interface Data {
+export interface IData {
   banner: IBanner[];
   newGoodsList: INewGoods[];
   couponList: ICoupon[];
@@ -143,5 +143,5 @@ export interface Data {
 
 export interface IRootObject {
   errno: number;
-  data: Data;
+  data: IData;
 }

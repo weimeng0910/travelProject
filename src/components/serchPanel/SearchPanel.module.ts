@@ -13,14 +13,7 @@ export const WelcomeText = styled.div`
   ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXXXL, fontWeight: 'bold' })};
   width: 100%; 
  
-  ${media.tablet} {
-
-    ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXXL ,fontWeight: 'bold' })};
-  }
-  ${media.phone} {
-
-   ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXL,fontWeight: 'bold'  })};
-  }
+  
 `;
 
 export const Container = styled.div`
@@ -47,15 +40,7 @@ export const WorldText = styled.h1`
   margin:0 1.25rem 0 0;
 
 
-  ${media.tablet} {
-
-    ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold' })};
-
-  }
-  ${media.phone} {
-
-    ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold' })};
-  }
+  
 `;
 export const NewInput: typeof Input = styled(Input) <InputProps>`
 

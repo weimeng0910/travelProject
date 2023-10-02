@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
-
-import { Pin } from '@/components/pin';
 import {
   Container,
   CarouselDescription,
@@ -52,7 +50,9 @@ export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
                   {item.counter_price}
                   <i>$</i>
                 </CarouseTitle>
-                <Pin checked />
+
+                <CarouseRunden />
+
                 <CarouseTitle>
                   {item.retail_price}
                   <CarouselMoney>reviews</CarouselMoney>

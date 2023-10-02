@@ -12,18 +12,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   width: 100vw;
-  justify-content: flex-start;
+ 
   flex:1;
-
-  ${media.tablet} {
-    justify-content: space-between;
-
-  }
+  
 
 `;
 export const MenuLayout = styled.div`
  
-  margin-left: 1.39vw;
+  margin-left: 1.3vw;
   padding: 2.1333vw 1.8667vw;
   height: 160vw;
   flex: 0;
@@ -31,7 +27,7 @@ export const MenuLayout = styled.div`
   ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}
   background-color:${BackgroundColor.backgroundColorTertiary};
   ${media.tablet} {
-   display:block;
+   display: none;
   }
   ${media.phone} {
    display: none;
@@ -44,6 +40,7 @@ export const MainLayout = styled.div`
   justify-content: flex-start;
   align-self:auto;
   flex:1;
+  height: 160vw;
   margin:0 2.1333vw;
   padding: .5333vw 1.8667vw;
 
@@ -52,13 +49,13 @@ export const MainLayout = styled.div`
 
    ${media.tablet} {
     width: 100vw;
-    justify-content: space-between;
+   
     
     
   }
   ${media.phone} {
     width: 100vw;
-    justify-content: space-between;
+  
     
   }
 `;
@@ -67,7 +64,6 @@ export const SearchlBox = styled.div`
    flex-direction: row;
    flex-wrap: wrap;
    justify-content: flex-start;
-   margin: 0rem;
    justify-content: center;
    align-content: stretch;
    
@@ -75,18 +71,18 @@ export const SearchlBox = styled.div`
 `;
 export const CarouselBox = styled.div`
    display: flex;
-   margin: 0rem;
-
    justify-content: center;
    align-content: stretch;
-   width: 100%;    
-   height:18vw;
+   height:20vw;
+   margin:0;
    ${media.tablet} {
+    height:10vw;
     margin-bottom:10vw ;
     
     
   }
   ${media.phone} {
+    height:18vw;
     margin-bottom:10vw ;
     
   }

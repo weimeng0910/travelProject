@@ -1,6 +1,6 @@
 import React from 'react';
 import { IHotGoods } from '@/types/goods';
-import { HeartTwoTone } from '@ant-design/icons';
+import { Button } from 'antd';
 import {
   Container,
   TitleBox,
@@ -8,10 +8,12 @@ import {
   DescribeText,
   MoreText,
   HotGoodsBox,
-  ImgBox,
+  ProductBox,
   HotGoodsImg,
   HotGoodsWord,
   Hot,
+  Heart,
+  Buttondisplay,
   Img,
 } from './product.module';
 /**
@@ -34,21 +36,25 @@ export const ProductCollection: React.FC<{ hotGoodsData: IHotGoods[] }> = ({ hot
         {hotGoodsData.map((item, _index) => {
           if (item.isHot) {
             return (
-              <ImgBox key={item.id}>
+              <ProductBox key={item.id}>
                 <HotGoodsImg>
                   <Img src={item.picUrl} />
                 </HotGoodsImg>
                 <Hot>
-                  <HeartTwoTone twoToneColor="#fff" rev={undefined} />
+                  <Heart rev={undefined} />
                 </Hot>
                 <HotGoodsWord>
                   <ul>
                     <li>{item.name}</li>
-                    <li>{item.counterPrice}</li>
-                    <li>{item.retailPrice}￥</li>
+
+                    <li>from $ {item.retailPrice} per adult</li>
+                    <li>
+                      <Buttondisplay>See more</Buttondisplay>
+                      <Buttondisplay>Add to Cart</Buttondisplay>
+                    </li>
                   </ul>
                 </HotGoodsWord>
-              </ImgBox>
+              </ProductBox>
             );
           }
         })}

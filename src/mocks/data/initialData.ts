@@ -564,9 +564,9 @@ export const goodsData = {
     "hotGoodsList": [
       {
         "id": 1152008,
-        "name": "魔兽世界 部落 护腕 一只",
-        "brief": "吸汗、舒适、弹性、防护、耐用",
-        "picUrl": "http://yanxuan.nosdn.127.net/203cb83d93606865e3ddde57b69b9e9a.png",
+        "name": "Ubud Tour - Best of Ubud - All Inclusive",
+        "brief": "Discover the Uniqueness of Our Bali Tours",
+        "picUrl": 'images/travel-01.jpeg',
         "isNew": false,
         "isHot": true,
         "counterPrice": 49.00,
@@ -574,9 +574,9 @@ export const goodsData = {
       },
       {
         "id": 1152009,
-        "name": "魔兽世界 联盟 护腕 一只",
-        "brief": "吸汗、舒适、弹性、防护、耐用",
-        "picUrl": "http://yanxuan.nosdn.127.net/ae6d41117717387b82dcaf1dfce0cd97.png",
+        "name": "Shiraume",
+        "brief": "#1 of 187 ryokans in Kyoto",
+        "picUrl": 'images/travel-02.jpeg',
         "isNew": false,
         "isHot": true,
         "counterPrice": 49.00,
@@ -584,9 +584,9 @@ export const goodsData = {
       },
       {
         "id": 1152031,
-        "name": "魔兽世界-伊利丹颈枕眼罩套装",
-        "brief": "差旅好伴侣",
-        "picUrl": "http://yanxuan.nosdn.127.net/fd6e78a397bd9e9804116a36f0270b0a.png",
+        "name": "The Colorado Durango & Silverton Narrow Gauge Railroad in autumn",
+        "brief": "Durango & Silverton Narrow Gauge Railroad, CO",
+        "picUrl": 'images/travel-03.jpeg',
         "isNew": false,
         "isHot": true,
         "counterPrice": 119.00,
