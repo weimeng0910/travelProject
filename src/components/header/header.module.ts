@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import media from "@/styles/tools/media";
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
-import { BaseShadow, Border, Margin, Font, gridBox } from '@/styles/tools/logicalMixins'
+import { BaseShadow, Border, Margin, Font, GridBox } from '@/styles/tools/logicalMixins'
 import { BaseBoxShadow, BorderBase, BackgroundColor, FontColor, FontSizes } from '@/styles/settings/var';
 /**
  * @date 2023/05/30
@@ -30,16 +30,16 @@ export const Container = styled.header`
 `;
 
 export const Navbar = styled.div`
-  ${gridBox}
+  ${GridBox}
   height: 4.5vw;
 
   ${media.tablet} { 
     height: 6vw;
-    ${gridBox({ gridTemplateColumns: '1fr 10vw' })}
+    ${GridBox({ gridTemplateColumns: '1fr 10vw' })}
 
   }
   ${media.phone} { 
-    ${gridBox({ gridTemplateColumns: '1fr 20vw' })}
+    ${GridBox({ gridTemplateColumns: '1fr 20vw' })}
   height:10vw;
   }
 

@@ -58,9 +58,9 @@ export const BorderBase = {
 };
 /// borderRadius|1|Radius|0
 export const BorderRadiusBase = {
-  bordeRadiusBase: `1.5625rem `,
+  bordeRadiusBase: `1.6vw `,
 
-  borderRadiusSmall: `.5rem `,
+  borderRadiusSmall: `0.5vw `,
 
   borderRadiusCircle: `50% `,
 

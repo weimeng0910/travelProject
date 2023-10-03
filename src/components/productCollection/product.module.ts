@@ -1,9 +1,28 @@
 import styled from 'styled-components';
 import { Button } from 'antd'
 import { HeartTwoTone } from '@ant-design/icons';
-import { BorderRadius, Font, gridBox, BaseShadow, Ellipsis } from '@/styles/tools/logicalMixins';
-import { BorderRadiusBase, BackgroundColor, FontColor, FontSizes, BaseBoxShadow } from '@/styles/settings/var'
+import {
+  BorderRadius,
+  Font,
+  GridBox,
+  BaseShadow,
+  Ellipsis,
+  Padding,
+  Margin,
+  Border,
+  FlexBox,
+  Absolute
+} from '@/styles/tools/logicalMixins';
+import {
+  BorderRadiusBase,
+  BackgroundColor,
+  FontColor,
+  FontSizes,
+  BaseBoxShadow,
+  ZIndex
+} from '@/styles/settings/var'
 import media from "@/styles/tools/media";
+
 /**
  * @date 2023/09/04
  * @description ProductCollection Css
@@ -27,92 +46,86 @@ export const Container = styled.div`
  * text
 */
 export const TitleBox = styled.div`
-  display: grid;
-  grid-template-columns:1fr 1fr 5vw;
+  ${GridBox({ gridTemplateColumns: '1fr 1fr 5vw' })}
   align-items: center;
   ${BorderRadius({ all: BorderRadiusBase.borderRadiusSmall })};
   background-color:${BackgroundColor.backgroundColorprimary};
   width: 100%;
   height: 8vw;
   ${media.desktop} {
-   grid-template-columns:30vw 1fr 10vw;
+   ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })}
    height: 8vw;
   }
 
   ${media.tablet} {
-   grid-template-columns:30vw 1fr 10vw;
+   ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })}
    height: 10vw;
   }
 
   ${media.phone} {
     height: 10vw;
-    
   }
 `;
 
 export const TripText = styled.div`
   display: flex;
   ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXL, fontWeight: 'bold' })};
-  margin: auto ;
-  padding-right: 2vw;
-  border-right: .0313rem solid #fff; 
-  box-shadow: .0625rem 0 .0625rem -0.0625rem #000;
+  ${Margin({ all: 'auto' })};
+  ${Padding({ right: '2vw' })};
+  ${Border({ right: '.0667vw solid #fff' })}
+  ${BaseShadow('.0625rem 0 .0625rem -0.0625rem #000')}
+  
   ${media.tablet} {
-
-  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeS, fontWeight: 'bold' })};
+    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeS, fontWeight: 'bold' })};
 }
   ${media.phone} {
-
-  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeS, fontWeight: 'bold' })};
+    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeS, fontWeight: 'bold' })};
 }
   `;
 
 export const DescribeText = styled.div`
-  
-  font-size: 1.2vw;
-  color: #fff;
-  margin:0 2.6667vw 0 0;
+
+  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeK })}
+  ${Margin({ right: '2.6667vw' })}
   ${media.desktop} {
     width: 80%;
-    margin:0 1vw 0 0;
-    ${Ellipsis({ webkitLinCclamp: '2' })}
+    ${Margin({ right: '1vw' })}
+    ${Ellipsis({ webkitLinCclamp: '2' })};
   }
   ${media.tablet} {
     width: 80%;
-    margin:0 1vw 0 0;
-    ${Ellipsis({ webkitLinCclamp: '2' })}
+    ${Margin({ right: '1vw' })}
+    ${Ellipsis({ webkitLinCclamp: '2' })};
   }
   ${media.phone} {
     width: 80%;
-    margin:0 1vw 0 0;
-    ${Ellipsis({ webkitLinCclamp: '2' })}
+    ${Margin({ right: '1vw' })}
+    ${Ellipsis({ webkitLinCclamp: '2' })};
   }
   `;
 
 export const MoreText = styled.div`
   display: flex;
-  font-size: 1.5vw;
-  margin: auto ;
-  padding-right: 2vw;
-  color: #fff;
+  ${Margin({ all: 'auto' })}
+  ${Padding({ right: '2vw' })}
+  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeK })}
   
   `;
 /**
  * goods
 */
 export const HotGoodsBox = styled.div`
-  ${gridBox({ gridColumnGap: '1vw' })}
-  align-items: center;
+  ${GridBox({ gridColumnGap: '1vw' })}
   width: 100%;
   `;
 
 export const ProductBox = styled.div`
   display: grid;
-  position: relative;
   grid-template-rows:2fr 1fr;
-  margin-top: 2vw;
+  position: relative;
   width: 100%;
-  border-radius: 1.6vw;
+  ${Margin({ top: '2vw' })};
+  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
   cursor: pointer;
   height: 19vw;
   transition:all .3s;
@@ -129,26 +142,22 @@ export const ProductBox = styled.div`
     }
 
   ${media.tablet} {
-    margin-top: 3vw;
+    ${Margin({ top: '3vw' })};
   }
 
   ${media.phone} {
-    margin-top: 4vw;
+   ${Margin({ top: '4vw' })};
   }
 `;
 
 export const HotGoodsImg = styled.div` 
-  border-radius: 1.6vw 1.6vw 0 0;
-  background-color: #fff;
+  background-color: ${BackgroundColor.backgroundColorFourth};
   `;
 
 export const Img = styled.img`
-  display: flex;
-  border-radius: 1.6vw 1.6vw 0 0;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
- 
+  ${FlexBox({ spacing: 'center' })}
+  ${BorderRadius({ topLeft: BorderRadiusBase.bordeRadiusBase, topRight: BorderRadiusBase.bordeRadiusBase })};
+  ${Margin({ y: '0', x: 'auto' })}
   width: 100%;
   height:16vw;
   ${media.tablet} {
@@ -163,19 +172,14 @@ export const Img = styled.img`
 `;
 
 export const Hot = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 1.25vw;
-  right: 1.25vw;
+  ${FlexBox({ spacing: 'center' })}
+  ${Absolute({ top: '1.25vw', right: '1.25vw' })}
   width: 2.5vw;
   height:2.5vw;
-  z-index: 1;
-  border-radius: 50%;   
-  background-color:#16A085;
+  z-index: ${ZIndex.indexNormal};
+  ${BorderRadius({ all: BorderRadiusBase.borderRadiusCircle })};  
+  background-color:${BackgroundColor.backgroundColorprimary};
   border: 0 solid palevioletred;
-  opacity:0.6;
 
   ${media.tablet} {
     width: 3vw;
@@ -190,22 +194,22 @@ export const Hot = styled.button`
   `;
 
 export const Heart = styled(HeartTwoTone)`
-  font-size: 1.8vw;
+ 
+  ${Font({ size: FontSizes.sizeM })}
 
   `;
 export const Buttondisplay = styled(Button)`
-  
-  margin: .5vw; 
+
+ ${Margin({ all: '.5vw' })}
  ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeJ, fontWeight: 'bold' })};
  
   `;
 export const HotGoodsWord = styled.div`
 
   text-align: center;
-  
-  border-radius: 0 0 1.6vw 1.6vw; 
+  ${BorderRadius({ bottomLeft: BorderRadiusBase.bordeRadiusBase, bottomRight: BorderRadiusBase.bordeRadiusBase })}; 
   ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeK })};
-  background-color: #fff;
+  background-color:${BackgroundColor.backgroundColorFourth};
   ul {
     margin: 0;
     padding: 0;  
@@ -223,7 +227,7 @@ export const HotGoodsWord = styled.div`
   }
   ul li:first-child{
     width: 90%;
-    
+    ${Margin({ top: '.5vw' })}
     ${Ellipsis({ webkitLinCclamp: '1' })}
   };
   ul li:nth-child(2){

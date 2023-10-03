@@ -81,15 +81,19 @@ export const CarouseImg = styled.img`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width:100%;
+  width:18vw;
+  height: 12vw;
+  overflow: hidden !important;
   border-radius: 1.5vw;
   ${media.tablet} {
    
    width:20vw;
+   height: 16vw;
    }
  ${media.phone} {
    
   width:27vw;
+  height: 16vw;
   }
 
 `

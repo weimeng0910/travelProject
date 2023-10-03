@@ -1,4 +1,6 @@
 import { css } from 'styled-components';
+import { checkFlexGapSupported } from './checkFlexGapSupported'
+
 
 /* font
 ----------------------- */
@@ -22,14 +24,13 @@ export const BaseShadow = (value: string) => `
   box-shadow: ${value};
 `;
 
-
-interface IRem {
+interface IVw {
   size?: number;
   base?: number;
 }
-export const rem = ({ size, base = 16 }: IRem) => `
+export const vw = ({ size, base = 750 }: IVw) => `
   font-size: ${size}px;
-  font-size: calc(${size! / base} * 1rem);
+  font-size: calc(${size! / base} * 100vw);
 `;
 
 /* Border
@@ -66,40 +67,7 @@ export const Border = ({
   }
 `;
 
-interface IBorderRadius {
-  all?: string;
-  bottomLeft?: string;
-  bottomRight?: string;
-  topLeft?: string;
-  topRight?: string;
-}
 
-export const BorderRadius = ({
-  all,
-  bottomLeft = all,
-  bottomRight = all,
-  topLeft = all,
-  topRight = all,
-}: IBorderRadius) => css`
-  border-end-end-radius: ${bottomRight};
-  border-end-start-radius: ${bottomLeft};
-  border-start-end-radius: ${topRight};
-  border-start-start-radius: ${topLeft};
-  @supports not (border-end-end-radius: 1px) {
-    border-bottom-left-radius: ${bottomLeft};
-    border-bottom-right-radius: ${bottomRight};
-    border-top-left-radius: ${topLeft};
-    border-top-right-radius: ${topRight};
-  }
-`;
-interface BorderProps {
-  borderWidthBase: string;
-  borderStyleBase: string;
-  borderColorBase: string;
-}
-export const borderBase = ({ borderWidthBase, borderStyleBase, borderColorBase }: BorderProps) => css`
-    border-style: ${borderWidthBase} ${borderStyleBase} ${borderColorBase};
-  `;
 /* Margin
 ----------------------- */
 export const Margin = ({
@@ -144,6 +112,41 @@ export const Padding = ({
     padding-top: ${top};
   }
 `;
+interface IBorderRadius {
+  all?: string;
+  bottomLeft?: string;
+  bottomRight?: string;
+  topLeft?: string;
+  topRight?: string;
+}
+
+export const BorderRadius = ({
+  all,
+  bottomLeft = all,
+  bottomRight = all,
+  topLeft = all,
+  topRight = all,
+}: IBorderRadius) => css`
+  border-end-end-radius: ${bottomRight};
+  border-end-start-radius: ${bottomLeft};
+  border-start-end-radius: ${topRight};
+  border-start-start-radius: ${topLeft};
+  @supports not (border-end-end-radius: 1px) {
+    border-bottom-left-radius: ${bottomLeft};
+    border-bottom-right-radius: ${bottomRight};
+    border-top-left-radius: ${topLeft};
+    border-top-right-radius: ${topRight};
+  }
+`;
+interface BorderProps {
+  borderWidthBase: string;
+  borderStyleBase: string;
+  borderColorBase: string;
+}
+export const borderBase = ({ borderWidthBase, borderStyleBase, borderColorBase }: BorderProps) => css`
+    border-style: ${borderWidthBase} ${borderStyleBase} ${borderColorBase};
+  `;
+
 /* Position
 ----------------------- */
 interface IPosition {
@@ -219,6 +222,27 @@ export const Size = ({
     width: ${width};
   }
 `;
+/* Center
+----------------------- */
+interface ICenter {
+  position?: string,
+
+  left?: string | number;
+  top?: string | number;
+  transform?: string
+}
+export const Center = ({
+  position = 'absolute',
+  top = '50%',
+  left = '50%',
+  transform = 'translate(-50%, -50%)'
+}: ICenter) => css`
+ position: ${position};
+ top:${top};
+ left:${left};
+ transform: ${transform};
+
+`;
 /* GridBox
 ----------------------- */
 interface IGridBox {
@@ -227,7 +251,7 @@ interface IGridBox {
   gridColumnGap?: string
 }
 
-export const gridBox = ({
+export const GridBox = ({
   display = "grid",
   gridTemplateColumns = "1fr 1fr 1fr",
   gridColumnGap = ".5vw"
@@ -235,6 +259,26 @@ export const gridBox = ({
   display: ${display};
   grid-template-columns: ${gridTemplateColumns};
   grid-column-gap: ${gridColumnGap};
+`;
+
+/* FlexBox
+----------------------- */
+interface IFlexBox {
+  display?: string,
+  direction?: string,
+  spacing?: string,
+  alignment?: string,
+}
+export const FlexBox = ({
+  display = 'flex',
+  direction = 'row',
+  spacing = 'space - between',
+  alignment = 'center'
+}: IFlexBox) => css`
+  display: ${display};
+  flex-direction:${direction};
+  justify-content:${spacing};
+  align-items: ${alignment};
 `;
 /* Ellipsis
 ----------------------- */
@@ -255,7 +299,54 @@ export const Ellipsis = ({
    overflow: ${overflow};
    -webkit-box-orient:${webkitBoxOrient};
    -webkit-line-clamp:${webkitLinCclamp}
-`
+`;
+
+/* flexGapPolyfill
+----------------------- */
+export const flexGapPolyfill = (gap: string) => {
+  return css`
+    margin-left: -${gap};
+    margin-top: -${gap};
+
+    & > * {
+      margin-left: ${gap};
+      margin-top: ${gap};
+    }
+  `;
+};
+
+export const flexGap = (gap: string) => {
+  if (checkFlexGapSupported()) {
+    return css`
+      gap: ${gap};
+    `;
+  }
+
+  return flexGapPolyfill(gap);
+};
+/* Absolute
+----------------------- */
+interface IAbsolute {
+  position?: string,
+  top?: string | number;
+  right?: string | number;
+  bottom?: string | number;
+  left?: string | number;
+}
+export const Absolute = ({
+  position = 'absolute',
+  top = 'auto',
+  right = 'auto',
+  bottom = 'auto',
+  left = 'auto'
+}: IAbsolute) => css`
+  position: ${position};
+  top: ${top};;
+  right:${right};;
+  bottom:${bottom};;
+  left:${left};
+  `;
+
 export default {
   Font,
   Border,
