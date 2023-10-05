@@ -182,6 +182,24 @@ export const Position = ({ top, right, bottom, left }: IPosition) => css`
     right: ${right};
   }
 `;
+/* width and height
+----------------------- */
+interface IWH {
+  all?: string | number;
+  width?: string | number;
+  height?: string | number;
+
+}
+export const WH = ({
+  all = '',
+  width = all,
+  height = all,
+
+}: IWH) => css`
+ width: ${width};
+ height:${height};
+`;
+
 /* Size
 ----------------------- */
 interface ISize {
@@ -240,7 +258,7 @@ export const Center = ({
  position: ${position};
  top:${top};
  left:${left};
- transform: ${transform};
+ transform: ${transform};//在 CSS 中将元素居中
 
 `;
 /* GridBox
@@ -268,17 +286,29 @@ interface IFlexBox {
   direction?: string,
   spacing?: string,
   alignment?: string,
+  flexWrap?: string,
+  alignContent?: string
 }
 export const FlexBox = ({
   display = 'flex',
   direction = 'row',
-  spacing = 'space - between',
-  alignment = 'center'
+  spacing = 'center',
+  alignment = 'center',
+  flexWrap,
+  alignContent
 }: IFlexBox) => css`
+
   display: ${display};
+  /* flex-direction 属性指定了弹性子元素在父容器中的位置。 */
   flex-direction:${direction};
+  /* 内容对齐（justify-content）
+  属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。 */
   justify-content:${spacing};
+  /* align-items 设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式。 */
   align-items: ${alignment};
+  flex-wrap: ${flexWrap};
+  /* align-content 适用于多行（换行）的情况，单行无效 */
+  align-content:${alignContent};
 `;
 /* Ellipsis
 ----------------------- */
@@ -345,6 +375,37 @@ export const Absolute = ({
   right:${right};;
   bottom:${bottom};;
   left:${left};
+  `;
+/*Transition
+----------------------- */
+interface ITransition {
+  properties?: string,
+  type?: string;
+  time?: string;
+
+}
+export const Transition = ({
+  properties,
+  type = "linear",
+  time = "0.25s"
+}: ITransition) => css`
+    transition: ${time} ${type};
+    /* transition-property 指定应用过渡属性的名称 */
+    transition-property: ${properties};
+    will-change: ${properties};
+  `;
+
+/*DisabledStyle
+----------------------- */
+
+interface IDisabledStyle {
+  disabled?: boolean,
+}
+export const DisabledStyle = ({ disabled = false }: IDisabledStyle) => css`
+    /* opacity 属性指定了一个元素的不透明度 */
+    opacity: ${disabled ? 0.6 : ""};
+    /* 鼠标 */
+    cursor: ${disabled && `default`};
   `;
 
 export default {

@@ -72,7 +72,7 @@ export const Container = styled.div`
    }
  ${media.phone} {
    margin-top: 4vw;
-  width:95vw;
+   width:95vw;
   }
  
 `;
@@ -113,7 +113,7 @@ export const CarouseTitle = styled.div`
   text-overflow:ellipsis;
   white-space:nowrap;
   ${media.tablet} {
-    margin-bottom: 4vw;
+    margin-bottom: 6vw;
    
   }
     ${media.phone} {
@@ -136,7 +136,7 @@ export const CarouseKommentar = styled.div`
   text-overflow:ellipsis;
   white-space:nowrap;
   ${media.tablet} {
-    margin-bottom: 1.8vw;
+    margin-bottom: 2vw;
    
   }
 

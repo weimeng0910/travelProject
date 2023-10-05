@@ -38,14 +38,14 @@ export const Main = styled.main<VisibleProps>`
  ${media.tablet} {
    
     margin-top:${(props: VisibleProps) =>
-    props.visible ? "43vw" : "3vw"};;
+    props.visible ? "43vw" : "2vw"};;
     
   }
   /* iphone6 7 8 plus */
   ${media.phone} {
    
     margin-top:${(props: VisibleProps) =>
-    props.visible ? "100vw" : "10vw"};
+    props.visible ? "100vw" : "6vw"};
     
   }
 

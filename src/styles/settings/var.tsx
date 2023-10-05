@@ -47,6 +47,8 @@ export const BackgroundColor = {
   backgroundColorTertiary: `#F5F6FA `,
   backgroundColorFourth: `#FFF `,
   backgroundColorGrey: `#7f8c8d `,
+  backgroundColorLightGrey: `#FAFAFA `,
+  backgroundColorFifrtary: `#F5FAF8`,
 };
 /* Border
 ----------------------- */

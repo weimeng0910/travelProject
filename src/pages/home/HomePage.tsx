@@ -3,16 +3,18 @@ import {
   Container,
   MenuLayout,
   MainLayout,
-  FontBox,
+  WordBox,
   CarouselBox,
   InnerH3,
   SearchlBox,
   HotGoodslBox,
+  DateSearchBox,
 } from './HomePage.module';
 import { SideMenu } from '@/components/sideMenu';
 import { SearchPanel } from '@/components/serchPanel';
 import { SwiperPage } from '@/components/Swiper';
 import { ProductCollection } from '@/components/productCollection';
+import { DateSearch } from '@/components/dateSearch';
 import { useGoods } from '@/utils'; //data
 /**
  * @date 2023/05/30
@@ -26,9 +28,9 @@ export const HomePage: FC = () => {
     <Container>
       <MenuLayout>
         <SideMenu />
-        <FontBox>
+        <WordBox>
           <InnerH3>Here to help keep you on the move</InnerH3>
-        </FontBox>
+        </WordBox>
       </MenuLayout>
 
       <MainLayout>
@@ -42,6 +44,9 @@ export const HomePage: FC = () => {
         <HotGoodslBox>
           <ProductCollection hotGoodsData={goodsList?.data.hotGoodsList || []} />
         </HotGoodslBox>
+        <DateSearchBox>
+          <DateSearch />
+        </DateSearchBox>
       </MainLayout>
     </Container>
   );

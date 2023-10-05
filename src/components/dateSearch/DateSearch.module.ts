@@ -13,6 +13,10 @@ import {
   FlexBox,
   Absolute,
   WH,
+  Size,
+  Transition,
+
+
 } from '@/styles/tools/logicalMixins';
 import {
   BorderRadiusBase,
@@ -21,7 +25,7 @@ import {
   FontSizes,
   BaseBoxShadow,
   ZIndex
-} from '@/styles/settings/var';
+} from '@/styles/settings/var'
 import media from "@/styles/tools/media";
 
 /**
@@ -30,31 +34,70 @@ import media from "@/styles/tools/media";
  */
 
 export const Container = styled.div`
-  ${FlexBox({ direction: 'column', flexWrap: 'nowrap' })}
-`;
+  ${WH({ width: '100%', height: '4vw' })}
+  ${Margin({ all: '0' })};
+  ${Padding({ all: '0' })}; 
+  background-color:${BackgroundColor.backgroundColorFifrtary};
+  ul{
+    display: inline-block;
+    ${Margin({ all: '0' })};
+    ${Padding({ all: '0' })}; 
+  }
+
+  ul li{
+    float: right;
+    ${Margin({ top: '0.2vw', bottom: '0', left: '0', right: '-3.1vw' })}
+    ${Padding({ all: '0.31vw' })};
+    ${BorderRadius({ all: '3.12vw' })}
+    background-color:${BackgroundColor.backgroundColorFifrtary};
+    ${Transition({ properties: 'all', time: '0.2s' })};
+    cursor: pointer;
+    
+  }
+  ul li:last-child span{
+    display: block;
+    overflow: hidden;
+    ${Size({ minWidth: '4.5vw' })}
+    ${WH({ all: '4.5vw' })}
+    background-color: #e8e8e8;
+    text-align: center;
+    line-height: 4.5vw;
+    ${BorderRadius({ all: '3.12vw' })}
+    ${Transition({ properties: 'all', time: '0.2s' })};
+    box-sizing: border-box;
+    
+   
+   
+}   
+  ul li:not(:last-child) span{
+    display: block;
+    overflow: hidden;
+    padding: 0 2.1vw 0 3.25vw;
+    background-color:${BackgroundColor.backgroundColorFourth};
+    text-align: center;
+    line-height: 4.5vw;
+    box-sizing: border-box;
+    ${Transition({ properties: 'all', time: '0.2s' })}
+    ${Size({ minWidth: '4.5vw' })};
+    ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeK, fontWeight: 'bold' })};
+    ${WH({ width: '17vw', height: '4.5vw' })};
+    ${BorderRadius({ all: '3.12vw' })};
+    
+    &:hover {
+    ${WH({ width: '20vw' })}
+    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeK, fontWeight: 'bold' })};
+    background-color: #77c2a5;
+    ${BaseShadow(BaseBoxShadow.boxShadowBase)}
+    
+}
+
+  }
+`
 /**
- * text
+ * Icon
 */
-export const TitleBox = styled.div`
-  ${GridBox({ gridTemplateColumns: '1fr 1fr 5vw' })}
-  align-items: center;
-  ${BorderRadius({ all: BorderRadiusBase.borderRadiusSmall })};
-  background-color:${BackgroundColor.backgroundColorprimary};
-  ${WH({ width: '100%', height: '8vw' })};
-  ${media.desktop} {
-   ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })};
-   ${WH({ height: '8vw' })};
-  }
 
-  ${media.tablet} {
-   ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })}
-   ${WH({ height: '10vw' })};
-  }
 
-  ${media.phone} {
-   ${WH({ height: '10vw' })};
-  }
-`;
 
 export const TripText = styled.div`
   display: flex;
@@ -112,6 +155,7 @@ export const ProductBox = styled.div`
   display: grid;
   grid-template-rows:2fr 1fr;
   position: relative;
+  ${WH({ width: '100%', height: '19vw' })};
   ${Margin({ top: '2vw' })};
   ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
   cursor: pointer;
@@ -128,19 +172,17 @@ export const ProductBox = styled.div`
     }
     }
 
-  
+  ${media.tablet} {
+    ${Margin({ top: '3vw' })};
+  }
+
+  ${media.phone} {
+   ${Margin({ top: '4vw' })};
+  }
 `;
 
 export const HotGoodsImg = styled.div` 
   background-color: ${BackgroundColor.backgroundColorFourth};
-  ${WH({ width: '100%', height: '16vw' })};
-  
-  ${media.tablet} {
-    ${WH({ height: '18vw' })};
-  }
-  ${media.phone} {
-    ${WH({ height: '25vw' })}; 
-  }
   `;
 
 export const Img = styled.img`
@@ -148,12 +190,14 @@ export const Img = styled.img`
   ${BorderRadius({ topLeft: BorderRadiusBase.bordeRadiusBase, topRight: BorderRadiusBase.bordeRadiusBase })};
   ${Margin({ y: '0', x: 'auto' })}
   ${WH({ width: '100%', height: '16vw' })};
-
   ${media.tablet} {
-    ${WH({ height: '18vw' })};
+  ${WH({ height: '18vw' })};
+
   }
   ${media.phone} {
-    ${WH({ height: '25vw' })}; 
+    
+    ${WH({ height: '20vw' })};
+    
   }
 `;
 
@@ -194,7 +238,18 @@ export const HotGoodsWord = styled.div`
   ul {
     ${Padding({ all: '0' })};
     ${Margin({ all: '0' })};
+    ${WH({ height: '6vw' })};
 
+    ${media.tablet} {
+
+      ${WH({ height: '8vw' })};
+
+  }
+    ${media.phone} {
+   
+      ${WH({ height: '15vw' })};
+    
+  }
   }
   ul li:first-child{
     ${WH({ width: '90%' })};

@@ -1,4 +1,3 @@
-//import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import {
@@ -103,7 +102,7 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
 
           <HeaderCenter visible={visible}>
             <Links>
-              {menuList?.map(item => (
+              {menuList?.map((item) => (
                 <Link key={item.id} to={item.key}>
                   <Li key={nanoid()}>
                     <SpanIcon>{iconList[item.key]}</SpanIcon>
