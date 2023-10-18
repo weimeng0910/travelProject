@@ -1,14 +1,21 @@
+/*
+ * @Date: 2023-05-30 20:05:20
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-10-18 15:23:00
+ * @FilePath: /travelProject/src/components/sideMenu/sideMenu.module.ts
+ * @Description:SideMenu-css
+ */
 import styled from 'styled-components/macro';
 import { Menu } from 'antd';
 /**
- * @date 2023/05/30
- * @description SideMenu-css
+ * SideMenu-css
  */
 export const StyledMenu = styled(Menu)`
   margin-top: 10px;
   border-radius: 25px;
   width: 50%;
   background: #f9fbfb;
+  
   .ant-menu-submenu-title {
     color: #95a5a6;
     .ant-menu-submenu-arrow::before,

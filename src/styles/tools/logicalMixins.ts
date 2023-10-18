@@ -24,6 +24,8 @@ export const BaseShadow = (value: string) => `
   box-shadow: ${value};
 `;
 
+/* font-size
+----------------------- */
 interface IVw {
   size?: number;
   base?: number;
@@ -32,7 +34,15 @@ export const vw = ({ size, base = 750 }: IVw) => `
   font-size: ${size}px;
   font-size: calc(${size! / base} * 100vw);
 `;
+interface IEm {
+  size?: number;
+  base?: number;
+}
 
+
+export const Em = ({ size, base = 16 }: IEm) => `
+ font-size:${size! / base}em;
+`
 /* Border
 ----------------------- */
 
@@ -258,7 +268,7 @@ export const Center = ({
  position: ${position};
  top:${top};
  left:${left};
- transform: ${transform};//在 CSS 中将元素居中
+ transform: ${transform};
 
 `;
 /* GridBox
@@ -266,17 +276,23 @@ export const Center = ({
 interface IGridBox {
   display?: string,
   gridTemplateColumns?: string,
-  gridColumnGap?: string
+  gridTemplateRows?: string,
+  gridColumnGap?: string,
+  gridRowGap?: string
 }
 
 export const GridBox = ({
   display = "grid",
   gridTemplateColumns = "1fr 1fr 1fr",
-  gridColumnGap = ".5vw"
+  gridColumnGap = ".5vw",
+
+
+
 }: IGridBox) => css`
   display: ${display};
   grid-template-columns: ${gridTemplateColumns};
   grid-column-gap: ${gridColumnGap};
+
 `;
 
 /* FlexBox
@@ -316,19 +332,22 @@ interface IEllipsis {
   display?: string,
   overflow?: string,
   webkitBoxOrient?: string,
-  webkitLinCclamp?: string
+  webkitLinCclamp?: string,
+  textOverflow?: string
 }
 
 export const Ellipsis = ({
   display = "-webkit-box",
   overflow = "hidden",
   webkitBoxOrient = "vertical",
-  webkitLinCclamp = "1"
+  webkitLinCclamp = "1",
+  textOverflow = "ellipsis"
 }: IEllipsis) => css`
    display: ${display};
    overflow: ${overflow};
+   text-overflow:${textOverflow};
    -webkit-box-orient:${webkitBoxOrient};
-   -webkit-line-clamp:${webkitLinCclamp}
+   -webkit-line-clamp:${webkitLinCclamp};
 `;
 
 /* flexGapPolyfill
@@ -407,7 +426,69 @@ export const DisabledStyle = ({ disabled = false }: IDisabledStyle) => css`
     /* 鼠标 */
     cursor: ${disabled && `default`};
   `;
+/* Button
+----------------------- */
+interface IButtonStyle {
+  border?: string,
+  color?: string,
+  backgroundColor?: string,
+  padding?: string,
+  fontSize?: string,
+  cursor?: string,
+  display?: string,
+  hoverBackgroundColor?: string,
+  hoverColor?: string
+}
+export const Buttons = ({
+  border = 'none',
+  color,
+  backgroundColor = '#16A085',
+  padding,
+  fontSize = '1.6vw',
+  cursor = 'pointer',
+  display = 'inline - block',
+  hoverBackgroundColor,
+  hoverColor,
+}: IButtonStyle) => css`
+  border: ${border};
+  color: ${color};
+  background-color:  ${backgroundColor};
+  padding: ${padding};
+  font-size:  ${fontSize};
+  cursor:  ${cursor};
+  display:  ${display};
+  &:hover {
+    color:  ${hoverColor};
+    background-color: ${hoverBackgroundColor};
+  }
+  &:active {
+    background: ${hoverBackgroundColor};
+}
+`
+/*Iput
+----------------------------------------------------- */
 
+export const inputPlaceholder = (css: string) => {
+  return (`
+        &.placeholder { ${css} }
+        &:-moz-placeholder { ${css} }
+        &::-moz-placeholder { ${css} }
+        &:-ms-input-placeholder { ${css} }
+        &::-webkit-input-placeholder { ${css} }
+    `);
+}
+/*background-color
+----------------------------------------------------- */
+interface Colors {
+  color?: string;
+  hover?: string;
+}
+export const bgMixin = (color: Colors) => css`
+  background-color: ${color.color};
+  &:hover {
+    background-color: ${color.hover};
+  }
+`;
 export default {
   Font,
   Border,

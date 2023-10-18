@@ -1,8 +1,30 @@
 import styled from 'styled-components/macro';
 import media from "@/styles/tools/media";
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
-import { BaseShadow, Border, Margin, Font, GridBox } from '@/styles/tools/logicalMixins'
-import { BaseBoxShadow, BorderBase, BackgroundColor, FontColor, FontSizes } from '@/styles/settings/var';
+import {
+  BorderRadius,
+  Font,
+  GridBox,
+  BaseShadow,
+  Padding,
+  Margin,
+  FlexBox,
+  Absolute,
+  WH,
+  Transition,
+  Border
+
+} from '@/styles/tools/logicalMixins';
+import {
+  BackgroundColor,
+  FontColor,
+  FontSizes,
+  BaseBoxShadow,
+  ZIndex,
+  BorderBase,
+  a11yHidden,
+  inlineBlock
+} from '@/styles/settings/var';
 /**
  * @date 2023/05/30
  * @description Header-css
@@ -10,46 +32,43 @@ import { BaseBoxShadow, BorderBase, BackgroundColor, FontColor, FontSizes } from
 
 export const Container = styled.header`
   grid-area: header;
-  z-index: 7;
-  width: 100%;
-  margin: auto ;
-  align-items: center;
-  background-color: ${BackgroundColor.backgroundColorFourth};
+  ${ZIndex.indexTop};
+  ${Margin({ all: 'auto' })}
+  ${WH({ width: '100%', height: '4.5vw' })}
+  ${BackgroundColor.backgroundColorFourth};
   ${Border({ bottom: BorderBase.borderPrimary })}
   ${BaseShadow(BaseBoxShadow.boxShadowBase)}
-
   ${media.tablet} {
-   width: 100%;
-   height:6vw;
+    ${WH({ width: '100%', height: '6vw' })}
   }
   ${media.phone} {
-   width: 100%;
-   height:10vw;
+     ${WH({ width: '100%', height: '10vw' })}
   }
-
 `;
 
 export const Navbar = styled.div`
-  ${GridBox}
-  height: 4.5vw;
-
+  ${GridBox({ gridTemplateColumns: '12vw 1fr 12vw' })};
+  ${WH({ width: '76.625vw', height: '4.5vw' })};
+  ${Margin({ x: 'auto', y: '0' })}
+  ${media.desktop} { 
+    ${WH({ width: '98vw', height: '4.5vw' })}
+   
+  }
   ${media.tablet} { 
-    height: 6vw;
+
+    ${WH({ width: '100vw', height: '6vw' })}
     ${GridBox({ gridTemplateColumns: '1fr 10vw' })}
 
   }
   ${media.phone} { 
     ${GridBox({ gridTemplateColumns: '1fr 20vw' })}
-  height:10vw;
+    ${WH({ width: '100vw', height: '10vw' })}
   }
 
 `;
 
 export const HeaderLeft = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  ${FlexBox}
   &:hover {
       cursor: pointer;
       color: hotpink; 
@@ -59,14 +78,14 @@ export const HeaderLeft = styled.div`
      ${Margin({ left: '5vw' })}
   }
   ${media.phone} { 
-     text-align:left;
+     /*text-align:left;*/
      ${Margin({ left: '5vw' })}
   }
 `;
 
 export const LogoBox = styled.div`
   display: flex;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
   ${media.tablet} {
      ${Margin({ right: 'auto' })}
      ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
@@ -78,36 +97,32 @@ export const LogoBox = styled.div`
 
 `;
 export const Logo = styled(Softwarelogo)`
-  width: 3vw;
-  height: 3vw;
-  
+  ${WH({ all: '3vw' })};
   ${media.tablet} {
-     width: 4vw;
-     height: 4vw;
+    ${WH({ all: '4vw' })};
     
   }
   ${media.phone} {
-     width: 5vw;
-     height: 5vw;
-    
+     ${WH({ all: '5vw' })}; 
   }
 
 `;
 export const MenuButton = styled.label`
-  display: none;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL })};
+  ${a11yHidden}
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, })};
   cursor: pointer;
   ${Margin({ all: 'auto' })}
 
   ${media.tablet} {
-    display: block;
+   
+    ${inlineBlock}
     ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL })};
 		cursor: pointer;
     
 
   }
  ${media.phone} {
-    display: block;  
+    ${inlineBlock}  
 		${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL })};
 		cursor: pointer;
   }
@@ -118,133 +133,107 @@ type VisibleProps = {
 }
 
 export const HeaderCenter = styled.div<VisibleProps>`
- 	display: flex;
   flex: 1;
-  justify-content:space-between;
-  align-items: center;
-
+  ${FlexBox({ spacing: 'space-between' })}
   ${media.tablet} {
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
     flex-flow:column;
-    margin-top:1rem;
+  
+
   }
   ${media.phone} {
     display: ${(props: VisibleProps) =>
     props.visible ? "block" : "none"};
     flex-flow:column;
-    margin-top:1rem;
-  } 
-`;
-
-
-export const HeaderRight = styled.div<VisibleProps>`
-  display: flex; 
-  justify-content: center;
-  align-content: center;
-  ${media.tablet} {
-    position: absolute;
-    left: 5vw;
-    top: 42vw;
-    display: ${(props: VisibleProps) =>
-    props.visible ? "block" : "none"};
-  }
-  ${media.phone} {
-    position: absolute;
-    left: 6vw;
-    top: 84vw;
-    display: ${(props: VisibleProps) =>
-    props.visible ? "block" : "none"};
-  }
-`;
-export const Links = styled.ul`
-  display: flex;
-  justify-content:space-between;
-  margin: 0;
-  padding: 0;
-  flex: 1 1 auto;
- 
-  ${media.tablet} {
-    flex-direction: column;
-
-		justify-content: center;
-    align-items: flex-start;
-    ${Margin({ left: '5vw' })}
-  }
- ${media.phone} {
-    flex-direction: column;
-		justify-content: center;
    
-     ${Margin({ left: '5vw' })}
-  }
+  } 
+  ul{
+    ${FlexBox({ spacing: 'space-between' })}
+    ${Margin({ all: '0' })}
+    ${Padding({ all: '0' })}
+    flex: 1 1 auto;
 
-`;
+    ${media.tablet} {
 
-export const Li = styled.li`
-  display: flex;
- 
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeS, fontWeight: 'bold' })};
-  line-height: 3vw;//3倍字高
-  
-  text-align: center;//文本居中
+      ${FlexBox({ direction: 'column', alignment: 'flex-start' })}
+      ${Margin({ left: '5vw', top: '4vw' })}
+    }
+    ${media.phone} {
 
-  position: relative;
-  
-  margin:0;
-/* 下划线出现动画  */
-  line-height: 3vw;//3倍字高
-  transition: 0.2s all linear;
-    &::before {
+    ${FlexBox({ direction: 'column', alignment: 'flex-start' })}
+    ${Margin({ left: '5vw', top: '8vw' })}
+    ${Transition({ properties: '0.6s all linear' })}
+    }
+    li{
+      display: flex;
+      position: relative;
+      ${Margin({ y: '0', x: '1vw' })}
+      ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })};
+       /* 下划线出现动画  */
+      line-height: 2vw;
+      ${Transition({ properties: '0.2s all linear' })}
+      &::before {
             content: "";
-            position: absolute;
-            top: 0;
-            left: 40%;
-            width: 0;
-            height: 100%;
+            ${Absolute({ top: '0', left: '40%' })}
+            ${WH({ width: '0', height: '100%' })}
             ${Border({ bottom: BorderBase.borderFourth })}
-            transition: 0.2s all linear;
+            ${Transition({ properties: '0.2s all linear' })}
         }
         &:hover{
            color: #95a5a6;
-         ::before {
+          ::before {
             width: 100%;
             top: 0;
             left: 0;
             transition-delay: 0.1s;
             border-bottom-color: #2ecc71;
             
+          }
         }
+        ${media.tablet} {
+            
+            ${Margin({ y: '0.5vw', x: '0' })};
+         }
+        ${media.phone} {
+		       ${Margin({ y: '0.5vw', x: '0' })} ;
+           line-height: 5vw;
+        }
+        span{
+            ${Margin({ right: '0.7vw' })}
+            ${media.phone} {
+ 
+	           margin: 0 .4vw;
+             ${Margin({ x: '0.4vw', y: '0.4vw' })}
+            }
+  
+         }
+      }
   }
+`;
+
+
+export const HeaderRight = styled.div<VisibleProps>`
+  ${FlexBox({ spacing: 'center' })}
   ${media.tablet} {
-
-		margin: 8px, 0;
-
+    ${Absolute({ top: '26vw', left: '5vw' })}
+    display: ${(props: VisibleProps) =>
+    props.visible ? "block" : "none"};
   }
   ${media.phone} {
+    ${Absolute({ top: '54vw', left: '5vw' })}
+    display: ${(props: VisibleProps) =>
+    props.visible ? "block" : "none"};
     
-		margin: 8px, 0;
-   
   }
-  
 `;
 
-export const SpanIcon = styled.span`
-  display: block;
-  margin: 0 auto; 
-  margin-right: 10px;
-  
-  ${media.phone} {
 
-	margin: 0 5px;
 
-  }
-  
-`;
 export const UserRegister = styled.div`
-  display: flex;
-  align-items: center;
-  border-radius: .64vw;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeS, fontWeight: 'bold' })}
+  ${FlexBox({ alignment: 'center' })};
+  ${BorderRadius({ all: '.64vw' })};
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })};
   
  
 

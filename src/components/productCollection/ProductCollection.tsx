@@ -1,6 +1,12 @@
+/*
+ * @Date: 2023-09-04 18:36:34
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-10-18 12:08:07
+ * @FilePath: /travelProject/src/components/productCollection/ProductCollection.tsx
+ * @Description: ProductCollection
+ */
 import React from 'react';
 import { IHotGoods } from '@/types/goods';
-import { Button } from 'antd';
 import {
   Container,
   TitleBox,
@@ -15,10 +21,10 @@ import {
   Heart,
   Buttondisplay,
   Img,
+  HotGoodsSpan,
 } from './product.module';
 /**
- * @date 2023/09/04
- * @description ProductCollection
+ * ProductCollection
  */
 
 export const ProductCollection: React.FC<{ hotGoodsData: IHotGoods[] }> = ({ hotGoodsData }) => {
@@ -43,7 +49,7 @@ export const ProductCollection: React.FC<{ hotGoodsData: IHotGoods[] }> = ({ hot
                 <Hot>
                   <Heart rev={undefined} />
                 </Hot>
-                <HotGoodsWord>
+                <HotGoodsWord id="HotGoodsWord">
                   <ul>
                     <li>{item.name}</li>
 
@@ -53,6 +59,7 @@ export const ProductCollection: React.FC<{ hotGoodsData: IHotGoods[] }> = ({ hot
                       <Buttondisplay>Add to Cart</Buttondisplay>
                     </li>
                   </ul>
+                  <HotGoodsSpan id="Hotspan">view</HotGoodsSpan>
                 </HotGoodsWord>
               </ProductBox>
             );

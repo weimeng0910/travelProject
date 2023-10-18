@@ -1,6 +1,9 @@
-/**
- * @date 2023/06/13
- * @description CSS Public Variable
+/*
+ * @Date: 2023-09-12 12:11:40
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-10-18 10:18:57
+ * @FilePath: /travelProject/src/styles/settings/var.tsx
+ * @Description: CSS Public Variable
  */
 
 /* Color
@@ -9,6 +12,7 @@ export const Color = {
   colorPamary: `#16A085`,
   colorWhite: `#ffffff`,
   colorBlack: `#000`,
+  colorLightGreen: `#00AA6C`,
 };
 
 export const FontColor = {
@@ -20,23 +24,23 @@ export const FontColor = {
 
 /* Font
 ----------------------- */
-interface IVw {
+interface IEm {
   size?: number;
   base?: number;
 }
-const vw = ({ size, base = 750 }: IVw) => `
+const Em = ({ size, base = 16 }: IEm) => `
   font-size: ${size}px;
-  font-size: calc(${size! / base} * 100vw);
+  font-size: ${size! / base}em;
 `;
 export const FontSizes = {
-  sizeJ: vw({ size: 8 }),
-  sizeK: vw({ size: 10 }),
-  sizeS: vw({ size: 12 }),
-  sizeM: vw({ size: 14 }),
-  sizeL: vw({ size: 16 }),
-  sizeXL: vw({ size: 18 }),
-  sizeXXL: vw({ size: 20 }),
-  sizeXXXL: vw({ size: 30 }),
+  sizeJ: Em({ size: 8 }),
+  sizeK: Em({ size: 10 }),
+  sizeS: Em({ size: 12 }),
+  sizeM: Em({ size: 14 }),
+  sizeL: Em({ size: 16 }),
+  sizeXL: Em({ size: 18 }),
+  sizeXXL: Em({ size: 20 }),
+  sizeXXXL: Em({ size: 30 }),
 };
 
 /* Background
@@ -83,4 +87,16 @@ export const ZIndex = {
   indexNormal: `1 !default`,
   indexTop: `1000 !default`,
   indexPopper: `2000 !default`,
+};
+
+/* Hide elements from all users.
+-------------------------------- */
+export const a11yHidden = {
+  display: `none`,
+};
+
+/* Display inline block cross browser
+-------------------------------------*/
+export const inlineBlock = {
+  display: `block`,
 };

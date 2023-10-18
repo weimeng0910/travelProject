@@ -14,6 +14,7 @@ import {
   BorderRadiusBase,
   BackgroundColor,
   BaseBoxShadow,
+  a11yHidden
 } from '@/styles/settings/var';
 
 /**
@@ -22,9 +23,9 @@ import {
  */
 
 export const Container = styled.div`
-  ${FlexBox};
+  ${FlexBox({ alignment: 'flex-start' })};
   ${WH({ width: '100vw' })};
- 
+  ${Margin({ x: 'auto' })}
 `;
 /**
  * Menu
@@ -32,25 +33,25 @@ export const Container = styled.div`
 export const MenuLayout = styled.div`
   ${Margin({ left: '1.3vw' })};
   ${Padding({ x: '2.1vw', y: '1.8vw' })}
-  ${WH({ height: '160vw' })};
+  ${WH({ width: '22vw' })};
   ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}
   background-color:${BackgroundColor.backgroundColorTertiary};
   ${media.tablet} {
-     display: none;
+     ${a11yHidden}
   }
   ${media.phone} {
-     display: none;
+     ${a11yHidden}
   }
 `;
 export const WordBox = styled.div`
-    ${WH({ width: '20vw', height: '33.3333vw' })};
+    ${WH({ width: '19vw', height: '33.3333vw' })};
     background: red;
     cursor: pointer;
+
 
     ${Transition({ properties: 'all', time: '0.4s' })};
     &:hover {
       transform: translate(0,-0.625rem);
-     
       ${BaseShadow(BaseBoxShadow.boxShadowDark)}
        
        }
@@ -100,7 +101,7 @@ export const SearchlBox = styled.div`
 export const CarouselBox = styled.div`
    ${FlexBox};
    ${WH({ height: '18vw' })};
-   ${Margin({ all: '0' })};
+   ${Margin({ y: '1vw', })};
    ${media.tablet} {
     ${WH({ height: '23vw' })};
   }

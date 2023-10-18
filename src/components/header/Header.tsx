@@ -19,9 +19,6 @@ import {
   HeaderLeft,
   HeaderCenter,
   HeaderRight,
-  Links,
-  SpanIcon,
-  Li,
   UserRegister,
   MenuButton,
   LogoBox,
@@ -90,7 +87,7 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
   return (
     <>
       <Container>
-        <Navbar gridTemplateColumns={'20vw auto 20vw'}>
+        <Navbar>
           <HeaderLeft>
             <Logo onClick={resetRoute} />
             <LogoBox onClick={resetRoute}>Travenly</LogoBox>
@@ -101,16 +98,16 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
           </MenuButton>
 
           <HeaderCenter visible={visible}>
-            <Links>
+            <ul>
               {menuList?.map((item) => (
                 <Link key={item.id} to={item.key}>
-                  <Li key={nanoid()}>
-                    <SpanIcon>{iconList[item.key]}</SpanIcon>
+                  <li key={nanoid()}>
+                    <span>{iconList[item.key]}</span>
                     {item.label}
-                  </Li>
+                  </li>
                 </Link>
               ))}
-            </Links>
+            </ul>
           </HeaderCenter>
           <HeaderRight visible={visible}>
             <User />
