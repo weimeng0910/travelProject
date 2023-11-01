@@ -1,13 +1,13 @@
 /*
  * @Date: 2023-09-11 11:09:24
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-16 12:29:51
+ * @LastEditTime: 2023-10-25 12:05:21
  * @FilePath: /travelProject/src/authenticatedApp.tsx
  * @Description: Do not edit
  */
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Layout, Main, Footer } from '@/styles/authenticatedApp.module';
+import { Layout, HeaderBox, Main, Footer } from '@/styles/authenticatedApp.module';
 import { Header } from '@/components/header';
 import {
   HomePage,
@@ -35,7 +35,9 @@ export const AuthenticatedAPP: React.FC<VisibleProps> = () => {
   return (
     <Layout>
       <Router>
-        <Header visible={visible} handleClick={handleClick} />
+        <HeaderBox>
+          <Header visible={visible} handleClick={handleClick} />
+        </HeaderBox>
         <Main visible={visible}>
           <Routes>
             <Route path="/home" element={<HomePage />} />

@@ -21,7 +21,6 @@ import {
   HeaderRight,
   UserRegister,
   MenuButton,
-  LogoBox,
   Logo,
 } from './header.module';
 import { useMenu } from '@/utils'; //data
@@ -89,8 +88,10 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
       <Container>
         <Navbar>
           <HeaderLeft>
-            <Logo onClick={resetRoute} />
-            <LogoBox onClick={resetRoute}>Travenly</LogoBox>
+            <div>
+              <Logo onClick={resetRoute} />
+              Travenly
+            </div>
           </HeaderLeft>
           {/* 折叠 */}
           <MenuButton onClick={handleClick}>
@@ -102,8 +103,10 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
               {menuList?.map((item) => (
                 <Link key={item.id} to={item.key}>
                   <li key={nanoid()}>
-                    <span>{iconList[item.key]}</span>
-                    {item.label}
+                    <span>
+                      {iconList[item.key]}
+                      {item.label}
+                    </span>
                   </li>
                 </Link>
               ))}

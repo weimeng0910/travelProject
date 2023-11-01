@@ -1,19 +1,25 @@
 /*
- * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @Date: 2023-08-25 18:51:06
+ * @Date: 2023-05-30 18:51:06
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-17 18:35:16
+ * @LastEditTime: 2023-10-25 12:02:54
  * @FilePath: /travelProject/src/styles/base/global-styles.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Description: Global css 
  */
-import { createGlobalStyle } from 'styled-components'
+
+import { createGlobalStyle } from 'styled-components';
+import { px2vw } from '@/utils';
 /**
- * @date 2023/05/30
- * @description Global css 
+ * Global css 
  */
 
 export const GlobalStyles = createGlobalStyle`
-
+ * {
+    margin: 0;
+    padding: 0;
+    margin-top:0;
+    padding-top:0;
+    box-sizing: border-box;
+  }
   html{
     scroll-behavior: smooth;
   }
@@ -21,18 +27,25 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0px;
     padding: 0px;
+    margin-top:0;
+    padding-top:0;
     font-family: sans-serif;
     box-sizing: border-box;
    
   }
   :root{
-  font-size:.75vw
+     font-size:${px2vw(24)};
+     
+     @media (min-width: 768px) {
+        font-size: ${px2vw(18)};
+      }
+
+      @media (min-width: 1024px) {
+        font-size: ${px2vw(16)};
+      }
+
   }
-  @media  (max-width:320px) {
-    html {
-        font-size: .3vw
-    }
-}
+  
   p, h1, h2, h3, h4 {
     margin-bottom: 0;
   }

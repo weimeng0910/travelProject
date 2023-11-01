@@ -1,12 +1,13 @@
 /*
  * @Date: 2023-06-22 08:57:48
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-18 11:23:34
+ * @LastEditTime: 2023-11-01 17:10:43
  * @FilePath: /travelProject/src/components/Swiper/SwiperPage.module.ts
  * @Description: Swiper Css
  */
 import styled from 'styled-components';
 import { Swiper, SwiperSlide, } from 'swiper/react';
+import { px2vw } from '@/utils';
 import {
   BorderRadius,
   Margin,
@@ -33,20 +34,57 @@ import media from "@/styles/tools/media";
  * Swiper Css
  */
 
+export const Container = styled.div`
+  ${WH({ width: '100%' })};
+  max-width: 1200px; 
+  
+  ${media.bigdesktop} {
+       width:${px2vw(1200, 1280)} ; 
+       
+   }
+   ${media.desktop} {
+       width:${px2vw(1000, 1024)} ;
+       
+   }
+   ${media.tablet} {
+       width:${px2vw(758, 768)} ;
+       height:${px2vw(200, 768)} ;
 
+   }
+   ${media.phone} {
+       width:${px2vw(500, 576)} ;
+       height:${px2vw(180, 576)} ;
+      ${Margin({ y: '1vw', x: 'auto' })};
+   }
+`;
 export const MySwiper = styled(Swiper)`
-  ${WH({ width: '70vw' })};
+  .swiper-wrapper{
+     height: 330px;
+     ${media.bigdesktop} { 
+       height:${px2vw(280, 1440)};  
+     }
+     ${media.desktop} {
+
+       height:${px2vw(260, 1024)};
+     }
+     ${media.tablet} {
+
+       height:${px2vw(200, 768)};
+     }
+     ${media.phone} {
+
+       height:${px2vw(180, 576)};
+     }
+  }
   /* 切换 */
   .swiper-pagination {
      &-bullet {
         cursor: pointer;
-        ${WH({ width: '1.3333vw', height: '1.3333vw' })};
         display: inline-block;
         ${BorderRadius({ all: BorderRadiusBase.borderRadiusCircle })};
         ${bgMixin({ color: BackgroundColor.backgroundColorGrey })};
         opacity: 0.2;
         border: ${BorderBase.borderFourth};
-        ${Margin({ y: '0', x: '.31vw' })}
         box-shadow: none;
         ${Transition({ properties: 'all 0.4s ease 0s' })}
         transform: scale(0.8);
@@ -58,84 +96,69 @@ export const MySwiper = styled(Swiper)`
         }
       }
     }
-    ${media.tablet} {
-   
-     ${WH({ width: '95vw' })};
-    }
-    ${media.phone} {
-   
-     ${WH({ width: '90vw' })};
-    }    
-`;
-
-
-export const MySwiperSlide = styled(SwiperSlide)`  
-   .swiper-slide{
-      width: 30vw !important;       
-    }     
-`;
-export const Container = styled.div`
   
-  ${media.tablet} {
-   ${Margin({ top: '4vw' })};
-   
-   }
- ${media.phone} {
-   ${Margin({ top: '4vw' })};
-   
-  }
- 
 `;
+
+
+
 export const CarouseImg = styled.img`
-  overflow: hidden !important;
   ${FlexBox}
-  ${Margin({ y: '1vw', x: 'auto' })};
-  ${WH({ width: '20vw', height: '12vw' })};
+  ${Margin({ y: '10px', x: 'auto' })};
+  max-width: 300px;
+  max-height: 180px;
+  width:${px2vw(200)};
+  height:${px2vw(120)};
   ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
-  
-  ${media.tablet} {
-    ${WH({ width: '25vw', height: '16vw' })};
+  ${media.bigdesktop} {
+       width:${px2vw(260, 1440)} ;  
+       height:${px2vw(160, 1440)};  
    }
- ${media.phone} {
-    ${WH({ width: '27vw', height: '16vw' })};
-  }
+   ${media.desktop} {
+       width:${px2vw(240, 1024)} ;
+       height:${px2vw(160, 1024)};
+   }
+   ${media.tablet} {
+       width:${px2vw(180, 768)} ;
+       height:${px2vw(120, 768)};
+   }
+   ${media.phone} {
+       width:${px2vw(140, 576)} ;
+       height:${px2vw(90, 576)};
+       ${BorderRadius({ all: '10px' })};
+   }
+
 
 `
 
 export const CarouseTitle = styled.div`
-  
-  ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeS, fontWeight: 'bold' })};
+  ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXL, fontWeight: 'bold' })};
   text-align: center;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
   ${media.tablet} {
-
-    ${Margin({ bottom: '6vw' })};
+     margin-bottom:${px2vw(30, 768)} ;
+      ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeS, fontWeight: 'bold' })};
   }
   ${media.phone} {
-      ${Margin({ bottom: '7vw' })};
+      margin-bottom:${px2vw(30, 576)} ;
+      ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeS, fontWeight: 'bold' })};
    
   }
 `;
-
-
-export const CarouseRunden = styled.div`
-  display: grid;
-  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
-  ${WH({ all: '1vw' })};
-  ${bgMixin({ color: Color.colorLightGreen })};
-  ${DisabledStyle({ disabled: true })};
-
-
-`;
 export const CarouselDescription = styled.div`
-  ${GridBox({ gridTemplateColumns: '2.6667vw 1fr 2.6667vw 1fr', gridColumnGap: '1.3333vw' })}
-  justify-items:center;
-  align-items: center;
-  
+  ${FlexBox};
   ${WH({ width: '90%' })};
   ${Margin({ bottom: '4vw' })};
+  & div:nth-child(even){
+    display: flex;
+    width: 50px;
+    margin-left:12px;
+    /*background-color: red;*/
+    justify-items:center;
+    align-items: right;
+  }
+ 
   ${media.tablet} {
     ${a11yHidden}
   }
@@ -145,7 +168,18 @@ export const CarouselDescription = styled.div`
 
 `
 
+export const CarouseRunden = styled.span`
+  display:inline-block;
+  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
+  ${WH({ all: '10px' })};
+  ${bgMixin({ color: Color.colorLightGreen })};
+  ${DisabledStyle({ disabled: true })};
+
+
+`;
+
+
 export const CarouselMoney = styled.i`
-   ${Font({ color: FontColor.colorFontGrey, size: ".6vw" })};
+   ${Font({ color: FontColor.colorFontGrey, size: "1em" })};
    ${DisabledStyle({ disabled: true })};
 `

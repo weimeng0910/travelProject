@@ -43,6 +43,7 @@ interface IEm {
 export const Em = ({ size, base = 16 }: IEm) => `
  font-size:${size! / base}em;
 `
+
 /* Border
 ----------------------- */
 

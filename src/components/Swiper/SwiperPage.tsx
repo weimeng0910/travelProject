@@ -1,7 +1,7 @@
 /*
  * @Date: 2023/08/30 16:35:08
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-17 14:58:44
+ * @LastEditTime: 2023-11-01 09:30:00
  * @FilePath: /travelProject/src/components/Swiper/SwiperPage.tsx
  * @Description: SwiperPage
  */
@@ -32,7 +32,7 @@ export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
     slidesPerView: 3,
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 1113000,
       disableOnInteraction: false,
     },
     pagination: { clickable: true },
@@ -45,22 +45,26 @@ export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
       <MySwiper {...option}>
         {dataList.map((item, index) => {
           return (
-            <SwiperSlide key={index}>
+            <SwiperSlide style={{ margin: '0' }} key={index}>
               <CarouseImg src={item.pic_url} />
               <CarouseTitle>{item.name}</CarouseTitle>
               <CarouselDescription>
-                <CarouseRunden />
-                <CarouseTitle>
+                <div>
+                  <CarouseRunden />
+                </div>
+
+                <div>
                   {item.counter_price}
                   <CarouselMoney>$</CarouselMoney>
-                </CarouseTitle>
+                </div>
+                <div>
+                  <CarouseRunden />
+                </div>
 
-                <CarouseRunden />
-
-                <CarouseTitle>
+                <div>
                   {item.retail_price}
                   <CarouselMoney>reviews</CarouselMoney>
-                </CarouseTitle>
+                </div>
               </CarouselDescription>
             </SwiperSlide>
           );

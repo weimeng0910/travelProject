@@ -1,28 +1,14 @@
 /*
  * @Date: 2023-09-04 18:36:34
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-18 12:08:07
+ * @LastEditTime: 2023-11-01 16:54:36
  * @FilePath: /travelProject/src/components/productCollection/ProductCollection.tsx
  * @Description: ProductCollection
  */
 import React from 'react';
 import { IHotGoods } from '@/types/goods';
-import {
-  Container,
-  TitleBox,
-  TripText,
-  DescribeText,
-  MoreText,
-  HotGoodsBox,
-  ProductBox,
-  HotGoodsImg,
-  HotGoodsWord,
-  Hot,
-  Heart,
-  Buttondisplay,
-  Img,
-  HotGoodsSpan,
-} from './product.module';
+import { HeartTwoTone } from '@ant-design/icons';
+import { Container, TitleBox, HotGoodsBox, ProductBox, Buttondisplay } from './product.module';
 /**
  * ProductCollection
  */
@@ -31,36 +17,35 @@ export const ProductCollection: React.FC<{ hotGoodsData: IHotGoods[] }> = ({ hot
   return (
     <Container>
       <TitleBox>
-        <TripText>The Hottest Trip</TripText>
-        <DescribeText>
+        <div>The Hottest Trip</div>
+        <div>
           The most popular and recommended Destination, bring family now Let's go together and enjoy
           the holiday.
-        </DescribeText>
-        <MoreText>more</MoreText>
+        </div>
+        <div>more</div>
       </TitleBox>
       <HotGoodsBox>
         {hotGoodsData.map((item, _index) => {
           if (item.isHot) {
             return (
               <ProductBox key={item.id}>
-                <HotGoodsImg>
-                  <Img src={item.picUrl} />
-                </HotGoodsImg>
-                <Hot>
-                  <Heart rev={undefined} />
-                </Hot>
-                <HotGoodsWord id="HotGoodsWord">
+                <div>
+                  <img src={item.picUrl} />
+                </div>
+                <div>
+                  <HeartTwoTone rev={undefined} />
+                </div>
+                <div>
                   <ul>
                     <li>{item.name}</li>
-
                     <li>from $ {item.retailPrice} per adult</li>
                     <li>
                       <Buttondisplay>See more</Buttondisplay>
-                      <Buttondisplay>Add to Cart</Buttondisplay>
+                      <Buttondisplay>To Cart</Buttondisplay>
                     </li>
                   </ul>
-                  <HotGoodsSpan id="Hotspan">view</HotGoodsSpan>
-                </HotGoodsWord>
+                  <span>view</span>
+                </div>
               </ProductBox>
             );
           }

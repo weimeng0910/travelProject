@@ -1,10 +1,11 @@
 /*
  * @Date: 2023-09-12 12:11:40
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-18 10:18:57
+ * @LastEditTime: 2023-11-01 08:44:40
  * @FilePath: /travelProject/src/styles/settings/var.tsx
  * @Description: CSS Public Variable
  */
+import { px2vw } from '@/utils';
 
 /* Color
 ----------------------- */
@@ -13,6 +14,7 @@ export const Color = {
   colorWhite: `#ffffff`,
   colorBlack: `#000`,
   colorLightGreen: `#00AA6C`,
+  maniColor: `#444`,
 };
 
 export const FontColor = {
@@ -42,7 +44,9 @@ export const FontSizes = {
   sizeXXL: Em({ size: 20 }),
   sizeXXXL: Em({ size: 30 }),
 };
-
+/* Size
+-------------------------- */
+export const SizeBase = `${px2vw(14)}`;
 /* Background
 ----------------------- */
 export const BackgroundColor = {
@@ -64,7 +68,7 @@ export const BorderBase = {
 };
 /// borderRadius|1|Radius|0
 export const BorderRadiusBase = {
-  bordeRadiusBase: `1.6vw `,
+  bordeRadiusBase: `20px `,
 
   borderRadiusSmall: `0.5vw `,
 

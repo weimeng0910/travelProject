@@ -247,7 +247,7 @@ export const sideMenuList = [
 ];
 
 /**
- * 产品数据
+ * product data
  * */
 export const goodsData = {
   "errno": 0,

@@ -1,13 +1,13 @@
 /*
  * @Date: 2023-09-04 12:18:30
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-18 12:25:17
+ * @LastEditTime: 2023-11-01 17:26:08
  * @FilePath: /travelProject/src/components/productCollection/product.module.ts
  * @Description: ProductCollection Css
  */
 
 import styled from 'styled-components';
-import { HeartTwoTone } from '@ant-design/icons';
+import { px2vw } from '@/utils';
 import {
   BorderRadius,
   Font,
@@ -22,7 +22,6 @@ import {
   WH,
   bgMixin,
   Buttons,
-
 } from '@/styles/tools/logicalMixins';
 import {
   BorderRadiusBase,
@@ -30,8 +29,6 @@ import {
   FontColor,
   FontSizes,
   BaseBoxShadow,
-  ZIndex,
-  a11yHidden
 } from '@/styles/settings/var';
 import media from "@/styles/tools/media";
 
@@ -40,272 +37,266 @@ import media from "@/styles/tools/media";
  */
 
 export const Container = styled.div`
-     /* css var */ 
-   --main-color: #fff; 
-   --f-color: #444;
-  ${FlexBox({ direction: 'column', flexWrap: 'nowrap' })}
+  ${FlexBox({ direction: 'column', flexWrap: 'nowrap' })};
+  max-width:1165px;
+
+  ${media.bigdesktop} {
+       width:${px2vw(1165, 1440)} ;    
+   }
+  ${media.desktop} {
+       width:${px2vw(1000, 1024)} ;
+   }
+  ${media.tablet} {
+       width:${px2vw(758, 768)} ;
+   }
+  ${media.phone} {
+       width:${px2vw(566, 576)} ;
+   }
 `;
 /**
  * text
 */
 export const TitleBox = styled.div`
-  ${GridBox({ gridTemplateColumns: '1fr 1fr 5vw' })}
-  align-items: center;
+  ${GridBox({ gridTemplateColumns: '350px 1fr 100px' })}
   ${BorderRadius({ all: BorderRadiusBase.borderRadiusSmall })};
   ${bgMixin({ color: BackgroundColor.backgroundColorprimary })};
-  ${WH({ width: '100%', height: '8vw' })};
+  ${WH({ width: '100%' })};
+  max-width: 1165px;
+  height:70px;
+  align-items: center;
+  & div:first-child{
+    display: flex;
+    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXXXL, fontWeight: 'bold' })};
+    ${Margin({ all: 'auto' })};
+    ${Padding({ right: '28px' })};
+    ${Border({ right: '1px solid #fff' })}
+    ${BaseShadow('.0625rem 0 .0625rem -0.0625rem #000')}
+  }
+   & div:nth-child(2){
+     ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeL })}
+     ${Margin({ right: '35px' })};
+   }
+   & div:last-child{
+     display: flex;
+     ${Margin({ all: 'auto' })}
+     ${Padding({ right: '28px' })}
+     ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXL })}
+     
+  }
+  ${media.bigdesktop} {
+     width:${px2vw(1165, 1440)} ;
+   }
   ${media.desktop} {
-   ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })};
-   ${WH({ height: '8vw' })};
+     ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })};
+     width:${px2vw(980, 1024)} ;
+     height:${px2vw(70, 1024)} ;
   }
 
   ${media.tablet} {
-   ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })}
-   ${WH({ height: '10vw' })};
+     ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })}
+     width:${px2vw(740, 768)} ;
+     height:${px2vw(50, 768)} ;
+     & div:first-child{
+       ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXXL, fontWeight: 'bold' })};
+      }
+     & div:nth-child(2){
+       ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeM })}
+       ${Margin({ right: '35px' })};
+      }
+      & div:last-child{
+        ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeM })}
+      }
   }
 
   ${media.phone} {
-   ${WH({ height: '10vw' })};
+     width:${px2vw(540, 576)} ;
+     height:${px2vw(50, 576)} ;
+     & div:first-child{
+        ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeS, fontWeight: 'bold' })};
+      }
+     & div:nth-child(2){
+        ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })};
+        ${Margin({ right: '35px' })};
+       }
+      & div:last-child{
+         ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })};
+      }
   }
+
 `;
 
-export const TripText = styled.div`
-  display: flex;
-  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXXXL, fontWeight: 'bold' })};
-  ${Margin({ all: 'auto' })};
-  ${Padding({ right: '2vw' })};
-  ${Border({ right: '.0667vw solid #fff' })}
-  ${BaseShadow('.0625rem 0 .0625rem -0.0625rem #000')}
-  
-  ${media.tablet} {
-    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXXL, fontWeight: 'bold' })};
-  }
-  ${media.phone} {
-    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeS, fontWeight: 'bold' })};
-  }
-  `;
-
-export const DescribeText = styled.div`
-
-  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeL })}
-  ${Margin({ right: '2.6667vw' })}
-  ${media.desktop} {
-    ${WH({ width: '80%' })};
-    ${Margin({ right: '1vw' })}
-    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeL })}
-    ${Ellipsis({ webkitLinCclamp: '2' })};
-  }
-  ${media.tablet} {
-    ${WH({ width: '80%' })};
-    ${Margin({ right: '1vw' })}
-    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeM })}
-    ${Ellipsis({ webkitLinCclamp: '2' })};
-  }
-  ${media.phone} {
-    ${WH({ width: '80%' })};
-    ${Margin({ right: '1vw' })}
-    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })}
-    ${Ellipsis({ webkitLinCclamp: '2' })};
-  }
-  `;
-
-export const MoreText = styled.div`
-  display: flex;
-  ${Margin({ all: 'auto' })}
-  ${Padding({ right: '2vw' })}
-  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXL })}
-  ${media.tablet} {
-
-    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeM })}
-  
-  }
-  ${media.phone} {
-
-    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })}
-   
-  }
-  `;
 /**
  * goods
 */
 export const HotGoodsBox = styled.div`
-  ${GridBox({ gridColumnGap: '1vw' })}
+  ${FlexBox({ flexWrap: 'nowrap' })};
+  /*gap:30px;*/
+  justify-content: space-between;
+  margin-top:${px2vw(20)};
   ${WH({ width: '100%' })};
+  max-width: 1165px;
+  ${media.bigdesktop} {
+    width:${px2vw(1165, 1440)} ;  
+   }
+   ${media.desktop} {
+     width:${px2vw(960, 1024)} ; 
+   }
+   ${media.tablet} {
+     width:${px2vw(720, 768)} ;  
+   }
+   ${media.phone} {
+     width:${px2vw(520, 576)} ; 
+   }
   `;
 
 export const ProductBox = styled.div`
-  display: grid;
-  grid-template-rows:2fr 1fr;
-  position: relative;
-  ${Margin({ top: '2vw' })};
   ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
+  position: relative;
   cursor: pointer;
   transition:all .3s;
-
-  &:hover {
-    transform: translate(0,-0.625rem);;
-    ${BaseShadow(BaseBoxShadow.boxShadowBase)}
-    ul li:nth-child(2){
-       ${a11yHidden}
-    } 
-    ul li:last-child{
-    display: block;  
-    }
-    #Hotspan{
-      display: none;
-    }
-    #HotGoodsWord{
-      background-image:none;
-    }
-    }
-
+  background-color:#fff;
+  margin: 0;
   
-`;
-
-export const HotGoodsImg = styled.div` 
-  ${bgMixin({ color: BackgroundColor.backgroundColorFourth })};
-  ${WH({ width: '100%', height: '16vw' })};
-  
-  ${media.tablet} {
-    ${WH({ height: '18vw' })};
-  }
-  ${media.phone} {
-    ${WH({ height: '25vw' })}; 
-  }
-  `;
-
-export const Img = styled.img`
-  ${FlexBox}
-  ${BorderRadius({ topLeft: BorderRadiusBase.bordeRadiusBase, topRight: BorderRadiusBase.bordeRadiusBase })};
-  ${Margin({ y: '0', x: 'auto' })}
-  ${WH({ width: '100%', height: '16vw' })};
-
-  ${media.tablet} {
-    ${WH({ height: '18vw' })};
-  }
-  ${media.phone} {
-    ${WH({ height: '25vw' })}; 
-  }
-`;
-
-export const Hot = styled.button`
-  ${FlexBox}
-  ${Absolute({ top: '1.25vw', right: '1.25vw' })}
-  ${WH({ all: '2.5vw' })};
-  ${ZIndex.indexNormal};
-  ${BorderRadius({ all: BorderRadiusBase.borderRadiusCircle })};  
-  ${bgMixin({ color: BackgroundColor.backgroundColorprimary })};
-  border: 0 solid palevioletred;
-
-  ${media.tablet} {
-    ${WH({ all: '3vw' })};
-  }
-  ${media.phone} {
-    ${WH({ all: '3vw' })};
-  }
-  `;
-
-export const Heart = styled(HeartTwoTone)`
- 
-  ${Font({ size: FontSizes.sizeXXL })}
-  ${media.phone} {
-     ${Font({ size: FontSizes.sizeK })}
-
-    } 
-  `;
-export const Buttondisplay = styled.button`
- ${Buttons({ color: "#fff;", backgroundColor: '#84CAA6', hoverBackgroundColor: '#2ecc71;', fontSize: '1em' })};
- ${Margin({ x: '1vw', y: '2vw' })}
- ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}; 
- ${media.phone} {
-   
-      ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })}
-    
+  & div:first-child{
+    max-width: 370px;
+    width: 370px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56%;
+    img{
+      ${BorderRadius({ topLeft: BorderRadiusBase.bordeRadiusBase, topRight: BorderRadiusBase.bordeRadiusBase })};
+      ${WH({ width: '100%' })};
+      ${Absolute({ top: '0', left: '0' })};
     }
- 
-  `;
-export const HotGoodsWord = styled.div`
-  position:relative;
-  text-align: center;
-  ${BorderRadius({ bottomLeft: BorderRadiusBase.bordeRadiusBase, bottomRight: BorderRadiusBase.bordeRadiusBase })}; 
-  ${Font({ color: FontColor.colorFontPrimary, size: '1em' })};
-  ${bgMixin({ color: BackgroundColor.backgroundColorFourth })};
-  background-image: radial-gradient( circle at bottom center, #F5FAF8 2vw, var(--main-color) 1.3vw );
-  &:hover{
-    background-image:none;
-    span{
-      display: none;
-     }
-   } 
-   ${media.phone} {
-    
-      ${Font({ size: FontSizes.sizeJ })}
-    
-    }
- 
-  ul {
-    ${Padding({ all: '0' })};
-    ${Margin({ all: '0' })};
-    ${WH({ width: '100%', height: '7vw' })};
   }
-  ul li:first-child{
-    ${WH({ width: '90%' })};
+  & div:nth-child(2){
+    ${FlexBox}
+    ${Absolute({ top: '18px', right: '18px' })};
+    ${WH({ all: '30px' })};
+    ${BorderRadius({ all: BorderRadiusBase.borderRadiusCircle })};  
+    ${bgMixin({ color: BackgroundColor.backgroundColorprimary })};
+    border: 0 solid palevioletred;
+  }
+  & div:nth-child(3){
+    max-width: 370px;
+    text-align: center;
     ${Margin({ top: '.5vw' })}
-    ${Ellipsis({ webkitLinCclamp: '1' })}
-     ${media.phone} {
+    ${Font({ color: FontColor.colorFontGrey, size: '1em' })}
+    ul li:first-child{
+         ${Ellipsis({ webkitLinCclamp: '1' })}
+    };
+    ul li:nth-child(3){
+         display: none;
     
-       ${Margin({ top: '3vw' })}
-    
+    };
+    span{
+      text-align: center;
+      align-items: center;
+      ${Absolute({ top: '95%', right: '0', left: '45%' })};
+      ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}; 
+      max-width: 40px;
+      max-height: 25px;
+
+      ${Font({ color: FontColor.colorFontWhite, size: '.5em' })};
+      cursor: pointer;
+      ${bgMixin({ color: '#84CAA6' })};
     }
-  };
-  ul li:nth-child(2){
-    display: block;
-    ${WH({ width: '90%' })};
-    ${Font({ color: FontColor.colorFontGrey, size: '1em', fontWeight: 'bold' })};
-    ${Ellipsis({ webkitLinCclamp: '1' })};
+  }
+  &:hover {
+    transform: translate(0,-0.625rem);
+    ${BaseShadow(BaseBoxShadow.boxShadowDark)}; 
+    & div:nth-child(3){
+      ul li:nth-child(2){
+         display: none;
     
-  };
-  ul li:last-child{
-     ${a11yHidden}
-     ${WH({ width: '100%' })};
-     
-  };
-  ul li button:first-child{
-    ${media.tablet} {
-   
-       ${a11yHidden}
-       
+      };
+      ul li:nth-child(3){
+         display: block;
+    
+      };
+      span{
+       display: none;
+      }
+      
+    }   
+    };
+  ${media.bigdesktop} {
+    & div:first-child{
+      width:${px2vw(370, 1440)} ;
+     } ;
+     & div:nth-child(2){
+       font-size:${px2vw(25, 1440)} ;
+       width:${px2vw(30, 1440)} ;
+       height:${px2vw(30, 1440)}
+     }  
+   };
+   ${media.desktop} {
+    width:${px2vw(300, 1024)} ;
+     & div:first-child{
+       width:${px2vw(300, 1024)} ;
+     };
+     & div:nth-child(2){
+      font-size:${px2vw(25, 1024)} ;
+      width:${px2vw(30, 1024)} ;
+      height:${px2vw(30, 1024)}
+     }  
+     span{
+      width:${px2vw(80, 1024)} ;
+      ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeK })};
      }
-    ${media.phone} {
-   
-      ${a11yHidden}
-    
-    }
-    
-  };
+   };
+   ${media.tablet} {
+    width:${px2vw(200, 778)} ;
+    & div:first-child{
+       width:${px2vw(200, 778)} ;
+     };
+     & div:nth-child(2){
+      font-size:${px2vw(18, 768)} ;
+      width:${px2vw(20, 768)} ;
+      height:${px2vw(20, 768)}  ;
+     };
+
+   };
+   ${media.phone} {
+     width:${px2vw(160, 576)} ;
+     ${BorderRadius({ all: '10px' })};
+     & div:first-child{
+       width:${px2vw(160, 576)} ;
+       img{
+        ${BorderRadius({ all: '10px' })};
+       }
+     };
+     & div:nth-child(2){
+      font-size:${px2vw(14, 576)} ;
+      width:${px2vw(20, 576)} ;
+      height:${px2vw(20, 576)}  ;
+      position:absolute;
+      top:${px2vw(12, 576)};
+      right: ${px2vw(12, 576)};
+     };
+       & div:nth-child(3){
+        font-size:${px2vw(10, 576)} ;
+        span{
+          width:${px2vw(20, 576)} ;
+        }
+       }
+   };
   
-  `;
-export const HotGoodsSpan = styled.span`
-  line-height: 1.2vw;
-  text-align: center;
-  ${Absolute({ top: '85%', right: '0', left: '45%', bottom: '0' })};
-  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}; 
-  ${WH({ width: '2.3vw', height: '1.2vw' })};
-  ${Font({ color: FontColor.colorFontWhite, size: '.5em' })};
-  cursor: pointer;
-  ${bgMixin({ color: '#84CAA6' })};
-  &:hover{
-     opacity: 0.6;
-     ${bgMixin({ color: '#84CAA6' })};
-     
-   }      
-  ${media.tablet} {
-   
-      ${WH({ width: '2.6vw', height: '1.5vw' })};
-     
-     }
-    ${media.phone} {
-       ${Absolute({ top: '90%', right: '0', left: '46%', bottom: '0' })};
-       ${Font({ color: FontColor.colorFontWhite, size: '.3em' })};
-    }
+`;
+export const Buttondisplay = styled.button`
+ ${Buttons({ color: "#fff;", backgroundColor: '#84CAA6', hoverBackgroundColor: '#2ecc71;', fontSize: '.8em' })};
+ ${Margin({ x: '10px', y: '5px' })}
+ ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}; 
+ width:${px2vw(60)} ;
+ align-items: center;
+ ${media.tablet} {
+  width:${px2vw(40, 768)} ;
+  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })}
+    
+ }
+ ${media.phone} {
+  width:${px2vw(35, 576)} ;
+  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })}
+    
+ }
   `;

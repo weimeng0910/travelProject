@@ -1,12 +1,19 @@
+/*
+ * @Date: 2023-05-30 19:31:34
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-10-27 11:54:04
+ * @FilePath: /travelProject/src/components/header/header.module.ts
+ * @Description: Header-css
+ */
 import styled from 'styled-components/macro';
 import media from "@/styles/tools/media";
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
+import { px2vw } from '@/utils';
 import {
   BorderRadius,
   Font,
   GridBox,
-  BaseShadow,
-  Padding,
+
   Margin,
   FlexBox,
   Absolute,
@@ -16,115 +23,127 @@ import {
 
 } from '@/styles/tools/logicalMixins';
 import {
-  BackgroundColor,
+
   FontColor,
   FontSizes,
-  BaseBoxShadow,
-  ZIndex,
   BorderBase,
   a11yHidden,
   inlineBlock
 } from '@/styles/settings/var';
 /**
- * @date 2023/05/30
- * @description Header-css
+ *  Header-css
  */
 
-export const Container = styled.header`
-  grid-area: header;
-  ${ZIndex.indexTop};
-  ${Margin({ all: 'auto' })}
-  ${WH({ width: '100%', height: '4.5vw' })}
-  ${BackgroundColor.backgroundColorFourth};
-  ${Border({ bottom: BorderBase.borderPrimary })}
-  ${BaseShadow(BaseBoxShadow.boxShadowBase)}
-  ${media.tablet} {
-    ${WH({ width: '100%', height: '6vw' })}
-  }
-  ${media.phone} {
-     ${WH({ width: '100%', height: '10vw' })}
-  }
+export const Container = styled.div`
+   display: flex;
+   ${Margin({ y: '0' })};
+   ${WH({ width: '100%' })};
+   height: 60px;
+   max-width:1220px;
+   ${media.bigdesktop} {
+       width:${px2vw(1220, 1280)} ;
+       height:${px2vw(60, 1280)}  ;
+   }
+   ${media.desktop} {
+       width:${px2vw(1000, 1024)} ;
+       height:${px2vw(60, 1024)}  ;
+    
+   }
+   ${media.tablet} {
+       width:${px2vw(760, 768)} ;
+       height:${px2vw(60, 768)}  ;
+    
+   }
+
+   ${media.phone} {
+       width:${px2vw(570, 576)} ;
+       height:${px2vw(60, 576)}  ;
+    
+   }
 `;
 
 export const Navbar = styled.div`
-  ${GridBox({ gridTemplateColumns: '12vw 1fr 12vw' })};
-  ${WH({ width: '76.625vw', height: '4.5vw' })};
-  ${Margin({ x: 'auto', y: '0' })}
-  ${media.desktop} { 
-    ${WH({ width: '98vw', height: '4.5vw' })}
-   
-  }
+  
+  ${GridBox({ gridTemplateColumns: '120px 1fr 120px' })};
+  ${WH({ width: '100%' })};
   ${media.tablet} { 
-
-    ${WH({ width: '100vw', height: '6vw' })}
-    ${GridBox({ gridTemplateColumns: '1fr 10vw' })}
-
+    width:${px2vw(768, 768)};
+    
   }
   ${media.phone} { 
-    ${GridBox({ gridTemplateColumns: '1fr 20vw' })}
-    ${WH({ width: '100vw', height: '10vw' })}
+    width:${px2vw(576, 576)} ;
+    
+    
   }
-
 `;
 
 export const HeaderLeft = styled.div`
-  ${FlexBox}
+  ${FlexBox};
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
+  position: relative;
   &:hover {
       cursor: pointer;
       color: hotpink; 
     } 
+  div{
+     ${FlexBox}; 
+  }
   ${media.tablet} { 
-     text-align:left;
-     ${Margin({ left: '5vw' })}
+     ${Margin({ left: '1vw' })};
+     ${FlexBox({ spacing: 'flex-start' })};
+     div{
+         position: absolute;
+         top:${px2vw(30)};
+         left: ${px2vw(14)};
+     }
   }
   ${media.phone} { 
-     /*text-align:left;*/
-     ${Margin({ left: '5vw' })}
+    ${Margin({ left: '1vw' })};
+    ${FlexBox({ spacing: 'flex-start' })};
+    div{
+         position: absolute;
+         top:${px2vw(29)};
+         left: ${px2vw(14)};
+     }
   }
 `;
 
-export const LogoBox = styled.div`
-  display: flex;
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
-  ${media.tablet} {
-     ${Margin({ right: 'auto' })}
-     ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
-  }
-  ${media.phone} {
-     ${Margin({ right: 'auto' })}
-     ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold', family: 'Helvetica Neue' })};
-  }
-
-`;
 export const Logo = styled(Softwarelogo)`
-  ${WH({ all: '3vw' })};
+  max-width: 30px;
+  max-height:30px;
   ${media.tablet} {
-    ${WH({ all: '4vw' })};
-    
+   ${WH({ all: '4vw' })}; 
+ 
   }
   ${media.phone} {
      ${WH({ all: '5vw' })}; 
   }
-
 `;
-export const MenuButton = styled.label`
-  ${a11yHidden}
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, })};
-  cursor: pointer;
-  ${Margin({ all: 'auto' })}
 
+export const MenuButton = styled.div`
+  ${a11yHidden};
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, })};
+  ${Margin({ right: '1vw' })};
+  cursor: pointer;
+  position: relative;
   ${media.tablet} {
-   
-    ${inlineBlock}
+    ${inlineBlock};
+    ${FlexBox({ spacing: 'center' })};
+    ${Margin({ all: '0' })};
     ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL })};
 		cursor: pointer;
-    
-
+    position: absolute;
+    top:${px2vw(20, 768)};
+    right: ${px2vw(30, 768)};
   }
  ${media.phone} {
-    ${inlineBlock}  
+    ${inlineBlock} ; 
+    ${FlexBox({ spacing: 'center' })};
 		${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL })};
 		cursor: pointer;
+    position: absolute;
+    top:${px2vw(20, 576)};
+    right: ${px2vw(30, 576)};
   }
 `;
 
@@ -133,108 +152,81 @@ type VisibleProps = {
 }
 
 export const HeaderCenter = styled.div<VisibleProps>`
-  flex: 1;
-  ${FlexBox({ spacing: 'space-between' })}
-  ${media.tablet} {
-    display: ${(props: VisibleProps) =>
-    props.visible ? "block" : "none"};
-    flex-flow:column;
-  
-
-  }
-  ${media.phone} {
-    display: ${(props: VisibleProps) =>
-    props.visible ? "block" : "none"};
-    flex-flow:column;
-   
-  } 
+  ${WH({ width: '100%' })};
+  ${FlexBox({ spacing: 'center' })};
+  position: relative;
   ul{
-    ${FlexBox({ spacing: 'space-between' })}
-    ${Margin({ all: '0' })}
-    ${Padding({ all: '0' })}
-    flex: 1 1 auto;
-
-    ${media.tablet} {
-
-      ${FlexBox({ direction: 'column', alignment: 'flex-start' })}
-      ${Margin({ left: '5vw', top: '4vw' })}
-    }
-    ${media.phone} {
-
-    ${FlexBox({ direction: 'column', alignment: 'flex-start' })}
-    ${Margin({ left: '5vw', top: '8vw' })}
-    ${Transition({ properties: '0.6s all linear' })}
-    }
-    li{
-      display: flex;
-      position: relative;
-      ${Margin({ y: '0', x: '1vw' })}
-      ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })};
-       /* 下划线出现动画  */
-      line-height: 2vw;
-      ${Transition({ properties: '0.2s all linear' })}
-      &::before {
-            content: "";
-            ${Absolute({ top: '0', left: '40%' })}
-            ${WH({ width: '0', height: '100%' })}
-            ${Border({ bottom: BorderBase.borderFourth })}
-            ${Transition({ properties: '0.2s all linear' })}
-        }
-        &:hover{
-           color: #95a5a6;
-          ::before {
-            width: 100%;
-            top: 0;
-            left: 0;
-            transition-delay: 0.1s;
-            border-bottom-color: #2ecc71;
-            
-          }
-        }
-        ${media.tablet} {
-            
-            ${Margin({ y: '0.5vw', x: '0' })};
-         }
-        ${media.phone} {
-		       ${Margin({ y: '0.5vw', x: '0' })} ;
-           line-height: 5vw;
-        }
-        span{
-            ${Margin({ right: '0.7vw' })}
-            ${media.phone} {
- 
-	           margin: 0 .4vw;
-             ${Margin({ x: '0.4vw', y: '0.4vw' })}
-            }
-  
-         }
+      ${FlexBox({ spacing: 'center' })};
+      flex-wrap: wrap;
+      margin: 0;
+      ${media.tablet} {
+         ${FlexBox({ spacing: 'space-between' })};
+         display: ${(props: VisibleProps) => props.visible ? "block" : "none"};
+         flex-flow:column;
+         position: absolute;
+         top:${px2vw(70, 768)};
+         left: ${px2vw(-110, 768)};
       }
-  }
+      ${media.phone} {
+          display: ${(props: VisibleProps) => props.visible ? "block" : "none"};
+          flex-flow:column;
+          position: absolute;
+          top:${px2vw(70, 576)};
+          left: ${px2vw(-150, 576)};
+      } 
+    }
+      li{
+           position: relative;
+           ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXXL, fontWeight: 'bold' })};
+           ${Transition({ properties: '0.2s all linear' })};
+           ${media.tablet} {
+               ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })};
+           }
+           ${media.phone} {
+               ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })};
+           } 
+           &::before {
+              content: "";
+               ${Absolute({ top: '0', left: '40%' })};
+               ${WH({ width: '0', height: '100%' })};
+               ${Border({ bottom: BorderBase.borderFourth })};
+               ${Transition({ properties: '0.2s all linear' })};
+           }
+           &:hover{
+              color: #95a5a6;
+              ::before {
+                  width: 100%;
+                  top: 0;
+                  left: 0;
+                  transition-delay: 0.1s;
+                  border-bottom-color: #2ecc71;
+               }
+             }
+           span{
+               ${Margin({ x: '0.3vw' })}
+            }
+       }
 `;
 
 
 export const HeaderRight = styled.div<VisibleProps>`
-  ${FlexBox({ spacing: 'center' })}
+  ${FlexBox({ spacing: 'center' })};
   ${media.tablet} {
-    ${Absolute({ top: '26vw', left: '5vw' })}
-    display: ${(props: VisibleProps) =>
-    props.visible ? "block" : "none"};
+      position: absolute;
+      top:${px2vw(200, 768)};
+      left: ${px2vw(20, 768)};
+      display: ${(props: VisibleProps) => props.visible ? "block" : "none"};
   }
   ${media.phone} {
-    ${Absolute({ top: '54vw', left: '5vw' })}
-    display: ${(props: VisibleProps) =>
-    props.visible ? "block" : "none"};
-    
+      position: absolute;
+      top:${px2vw(250, 576)};
+      left: ${px2vw(20, 576)};
+       display: ${(props: VisibleProps) => props.visible ? "block" : "none"};
   }
 `;
-
-
 
 export const UserRegister = styled.div`
   ${FlexBox({ alignment: 'center' })};
   ${BorderRadius({ all: '.64vw' })};
-  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeL, fontWeight: 'bold' })};
-  
- 
-
+  ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold' })};
 `;

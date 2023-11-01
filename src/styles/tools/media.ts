@@ -1,16 +1,19 @@
-import { css, CSSObject } from 'styled-components/macro'
-
-/**
- * @date 2023/05/30
- * @description useMediaQuery hook
+/*
+ * @Date: 2023-06-21 20:33:02
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-10-30 16:41:58
+ * @FilePath: /travelProject/src/styles/tools/media.ts
+ * @Description: useMediaQuery hook
  */
-//常用断点类型设置
+
+
 const customMediaQuery = (maxWidth: number) =>
   `@media (max-width: ${maxWidth}px)`;
 
 const media = {
   custom: customMediaQuery,
-  desktop: customMediaQuery(922),
+  bigdesktop: customMediaQuery(1440),
+  desktop: customMediaQuery(1024),
   tablet: customMediaQuery(768),
   phone: customMediaQuery(576)
 };

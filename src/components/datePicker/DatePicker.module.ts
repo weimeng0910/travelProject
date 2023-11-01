@@ -1,11 +1,12 @@
 /*
  * @Date: 2023-10-10 11:00:09
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-18 15:14:35
+ * @LastEditTime: 2023-11-01 18:12:47
  * @FilePath: /travelProject/src/components/datePicker/DatePicker.module.ts
  * @Description: Antd pickerStyle
  */
 import styled from "styled-components";
+import { px2vw } from '@/utils';
 import {
   BorderRadius,
   Font,
@@ -39,7 +40,10 @@ export const Container = styled.span`
     ${Transition({ properties: 'all', time: '0.2s' })}
     ${Size({ minWidth: '4.5vw' })};
     ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeXL, fontWeight: 'bold' })};
-    ${WH({ width: '16vw', height: '4.5vw' })};
+    width: 240px;
+    height: 50px;
+    max-width: 260px;
+    max-height:70px
     ${BorderRadius({ all: '3.12vw' })};
     ${media.tablet} {
       width: 23vw;
@@ -107,8 +111,8 @@ export const Container = styled.span`
        /*text-align: center !important;*/
        border: none !important;
        background: none!important;
-       width: 16vw !important;
-       height: 4.5vw !important;
+       width: 230px!important;
+       height:65px !important;
       
    
        &::placeholder {

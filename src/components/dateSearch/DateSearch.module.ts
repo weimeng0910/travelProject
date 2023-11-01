@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-04 08:59:49
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-18 14:30:20
+ * @LastEditTime: 2023-11-01 18:12:14
  * @FilePath: /travelProject/src/components/dateSearch/DateSearch.module.ts
  * @Description: ProductCollection Css
  */
@@ -10,7 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import media from "@/styles/tools/media";
 import { GoLang } from '@styled-icons/boxicons-logos/GoLang'
 import { Hypnotize, GeoAltFill, PersonCircle, Speedometer, ShareFill } from '@styled-icons/Bootstrap'
-
+import { px2vw } from '@/utils';
 import {
   BorderRadius,
   Font,
@@ -20,7 +20,6 @@ import {
   Center,
   bgMixin,
   WH,
-  Size,
   Transition,
 } from '@/styles/tools/logicalMixins';
 import {
@@ -85,11 +84,11 @@ export const Container = styled.div`
     box-sizing: border-box;
     ${bgMixin({ color: BackgroundColor.backgroundColorFourth })};
     ${Transition({ properties: 'all', time: '0.2s' })};
-    ${Size({ minWidth: '4.5vw' })};;
     ${Font({ color: FontColor.colorFontPrimary, size: FontSizes.sizeK, fontWeight: 'bold' })};
-    ${WH({ width: '16vw', height: '4.5vw' })};
+    ${WH({ width: '240px', height: '50px' })};
     ${BorderRadius({ all: '3.12vw' })};
-    
+    max-width: 260px;
+    max-height:70px;
     &:hover {
     
     ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeK, fontWeight: 'bold' })};

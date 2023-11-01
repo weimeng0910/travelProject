@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-05-30 20:05:20
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-18 15:23:00
+ * @LastEditTime: 2023-10-23 19:12:12
  * @FilePath: /travelProject/src/components/sideMenu/sideMenu.module.ts
  * @Description:SideMenu-css
  */
@@ -13,7 +13,7 @@ import { Menu } from 'antd';
 export const StyledMenu = styled(Menu)`
   margin-top: 10px;
   border-radius: 25px;
-  width: 50%;
+  width: 100%;
   background: #f9fbfb;
   
   .ant-menu-submenu-title {
@@ -26,7 +26,7 @@ export const StyledMenu = styled(Menu)`
   .ant-menu-submenu-title:hover {
     background: #16a085;
     transform: scale(1.05);
-    border-radius: 5px;
+    border-radius: 0.31vw;
     color: #fff;
     box-shadow: 0 0 30px -10px #000;
     .ant-menu-submenu-arrow::before,
