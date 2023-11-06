@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-12 12:11:40
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-01 08:44:40
+ * @LastEditTime: 2023-11-06 11:42:24
  * @FilePath: /travelProject/src/styles/settings/var.tsx
  * @Description: CSS Public Variable
  */

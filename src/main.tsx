@@ -1,7 +1,14 @@
+/*
+ * @Date: 2023-09-08 18:18:22
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-11-06 12:07:18
+ * @FilePath: /travelProject/src/main.tsx
+ * @Description: Do not edit
+ */
 import './wdyr'; // <--- first import
 import { mocker } from '@/mocks/browser';
 import { createRoot } from 'react-dom/client';
-import 'normalize.css/normalize.css'; //浏览器标准化引入
+import 'normalize.css/normalize.css'; //browser standardization
 import { AppProviders } from '@/context';
 
 import App from './App';
