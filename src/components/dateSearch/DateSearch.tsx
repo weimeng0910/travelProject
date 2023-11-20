@@ -1,12 +1,11 @@
 /*
  * @Date: 2023-10-03 19:53:54
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-18 14:31:19
+ * @LastEditTime: 2023-11-13 17:40:56
  * @FilePath: /travelProject/src/components/dateSearch/DateSearch.tsx
  * @Description: DateSearch
  */
-import { DatePickerPage } from '@/components/datePicker';
-import { IdSelect } from '@/components/idSelect';
+
 import {
   Container,
   EmojiWinkFillIcon,
@@ -29,17 +28,13 @@ export const DateSearch = () => {
           </a>
         </div>
         <div title="float">
-          <a>
-            <IdSelect />
-          </a>
+          <a>111</a>
         </div>
         <div title="float">
-          <a>
-            <IdSelect />
-          </a>
+          <a>222</a>
         </div>
         <div title="float">
-          <DatePickerPage />
+          <a>222</a>
         </div>
 
         <div id="Icon" title="float">

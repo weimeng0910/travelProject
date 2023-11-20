@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-05-30 13:22:58
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-03 11:33:05
+ * @LastEditTime: 2023-11-16 11:47:02
  * @FilePath: /travelProject/src/pages/home/HomePage.tsx
  * @Description: Homepage
  */
@@ -21,7 +21,7 @@ import { VacationsBar } from '@/components/VacationsBar';
 import { ProductCollection } from '@/components/productCollection';
 import { DateSearch } from '@/components/dateSearch';
 import { BestRestaurants } from '@/components/BestRestaurants';
-import { Basic } from '@/components/Tabs/Tabs';
+import TabsBasicLayou from '@/components/Tabs';
 import { useGoods } from '@/utils'; //data
 /**
  * HomePage
@@ -46,11 +46,11 @@ export const HomePage: FC = () => {
         </HotGoodslBox>
         <DateSearchBox>
           {/*<DateSearch />*/}
-          <Basic />
+          <TabsBasicLayou />
         </DateSearchBox>
-        {/*<RestaurantsBox>
-          <BestRestaurants />
-        </RestaurantsBox>*/}
+        {/*<div>
+          <TabsBasicLayou />
+        </div>*/}
       </MainLayout>
     </Container>
   );

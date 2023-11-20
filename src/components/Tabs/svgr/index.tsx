@@ -1,16 +1,16 @@
 /*
  * @Date: 2023-11-02 15:43:25
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-03 09:24:17
+ * @LastEditTime: 2023-11-15 18:43:57
  * @FilePath: /travelProject/src/components/Tabs/svgr/index.tsx
- * @Description: Do not edit
+ * @Description: svgr
  */
 import {
   Hypnotize as Home,
   GeoAltFill as Music,
   PersonCircle as Person,
   Speedometer as Search,
-  ShareFill,
+  ShareFill as NweShare,
 } from '@styled-icons/Bootstrap';
 //定义一个对象
 const icons = {
@@ -18,6 +18,7 @@ const icons = {
   GeoAltFill: Music,
   PersonCircle: Person,
   Speedometer: Search,
+  ShareFill: NweShare,
 } as const;
 
 interface Props {

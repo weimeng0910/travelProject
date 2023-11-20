@@ -1,7 +1,7 @@
 /*
  * @Date: 2023/08/30 16:35:08
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-01 09:30:00
+ * @LastEditTime: 2023-11-13 17:42:45
  * @FilePath: /travelProject/src/components/Swiper/SwiperPage.tsx
  * @Description: SwiperPage
  */
@@ -32,7 +32,7 @@ export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
     slidesPerView: 3,
     loop: true,
     autoplay: {
-      delay: 1113000,
+      delay: 3000,
       disableOnInteraction: false,
     },
     pagination: { clickable: true },

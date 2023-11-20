@@ -6,7 +6,7 @@
  * @Description: Swiper Css
  */
 import styled from 'styled-components';
-import { Swiper, SwiperSlide, } from 'swiper/react';
+import { Swiper} from 'swiper/react';
 import { px2vw } from '@/utils';
 import {
   BorderRadius,

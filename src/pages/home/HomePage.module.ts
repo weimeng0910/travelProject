@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-06-30 19:44:30
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-01 17:34:52
+ * @LastEditTime: 2023-11-20 19:13:37
  * @FilePath: /travelProject/src/pages/home/HomePage.module.ts
  * @Description: Homepage-css
  */
@@ -68,10 +68,12 @@ export const HotGoodslBox = styled.div`
   
 `;
 export const DateSearchBox = styled.div`
-   ${FlexBox({ spacing: 'strat' })};
+   ${FlexBox({ spacing: 'strat', direction: ' column' })};
+   justify-content:flex-start;
    ${WH({ width: '100%' })}; 
-   ${Margin({ all: '0' })};
+   ${Margin({ top: '20px' })};
    ${Padding({ all: '0' })};
+  
  
    
 `;

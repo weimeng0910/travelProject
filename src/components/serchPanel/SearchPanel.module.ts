@@ -1,7 +1,7 @@
 /*
  * @Date:  2023/05/30 12:18:22
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-30 16:49:35
+ * @LastEditTime: 2023-11-16 17:47:58
  * @FilePath: /travelProject/src/components/serchPanel/SearchPanel.module.ts
  * @Description: Homepage-css
  */
@@ -13,7 +13,7 @@ import { InputProps } from 'antd/lib/input';
 
 import { Font, Buttons, WH, Margin, FlexBox, GridBox, BorderRadius } from '@/styles/tools/logicalMixins';
 import { FontColor, FontSizes, BorderRadiusBase, SizeBase } from '@/styles/settings/var';
-import TravlIcon from '@/assets/icon/travel01.png'
+import TravlIcon from '@/assets/icon/travel01.png';
 
 
 export const Container = styled.div`
