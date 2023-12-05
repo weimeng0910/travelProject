@@ -445,7 +445,7 @@ export const Buttons = ({
   color,
   backgroundColor = '#16A085',
   padding,
-  fontSize = '1.6vw',
+  fontSize = '22px',
   cursor = 'pointer',
   display = 'inline - block',
   hoverBackgroundColor,

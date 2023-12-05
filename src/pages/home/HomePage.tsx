@@ -1,8 +1,5 @@
 /*
  * @Date: 2023-05-30 13:22:58
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-16 11:47:02
- * @FilePath: /travelProject/src/pages/home/HomePage.tsx
  * @Description: Homepage
  */
 import { FC } from 'react';
@@ -13,21 +10,19 @@ import {
   SearchlBox,
   HotGoodslBox,
   DateSearchBox,
-  RestaurantsBox,
 } from './HomePage.module';
 import { SearchPanel } from '@/components/serchPanel';
 import { SwiperPage } from '@/components/Swiper';
 import { VacationsBar } from '@/components/VacationsBar';
 import { ProductCollection } from '@/components/productCollection';
-import { DateSearch } from '@/components/dateSearch';
-import { BestRestaurants } from '@/components/BestRestaurants';
-import TabsBasicLayou from '@/components/Tabs';
-import { useGoods } from '@/utils'; //data
+import { TravelersChoice } from '@/components/TravelersChoice';
+import { useBannerGoods } from '@/api';
 /**
  * HomePage
  */
 export const HomePage: FC = () => {
-  const { data: goodsList } = useGoods();
+  const { data: goodsList } = useBannerGoods();
+  //console.log(goodsList?.data, '001');
 
   return (
     <Container>
@@ -45,12 +40,8 @@ export const HomePage: FC = () => {
           <ProductCollection hotGoodsData={goodsList?.data.hotGoodsList || []} />
         </HotGoodslBox>
         <DateSearchBox>
-          {/*<DateSearch />*/}
-          <TabsBasicLayou />
+          <TravelersChoice />
         </DateSearchBox>
-        {/*<div>
-          <TabsBasicLayou />
-        </div>*/}
       </MainLayout>
     </Container>
   );

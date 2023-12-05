@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-11-02 10:42:35
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-02 10:44:36
+ * @LastEditTime: 2023-11-30 12:39:57
  * @FilePath: /travelProject/src/components/VacationsBar/VacationsBar.module.ts
  * @Description: VacationsBar CSS
  */
@@ -12,24 +12,21 @@ import {
   Font,
   GridBox,
   BaseShadow,
-  Ellipsis,
   Padding,
   Margin,
   Border,
   FlexBox,
-  Absolute,
   WH,
   bgMixin,
-  Buttons,
 } from '@/styles/tools/logicalMixins';
 import {
   BorderRadiusBase,
   BackgroundColor,
   FontColor,
   FontSizes,
-  BaseBoxShadow,
 } from '@/styles/settings/var';
 import media from "@/styles/tools/media";
+import Shopping from '@/assets/icon/Shopping.png';
 
 /**
  * VacationsBar Css
@@ -37,7 +34,18 @@ import media from "@/styles/tools/media";
 export const Container = styled.div`
   ${FlexBox({ direction: 'column', flexWrap: 'nowrap' })};
   max-width:1165px;
-
+  position:relative;
+  & span:first-child{
+    position:absolute;
+    left:clamp(5px, 4vw, 10px);
+    top:clamp(-40%, 4vw, -30%);
+    width:clamp(20px, 4vw, 40px);
+    height:clamp(30px, 4vw, 60px);
+    
+    background:url(${Shopping})center center no-repeat;
+    background-size: clamp(20px, 3vw, 60px);
+    text-align:center;
+   }
   ${media.bigdesktop} {
        width:${px2vw(1165, 1440)} ;    
    }
@@ -50,6 +58,7 @@ export const Container = styled.div`
   ${media.phone} {
        width:${px2vw(566, 576)} ;
    }
+
 `;
 /**
  * text
@@ -64,22 +73,25 @@ export const TitleBox = styled.div`
   align-items: center;
   & div:first-child{
     display: flex;
-    ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXXXL, fontWeight: 'bold' })};
+    z-index:999;
+    ${Font({ color: FontColor.colorFontWhite, fontWeight: 'bold' })};
+    font-size:clamp(16px, 2.5vw, 30px);
     ${Margin({ all: 'auto' })};
     ${Padding({ right: '28px' })};
     ${Border({ right: '1px solid #fff' })}
     ${BaseShadow('.0625rem 0 .0625rem -0.0625rem #000')}
   }
    & div:nth-child(2){
-     ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeL })}
+     ${Font({ color: FontColor.colorFontWhite })}
+     font-size:clamp(8px, 2vw, 18px);
      ${Margin({ right: '35px' })};
    }
    & div:last-child{
      display: flex;
      ${Margin({ all: 'auto' })}
      ${Padding({ right: '28px' })}
-     ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXL })}
-     
+     ${Font({ color: FontColor.colorFontWhite })}
+     font-size:clamp(8px, 2vw, 18px);
   }
   ${media.bigdesktop} {
      width:${px2vw(1165, 1440)} ;
@@ -94,16 +106,6 @@ export const TitleBox = styled.div`
      ${GridBox({ gridTemplateColumns: '30vw 1fr 10vw' })}
      width:${px2vw(740, 768)} ;
      height:${px2vw(50, 768)} ;
-     & div:first-child{
-       ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeXXL, fontWeight: 'bold' })};
-      }
-     & div:nth-child(2){
-       ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeM })}
-       ${Margin({ right: '35px' })};
-      }
-      & div:last-child{
-        ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeM })}
-      }
   }
 
   ${media.phone} {

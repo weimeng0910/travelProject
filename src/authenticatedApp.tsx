@@ -1,14 +1,11 @@
 /*
  * @Date: 2023-09-11 11:09:24
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-25 12:05:21
- * @FilePath: /travelProject/src/authenticatedApp.tsx
  * @Description: Do not edit
  */
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout, HeaderBox, Main, Footer } from '@/styles/authenticatedApp.module';
-import { Header } from '@/components/header';
+import { Header } from '@/common/components/header';
 import {
   HomePage,
   DetailPage,

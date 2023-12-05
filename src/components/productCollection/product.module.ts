@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-09-04 12:18:30
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-02 10:53:57
+ * @LastEditTime: 2023-11-30 17:02:04
  * @FilePath: /travelProject/src/components/productCollection/product.module.ts
  * @Description: ProductCollection Css
  */
@@ -11,12 +11,9 @@ import { px2vw } from '@/utils';
 import {
   BorderRadius,
   Font,
-  GridBox,
   BaseShadow,
   Ellipsis,
-  Padding,
   Margin,
-  Border,
   FlexBox,
   Absolute,
   WH,
@@ -27,7 +24,6 @@ import {
   BorderRadiusBase,
   BackgroundColor,
   FontColor,
-  FontSizes,
   BaseBoxShadow,
 } from '@/styles/settings/var';
 import media from "@/styles/tools/media";
@@ -60,7 +56,6 @@ export const Container = styled.div`
 export const HotGoodsBox = styled.div`
   ${FlexBox({ flexWrap: 'nowrap' })};
   gap: 20px;
-  /*gap:30px;*/
   justify-content: space-between;
   margin-top:${px2vw(20)};
   ${WH({ width: '100%' })};
@@ -85,7 +80,7 @@ export const ProductBox = styled.div`
   cursor: pointer;
   transition:all .3s;
   background-color:#fff;
-  max-width: 360px;
+  
   margin: 0;
   
   & div:first-child{
@@ -99,6 +94,7 @@ export const ProductBox = styled.div`
       ${WH({ width: '100%' })};
       ${Absolute({ top: '0', left: '0' })};
     }
+    
   }
   & div:nth-child(2){
     ${FlexBox}
@@ -107,12 +103,15 @@ export const ProductBox = styled.div`
     ${BorderRadius({ all: BorderRadiusBase.borderRadiusCircle })};  
     ${bgMixin({ color: BackgroundColor.backgroundColorprimary })};
     border: 0 solid palevioletred;
+    font-size:clamp(10px, 2vw, 25px);
+   
   }
   & div:nth-child(3){
     max-width: 370px;
     text-align: center;
     ${Margin({ top: '.5vw' })}
-    ${Font({ color: FontColor.colorFontGrey, size: '1em' })}
+    ${Font({ color: FontColor.colorFontGrey })}
+    font-size:clamp(10px, 1vw, 20px);
     ul li:first-child{
          ${Ellipsis({ webkitLinCclamp: '1' })}
     };
@@ -125,10 +124,10 @@ export const ProductBox = styled.div`
       align-items: center;
       ${Absolute({ top: '95%', right: '0', left: '45%' })};
       ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}; 
-      max-width: 40px;
-      max-height: 25px;
-
-      ${Font({ color: FontColor.colorFontWhite, size: '.5em' })};
+      width: clamp(20px, 3vw, 40px);
+      height: clamp(13px, 1.8vw, 25px);
+      ${Font({ color: FontColor.colorFontWhite })};
+      font-size:clamp(8px, 1vw, 16px);
       cursor: pointer;
       ${bgMixin({ color: '#84CAA6' })};
     }
@@ -156,7 +155,7 @@ export const ProductBox = styled.div`
       width:${px2vw(370, 1440)} ;
      } ;
      & div:nth-child(2){
-       font-size:${px2vw(25, 1440)} ;
+     
        width:${px2vw(30, 1440)} ;
        height:${px2vw(30, 1440)}
      }  
@@ -167,14 +166,11 @@ export const ProductBox = styled.div`
        width:${px2vw(300, 1024)} ;
      };
      & div:nth-child(2){
-      font-size:${px2vw(25, 1024)} ;
+      
       width:${px2vw(30, 1024)} ;
       height:${px2vw(30, 1024)}
      }  
-     span{
-      width:${px2vw(80, 1024)} ;
-      ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeK })};
-     }
+     
    };
    ${media.tablet} {
     width:${px2vw(200, 778)} ;
@@ -182,7 +178,7 @@ export const ProductBox = styled.div`
        width:${px2vw(200, 778)} ;
      };
      & div:nth-child(2){
-      font-size:${px2vw(18, 768)} ;
+     
       width:${px2vw(20, 768)} ;
       height:${px2vw(20, 768)}  ;
      };
@@ -192,42 +188,30 @@ export const ProductBox = styled.div`
      width:${px2vw(160, 576)} ;
      ${BorderRadius({ all: '10px' })};
      & div:first-child{
-       width:${px2vw(160, 576)} ;
+       width:${px2vw(140, 576)} ;
        img{
         ${BorderRadius({ all: '10px' })};
        }
      };
      & div:nth-child(2){
-      font-size:${px2vw(14, 576)} ;
+     
       width:${px2vw(20, 576)} ;
       height:${px2vw(20, 576)}  ;
       position:absolute;
       top:${px2vw(12, 576)};
-      right: ${px2vw(12, 576)};
+      right: ${px2vw(20, 576)};
      };
-       & div:nth-child(3){
-        font-size:${px2vw(10, 576)} ;
-        span{
-          width:${px2vw(20, 576)} ;
-        }
-       }
+       
    };
   
 `;
 export const Buttondisplay = styled.button`
- ${Buttons({ color: "#fff;", backgroundColor: '#84CAA6', hoverBackgroundColor: '#2ecc71;', fontSize: '.8em' })};
+ ${Buttons({ color: "#fff;", backgroundColor: '#84CAA6', hoverBackgroundColor: '#2ecc71;' })};
+ font-size:clamp(8px, 1vw, 14px);
  ${Margin({ x: '10px', y: '5px' })}
  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}; 
- width:${px2vw(60)} ;
+ width:clamp(35px, 4vw, 60px);
+ height:clamp(18px, 1.8vw, 30px);
  align-items: center;
- ${media.tablet} {
-  width:${px2vw(40, 768)} ;
-  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })}
-    
- }
- ${media.phone} {
-  width:${px2vw(35, 576)} ;
-  ${Font({ color: FontColor.colorFontWhite, size: FontSizes.sizeJ })}
-    
- }
+ 
   `;

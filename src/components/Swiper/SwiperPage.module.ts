@@ -1,12 +1,12 @@
 /*
  * @Date: 2023-06-22 08:57:48
  * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-01 17:10:43
+ * @LastEditTime: 2023-11-30 11:38:25
  * @FilePath: /travelProject/src/components/Swiper/SwiperPage.module.ts
  * @Description: Swiper Css
  */
 import styled from 'styled-components';
-import { Swiper} from 'swiper/react';
+import { Swiper } from 'swiper/react';
 import { px2vw } from '@/utils';
 import {
   BorderRadius,
@@ -131,19 +131,17 @@ export const CarouseImg = styled.img`
 `
 
 export const CarouseTitle = styled.div`
-  ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeXL, fontWeight: 'bold' })};
+  ${Font({ color: FontColor.colorFontGrey, fontWeight: 'bold' })};
+  font-size:clamp(12px, 1vw, 18px);
   text-align: center;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
   ${media.tablet} {
-     margin-bottom:${px2vw(30, 768)} ;
-      ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeS, fontWeight: 'bold' })};
+     margin-bottom:${px2vw(30, 768)} ; 
   }
   ${media.phone} {
-      margin-bottom:${px2vw(30, 576)} ;
-      ${Font({ color: FontColor.colorFontGrey, size: FontSizes.sizeS, fontWeight: 'bold' })};
-   
+      margin-bottom:${px2vw(30, 576)} ; 
   }
 `;
 export const CarouselDescription = styled.div`
