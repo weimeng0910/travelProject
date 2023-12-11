@@ -30,7 +30,7 @@ import {
   Color
 } from '@/styles/settings/var';
 import media from "@/styles/tools/media";
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 type VisibleProps = {
   visible: boolean;
 }

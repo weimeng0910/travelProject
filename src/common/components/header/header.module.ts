@@ -8,7 +8,7 @@
 import styled from 'styled-components/macro';
 import media from "@/styles/tools/media";
 import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 import {
   BorderRadius,
   Font,

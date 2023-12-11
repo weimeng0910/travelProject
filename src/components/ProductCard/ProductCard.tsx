@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
-import { Container, ProductContent, Heartbeat, RoundBox } from './ProductCard.module';
+import { Container, Heartbeat, RoundBox } from './ProductCard.module';
 import { IGoods } from '@/types/goods';
-import { Icon } from '@/common/components/Icon';
+import { Icon } from '@/common/hooks/Icon';
 import { CarouselMoney } from '@/components/Swiper/SwiperPage.module';
 
 /*
@@ -9,7 +9,9 @@ import { CarouselMoney } from '@/components/Swiper/SwiperPage.module';
  * @Description: ProductCard
  */
 
-export const ProductCard: FC<Partial<IGoods>> = (props) => {
+export const ProductCard: FC<{ goodsData: Partial<IGoods>[] }> = ({ goodsData }) => {
+  console.log(goodsData, '006');
+
   const [visible, setVisible] = useState(false);
   return (
     <>

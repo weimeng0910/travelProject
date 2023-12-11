@@ -1,21 +1,13 @@
 /*
- * @Date: 2023-09-08 18:18:22
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-06 12:07:18
- * @FilePath: /travelProject/src/main.tsx
- * @Description: Do not edit
+ * @Date: 2023-05-24 18:18:22
+ * @Description: main
  */
 import './wdyr'; // <--- first import
 import { mocker } from '@/mocks/browser';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import 'normalize.css/normalize.css'; //browser standardization
 import { AppProviders } from '@/context';
-
 import App from './App';
-/**
- * @data 24.05.2023
- * @file  main
- */
 
 // Enable the mock service in the development environment
 //(开发环境开启mock服务)
@@ -29,7 +21,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 const rootElement = document.querySelector('#root');
 if (!rootElement) throw new Error('Failed to find the root element');
-const root = createRoot(rootElement);
+const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <AppProviders>

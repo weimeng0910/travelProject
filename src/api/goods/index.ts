@@ -11,7 +11,7 @@ import { IRootObject } from '@/types/goods';
  * @param query Goods string used in request
  * @returns Set of Banner Goods objects used for rendering
  */
-export const useBannerGoods = () => {
+export const useGoods = () => {
   const client = useHttp();
 
   return useQuery<IRootObject>(["Goods"], () =>

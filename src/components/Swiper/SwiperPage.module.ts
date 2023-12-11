@@ -4,7 +4,7 @@
  */
 import styled from 'styled-components';
 import { Swiper } from 'swiper/react';
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 import {
   BorderRadius,
   Margin,
@@ -54,7 +54,7 @@ export const Container = styled.div`
 `;
 export const MySwiper = styled(Swiper)`
   .swiper-wrapper{
-     height: 330px;
+     max-height: 330px;
      ${media.bigdesktop} { 
        height:${px2vw(280, 1440)};  
      }

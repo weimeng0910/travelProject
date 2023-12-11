@@ -4,6 +4,6 @@
  */
 export { useHttp } from './http';
 //Home product interface
-export { useBannerGoods } from './goods';
+export { useGoods } from './goods';
 // Home navigation interface
 export { useMenu } from './menu';

@@ -1,12 +1,12 @@
+/*
+ * @Date: 2023-07-04 11:19:54
+ * @Description: menu data request
+ */
 
-import { useHttp } from '@/utils';
+import { useHttp } from '@/api';
 import { useQuery } from '@tanstack/react-query';
 import { ISideMenu } from '@/types/sideMenu'
 
-/**
- * @date 2023/06/07
- * @description menu data request
- */
 export const useSideMenu = () => {
   const client = useHttp();
 

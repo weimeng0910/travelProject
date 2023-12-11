@@ -4,7 +4,7 @@
  */
 
 import styled from 'styled-components';
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 import {
   BorderRadius,
   Font,

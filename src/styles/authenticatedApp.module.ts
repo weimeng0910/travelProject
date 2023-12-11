@@ -7,7 +7,7 @@
  */
 import styled from 'styled-components/macro';
 import media from "@/styles/tools/media";
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 import {
   BaseShadow,
   Margin,

@@ -1,8 +1,5 @@
 /*
  * @Date: 2023-12-01 12:42:00
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-04 11:47:39
- * @FilePath: /travelProject/src/common/components/Icon/Icon.tsx
  * @Description: Icon
  */
 import {

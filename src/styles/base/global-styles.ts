@@ -7,7 +7,7 @@
  */
 
 import { createGlobalStyle } from 'styled-components';
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 /**
  * Global css 
  */

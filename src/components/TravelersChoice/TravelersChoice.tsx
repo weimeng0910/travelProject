@@ -4,13 +4,14 @@
  */
 import { FC } from 'react';
 import { Tabs, Tab, TabBarList, TabPane, TabPanels } from '@/common/components/Tabs';
-import { Icon } from '@/common/components/Icon';
+import { Icon } from '@/common/hooks/Icon';
 import { TabsBox, Container } from './style.module';
 import { ProductCard } from '@/components/ProductCard';
-import { useBannerGoods } from '@/api';
 import { IData } from '@/types/goods';
 
-export const TravelersChoice: FC = () => {
+export const TravelersChoice: FC<{ GoodsData: IData }> = ({ GoodsData }) => {
+  //console.log(GoodsData, '004');
+
   return (
     <Container>
       <Tabs defaultIndex={0}>
@@ -79,7 +80,7 @@ export const TravelersChoice: FC = () => {
 
         <TabPanels>
           <TabPane>
-            <ProductCard />
+            <ProductCard goodsData={GoodsData?.couponList} />
           </TabPane>
           <TabPane>TabContent 1</TabPane>
           <TabPane>TabContent 2</TabPane>

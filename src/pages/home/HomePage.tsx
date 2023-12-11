@@ -18,14 +18,14 @@ import { VacationsBar } from '@/components/VacationsBar';
 import { ProductCollection } from '@/components/productCollection';
 import { TravelersChoice } from '@/components/TravelersChoice';
 import { BestChoice } from '@/components/BestChoice';
-import { useBannerGoods } from '@/api';
-/**
- * HomePage
- */
-export const HomePage: FC = () => {
-  const { data: goodsList } = useBannerGoods();
-  console.log(goodsList?.data, '001');
+import { useGoods } from '@/api';
 
+export const HomePage: FC = () => {
+  const { data: goodsList } = useGoods();
+  //console.log(goodsList?.data, '00100');
+  if (!goodsList) {
+    return null;
+  }
   return (
     <Container>
       <MainLayout>
@@ -45,7 +45,7 @@ export const HomePage: FC = () => {
           <BestChoice />
         </BestChoiceBox>
         <TravelersChoiceBox>
-          <TravelersChoice />
+          <TravelersChoice GoodsData={goodsList.data || {}} />
         </TravelersChoiceBox>
       </MainLayout>
     </Container>

@@ -5,7 +5,7 @@
  * @FilePath: /travelProject/src/styles/settings/var.tsx
  * @Description: CSS Public Variable
  */
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 
 /* Color
 ----------------------- */

@@ -1,15 +1,13 @@
 /*
  * @Date: 2023-06-07 11:51:28
- * @Description: Do not edit
+ * @Description: Fetch hook
  */
 import qs from "qs";
 //import * as auth from "auth-provider";
 //import { useAuth } from "context/auth-context";
 import { useCallback } from "react";
-/**
- *  @date 07.06.2023
- *  @description Fetch hook
- */
+
+
 //用于请求的服务器 URL
 //const apiUrl = import.meta.env.VITE_APP_API_URL;
 const apiUrl = process.env.VITE_APP_API_URL;
@@ -45,7 +43,7 @@ export const http = async (
   //在fetch中get请求中请求的参数是带在url中的，post和put,delete是入在body中的
   if (config.method.toUpperCase() === "GET") {
     //endpoint加上携带的参数，qs.stringify通过这个方法，将要传递的对象转换成字符串，拼接成带参数的请求地址
-    endpoint += `?${qs.stringify(data)}`;
+    endpoint += data ? `?${qs.stringify(data)}` : '';
   } else {
     //读取传入的数据格式类型，不是表单数据使用JSON库进行格式化
     config.body = JSON.stringify(data || {});
@@ -60,11 +58,18 @@ export const http = async (
         window.location.reload();
         return Promise.reject({ message: "请重新登录" });
       }
-      const data = await response.json();
-      if (response.ok) {
-        return data;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        // Only attempt to parse as JSON if the content type is JSON
+        const responseData = await response.json();
+        if (response.ok) {
+          return responseData;
+        } else {
+          return Promise.reject(responseData);
+        }
       } else {
-        return Promise.reject(data);//fetch本身不会抛出异常，所以这里手动抛出异常
+        // If the response is not JSON, handle accordingly (e.g., return raw text)
+        return response.text();
       }
     });
 };

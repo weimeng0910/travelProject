@@ -27,7 +27,7 @@ import { useMenu } from '@/api'; //data
 //import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
 
 //导入logo跳转回根路由的方法
-import { resetRoute } from '@/utils';
+import { resetRoute } from '@/common/hooks';
 /**
  * @date 2023/05/30
  * @description Header

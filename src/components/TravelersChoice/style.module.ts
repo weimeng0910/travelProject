@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 import CompassIcon from '@/assets/icon/compass.png';
 import {
   BorderRadius,

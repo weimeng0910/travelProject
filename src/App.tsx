@@ -5,8 +5,8 @@
 import { GlobalStyles } from '@/styles/base/global-styles'; //global style
 import { AuthenticatedAPP } from '@/authenticatedApp';
 //Error Boundary
-import { ErrorBoundary } from '@/common/components/errorBoundary';
-import { FullPageErrorFallback } from '@/common/components/lib';
+import { ErrorBoundary } from '@/common/hooks/errorBoundary';
+import { FullPageErrorFallback } from '@/common/hooks/lib';
 
 const App = () => {
   return (

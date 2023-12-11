@@ -7,7 +7,7 @@
  */
 import styled from 'styled-components';
 import { HeartTwoTone } from '@ant-design/icons';
-import { px2vw } from '@/utils';
+import { px2vw } from '@/common/hooks';
 import media from "@/styles/tools/media";
 import Bg from '@/assets/images/bg.png';
 import TravelerBg from '@/assets/images/illust.png';
