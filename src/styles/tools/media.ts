@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-06-21 20:33:02
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-30 16:41:58
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-12-08 12:31:15
  * @FilePath: /travelProject/src/styles/tools/media.ts
  * @Description: useMediaQuery hook
  */

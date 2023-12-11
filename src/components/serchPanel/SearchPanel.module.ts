@@ -1,7 +1,7 @@
 /*
  * @Date:  2023/05/30 12:18:22
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-30 12:14:17
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-12-08 12:47:33
  * @FilePath: /travelProject/src/components/serchPanel/SearchPanel.module.ts
  * @Description: Homepage-css
  */
@@ -30,7 +30,7 @@ export const WelcomeText = styled.div`
   ${GridBox({ gridTemplateColumns: '2fr 1fr' })};
   ${Font({ color: FontColor.colorFontGrey, fontWeight: 'bold' })};
   ${WH({ width: '96%' })};
-  font-size:clamp(16px, 4vw, 50px);
+  font-size:clamp(14px, 3vw, 50px);
 
   & div :last-child{
     ${Margin({ left: 'auto', right: SizeBase })};
@@ -64,7 +64,7 @@ export const SearchInputBox = styled.div`
      & div :first-child{
       width: 60%;
        ${Font({ color: FontColor.colorFontPrimary, fontWeight: 'bold' })};
-       font-size:clamp(16px, 3vw, 50px);
+       font-size:clamp(14px, 3vw, 50px);
      }
      & div :last-child{
         width:clamp(20px, 3vw, 50px); 
@@ -98,6 +98,7 @@ export const StyledInput: typeof Input = styled(Input) <InputProps>`
   line-height: 2;
   text-underline-offset: 1.3333vw;
   border: .0313rem solid  #16a085;
+  font-size:clamp(8px, 1vw, 14px);
   width: 100%;
   height:clamp(25px, 3vw, 50px);
   

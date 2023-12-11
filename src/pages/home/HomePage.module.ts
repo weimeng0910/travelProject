@@ -1,8 +1,5 @@
 /*
  * @Date: 2023-06-30 19:44:30
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-20 19:13:37
- * @FilePath: /travelProject/src/pages/home/HomePage.module.ts
  * @Description: Homepage-css
  */
 import styled from 'styled-components/macro';
@@ -21,14 +18,10 @@ import {
   BackgroundColor,
 } from '@/styles/settings/var';
 
-/**
- * Homepage-css
- */
 export const Container = styled.div`
    ${Margin({ x: 'auto', y: '0' })};
-   ${WH({ width: '100%' })};
+   ${WH({ all: '100%' })};
    max-width:1220px;
-  
    ${media.bigdesktop} {
        width:${px2vw(1200, 1280)} ;    
    }
@@ -43,42 +36,58 @@ export const Container = styled.div`
    }
 `;
 export const MainLayout = styled.div`
- 
   ${FlexBox({ direction: 'column', flexWrap: 'nowrap', spacing: 'flex-start' })};
-  ${Padding({ x: '3px' })};
+  flex:1;
   ${Margin({ x: 'auto' })};
+  ${Padding({ x: '3px' })};
   ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
   background-color:${BackgroundColor.backgroundColorSecondary};
-  height: 1800px;
+ 
+  
+ 
 `;
 
 export const SearchlBox = styled.div`
    ${FlexBox({ flexWrap: 'wrap', alignContent: 'stretch' })};
+   flex:1;
    ${WH({ width: '100%' })};   
 `;
 export const CarouselBox = styled.div`
    ${FlexBox};
+   flex:1;
    ${Margin({ all: '0' })};
 
 `;
 
 export const HotGoodslBox = styled.div`
    ${FlexBox};
+   flex:1;
    ${Margin({ all: '0' })};
   
 `;
-export const DateSearchBox = styled.div`
-   ${FlexBox({ spacing: 'strat', direction: ' column' })};
-   justify-content:flex-start;
+export const BestChoiceBox = styled.div`
+   ${FlexBox};
+   flex:1;
    ${WH({ width: '100%' })}; 
-   ${Margin({ top: '20px' })};
+   ${Margin({ top: '15px' })};
+   /*height: clamp(60px, 30vw, 280px);*/
+   
+  
+`;
+export const TravelersChoiceBox = styled.div`
+   ${FlexBox({ spacing: 'strat', direction: ' column' })};
+   flex:1;
+   justify-content:flex-start;
+   width: 100%;
+   height: clamp(20px, 4vw, 40px);
+   ${Margin({ top: '10px' })};
    ${Padding({ all: '0' })};
   
- 
-   
 `;
 export const RestaurantsBox = styled.div`
+
    ${FlexBox};
+   flex:1;
    ${WH({ width: '100%' })}; 
    ${Margin({ all: '0' })};
    ${Padding({ all: '0' })};

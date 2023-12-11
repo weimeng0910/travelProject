@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-05-30 19:31:34
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-27 11:54:04
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-12-08 12:43:29
  * @FilePath: /travelProject/src/components/header/header.module.ts
  * @Description: Header-css
  */
@@ -219,8 +219,8 @@ export const HeaderRight = styled.div<VisibleProps>`
   }
   ${media.phone} {
       position: absolute;
-      top:${px2vw(250, 576)};
-      left: ${px2vw(20, 576)};
+      top:${px2vw(300, 576)};
+      left: ${px2vw(70, 576)};
        display: ${(props: VisibleProps) => props.visible ? "block" : "none"};
   }
 `;

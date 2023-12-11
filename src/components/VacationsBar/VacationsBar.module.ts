@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-11-02 10:42:35
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-30 12:39:57
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-12-08 12:57:27
  * @FilePath: /travelProject/src/components/VacationsBar/VacationsBar.module.ts
  * @Description: VacationsBar CSS
  */
@@ -18,6 +18,7 @@ import {
   FlexBox,
   WH,
   bgMixin,
+  Ellipsis
 } from '@/styles/tools/logicalMixins';
 import {
   BorderRadiusBase,
@@ -64,7 +65,7 @@ export const Container = styled.div`
  * text
 */
 export const TitleBox = styled.div`
-  ${GridBox({ gridTemplateColumns: '350px 1fr 100px' })}
+  ${GridBox({ gridTemplateColumns: '350px 1fr 60px' })}
   ${BorderRadius({ all: BorderRadiusBase.borderRadiusSmall })};
   ${bgMixin({ color: BackgroundColor.backgroundColorprimary })};
   ${WH({ width: '100%' })};
@@ -73,25 +74,30 @@ export const TitleBox = styled.div`
   align-items: center;
   & div:first-child{
     display: flex;
-    z-index:999;
     ${Font({ color: FontColor.colorFontWhite, fontWeight: 'bold' })};
-    font-size:clamp(16px, 2.5vw, 30px);
-    ${Margin({ all: 'auto' })};
-    ${Padding({ right: '28px' })};
+    z-index: 999;
+    justify-content: center;
+    font-size:clamp(12px, 2vw, 30px);
     ${Border({ right: '1px solid #fff' })}
     ${BaseShadow('.0625rem 0 .0625rem -0.0625rem #000')}
+    
   }
    & div:nth-child(2){
+     display: flex;
      ${Font({ color: FontColor.colorFontWhite })}
-     font-size:clamp(8px, 2vw, 18px);
-     ${Margin({ right: '35px' })};
+     width: 100%;
+     margin-left:5px;
+     font-size:clamp(5px, 1.5vw, 18px);
+    ${media.phone} {
+       ${Ellipsis({ webkitLinCclamp: '2' })}
+   }
    }
    & div:last-child{
      display: flex;
-     ${Margin({ all: 'auto' })}
-     ${Padding({ right: '28px' })}
+     justify-content: flex-start;
      ${Font({ color: FontColor.colorFontWhite })}
-     font-size:clamp(8px, 2vw, 18px);
+     font-size:clamp(10px, 2vw, 18px);
+     
   }
   ${media.bigdesktop} {
      width:${px2vw(1165, 1440)} ;

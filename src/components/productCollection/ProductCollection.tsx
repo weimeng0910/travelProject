@@ -5,7 +5,7 @@
 import { FC } from 'react';
 import { IHotGoods } from '@/types/goods';
 import { HeartTwoTone } from '@ant-design/icons';
-import { Container, HotGoodsBox, ProductBox, Buttondisplay } from './product.module';
+import { Container, HotGoodsBox, ProductBox, Buttondisplay, Heartbeat } from './product.module';
 
 export const ProductCollection: FC<{ hotGoodsData: IHotGoods[] }> = ({ hotGoodsData }) => {
   return (
@@ -18,9 +18,9 @@ export const ProductCollection: FC<{ hotGoodsData: IHotGoods[] }> = ({ hotGoodsD
                 <div>
                   <img src={item.picUrl} />
                 </div>
-                <div>
+                <Heartbeat>
                   <HeartTwoTone rev={undefined} />
-                </div>
+                </Heartbeat>
                 <div>
                   <ul>
                     <li>{item.name}</li>

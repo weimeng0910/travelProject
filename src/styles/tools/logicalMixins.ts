@@ -14,7 +14,7 @@ interface IFontProps {
 export const Font = ({ color, size, family, fontWeight }: IFontProps) => `
   color: ${color || "#16A085"};
   font-size: ${size || "1rem"};
-  font-family: ${family || "Lorem Ipsum"};
+  font-family: ${family || "Arial"};
   font-weight:${fontWeight || "normal"};
 `;
 /* box-shadow

@@ -1,8 +1,5 @@
 /*
  * @Date: 2023-09-04 12:18:30
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-30 17:02:04
- * @FilePath: /travelProject/src/components/productCollection/product.module.ts
  * @Description: ProductCollection Css
  */
 
@@ -96,22 +93,13 @@ export const ProductBox = styled.div`
     }
     
   }
-  & div:nth-child(2){
-    ${FlexBox}
-    ${Absolute({ top: '18px', right: '18px' })};
-    ${WH({ all: '30px' })};
-    ${BorderRadius({ all: BorderRadiusBase.borderRadiusCircle })};  
-    ${bgMixin({ color: BackgroundColor.backgroundColorprimary })};
-    border: 0 solid palevioletred;
-    font-size:clamp(10px, 2vw, 25px);
-   
-  }
+
   & div:nth-child(3){
     max-width: 370px;
     text-align: center;
     ${Margin({ top: '.5vw' })}
     ${Font({ color: FontColor.colorFontGrey })}
-    font-size:clamp(10px, 1vw, 20px);
+    font-size:clamp(5px, 1vw, 18px);
     ul li:first-child{
          ${Ellipsis({ webkitLinCclamp: '1' })}
     };
@@ -124,10 +112,10 @@ export const ProductBox = styled.div`
       align-items: center;
       ${Absolute({ top: '95%', right: '0', left: '45%' })};
       ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}; 
-      width: clamp(20px, 3vw, 40px);
-      height: clamp(13px, 1.8vw, 25px);
+      width: clamp(16px, 3vw, 40px);
+      height: clamp(8px, 1.8vw, 25px);
       ${Font({ color: FontColor.colorFontWhite })};
-      font-size:clamp(8px, 1vw, 16px);
+      font-size:clamp(5px, 1vw, 16px);
       cursor: pointer;
       ${bgMixin({ color: '#84CAA6' })};
     }
@@ -207,11 +195,21 @@ export const ProductBox = styled.div`
 `;
 export const Buttondisplay = styled.button`
  ${Buttons({ color: "#fff;", backgroundColor: '#84CAA6', hoverBackgroundColor: '#2ecc71;' })};
- font-size:clamp(8px, 1vw, 14px);
+ font-size:clamp(8px, 1vw, 12px);
  ${Margin({ x: '10px', y: '5px' })}
  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })}; 
- width:clamp(35px, 4vw, 60px);
+ width:clamp(35px, 3vw, 60px);
  height:clamp(18px, 1.8vw, 30px);
  align-items: center;
  
+  `;
+export const Heartbeat = styled.button`
+ ${FlexBox}
+ ${Absolute({ top: 'clamp(8px, 1vw, 18px)', right: 'clamp(12px, 2vw, 30px);' })};
+ ${BorderRadius({ all: BorderRadiusBase.borderRadiusCircle })};  
+ ${bgMixin({ color: BackgroundColor.backgroundColorprimary })};
+ border: 0 solid palevioletred;
+ font-size:clamp(5px, 2vw, 30px);
+ width:clamp(10px, 3vw, 35px);
+ height: clamp(10px, 3vw, 35px);
   `;

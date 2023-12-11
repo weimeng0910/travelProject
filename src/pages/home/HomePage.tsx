@@ -9,20 +9,22 @@ import {
   CarouselBox,
   SearchlBox,
   HotGoodslBox,
-  DateSearchBox,
+  BestChoiceBox,
+  TravelersChoiceBox,
 } from './HomePage.module';
 import { SearchPanel } from '@/components/serchPanel';
 import { SwiperPage } from '@/components/Swiper';
 import { VacationsBar } from '@/components/VacationsBar';
 import { ProductCollection } from '@/components/productCollection';
 import { TravelersChoice } from '@/components/TravelersChoice';
+import { BestChoice } from '@/components/BestChoice';
 import { useBannerGoods } from '@/api';
 /**
  * HomePage
  */
 export const HomePage: FC = () => {
   const { data: goodsList } = useBannerGoods();
-  //console.log(goodsList?.data, '001');
+  console.log(goodsList?.data, '001');
 
   return (
     <Container>
@@ -39,9 +41,12 @@ export const HomePage: FC = () => {
         <HotGoodslBox>
           <ProductCollection hotGoodsData={goodsList?.data.hotGoodsList || []} />
         </HotGoodslBox>
-        <DateSearchBox>
+        <BestChoiceBox>
+          <BestChoice />
+        </BestChoiceBox>
+        <TravelersChoiceBox>
           <TravelersChoice />
-        </DateSearchBox>
+        </TravelersChoiceBox>
       </MainLayout>
     </Container>
   );

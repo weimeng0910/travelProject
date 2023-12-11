@@ -1,8 +1,5 @@
 /*
  * @Date: 2023-06-22 08:57:48
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-30 11:38:25
- * @FilePath: /travelProject/src/components/Swiper/SwiperPage.module.ts
  * @Description: Swiper Css
  */
 import styled from 'styled-components';
@@ -15,7 +12,6 @@ import {
   WH,
   Transition,
   Font,
-  GridBox,
   bgMixin,
   DisabledStyle,
 } from '@/styles/tools/logicalMixins';
@@ -25,7 +21,6 @@ import {
   a11yHidden,
   BorderBase,
   Color,
-  FontSizes,
   FontColor
 } from '@/styles/settings/var';
 import media from "@/styles/tools/media";
@@ -73,7 +68,7 @@ export const MySwiper = styled(Swiper)`
      }
      ${media.phone} {
 
-       height:${px2vw(180, 576)};
+       height:${px2vw(200, 576)};
      }
   }
   /* 切换 */
@@ -132,7 +127,7 @@ export const CarouseImg = styled.img`
 
 export const CarouseTitle = styled.div`
   ${Font({ color: FontColor.colorFontGrey, fontWeight: 'bold' })};
-  font-size:clamp(12px, 1vw, 18px);
+  font-size:clamp(8px, 1vw, 18px);
   text-align: center;
   overflow:hidden;
   text-overflow:ellipsis;

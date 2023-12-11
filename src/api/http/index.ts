@@ -1,8 +1,5 @@
 /*
  * @Date: 2023-06-07 11:51:28
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-30 10:05:15
- * @FilePath: /travelProject/src/utils/http/index.ts
  * @Description: Do not edit
  */
 import qs from "qs";

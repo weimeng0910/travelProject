@@ -36,8 +36,9 @@ export const TabsBox = styled.div`
       display: flex;
       flex-direction:row;
       justify-content:flex-start;
+      margin-left:10px;
       width: 100%;
-      
+      height: clamp(20px, 4vw, 40px);
       width: 1165px;
 
       ${media.bigdesktop} {
@@ -55,7 +56,7 @@ export const TabsBox = styled.div`
       div:first-child{
          position:relative;
          vertical-align: top;
-         height: clamp(20px, 4vw, 40px);
+         height: clamp(20px, 3vw, 40px);
          width: clamp(20px, 4vw, 40px);
          line-height:40px;
          padding: 0 10px 0 5px;
@@ -67,7 +68,7 @@ export const TabsBox = styled.div`
          text-decoration: none;
         #Icon{
            position:absolute;
-           width: clamp(10px, 2vw, 20px);
+           width: clamp(10px, 1.5vw, 20px);
            top:28%;
            right: 5px;
          }
@@ -76,7 +77,7 @@ export const TabsBox = styled.div`
          position:absolute;
          top:0;
          border:0 solid ${Color.colorPamary};
-         border-width:clamp(10px, 2vw, 20px) 10px;
+         border-width:clamp(10px, 1.5vw, 20px) 10px;
          width: 0;
          height: 0;
        }
@@ -110,6 +111,7 @@ export const TabsBox = styled.div`
       overflow: hidden;
       background:url(${CompassIcon})center center no-repeat;
       background-size: clamp(20px, 5vw, 40px);
+     
     }
     ${media.phone} {
      display: none;

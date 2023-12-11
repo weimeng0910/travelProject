@@ -1,9 +1,8 @@
-/**
- * @author meng
- * @version 1.0
- * @date 2023/01/04
- * @file 封装Antd的rate组件，实现自定义收藏
+/*
+ * @Date: 2023-01-04 18:21:44
+ * @Description: pin componets
  */
+
 import { Rate } from 'antd';
 //保证新的组件有透传的能力，通过ComponentProps来获得props的所有属性
 import { ComponentProps } from 'react';
@@ -21,13 +20,13 @@ export const Pin = (props: PinProps) => {
   return (
     <Rate
       //count代表星星数量
-      count={1}
+      count={3}
       //value是星星是不是点亮
       value={checked ? 1 : 0}
       //这里的number代表回调函数来决定几颗星是点亮的，
       //当onCheckedChange是undefinad时候，？.代表啥也不干
       //!!num相当于Boolean(num)，如果num是0代表false，如果是非0代表true
-      onChange={num => onCheckedChange?.(true)}
+      onChange={(num) => onCheckedChange?.(!!num)}
       {...restProps} //其它属性
     />
   );

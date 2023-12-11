@@ -6,14 +6,11 @@ import { FC } from 'react';
 import { Tabs, Tab, TabBarList, TabPane, TabPanels } from '@/common/components/Tabs';
 import { Icon } from '@/common/components/Icon';
 import { TabsBox, Container } from './style.module';
-import { ProductCollection } from '@/components/productCollection';
+import { ProductCard } from '@/components/ProductCard';
 import { useBannerGoods } from '@/api';
-export interface TravelersChoiceProps {}
+import { IData } from '@/types/goods';
 
-export const TravelersChoice: FC<TravelersChoiceProps> = (props) => {
-  const { data: goodsList } = useBannerGoods();
-  console.log(goodsList, '002');
-
+export const TravelersChoice: FC = () => {
   return (
     <Container>
       <Tabs defaultIndex={0}>
@@ -24,28 +21,44 @@ export const TravelersChoice: FC<TravelersChoiceProps> = (props) => {
           <TabBarList>
             <Tab>
               <span>
-                <Icon id={'Icon'} type="HeartFill" style={{ width: '15px', marginRight: '10px' }} />
-                Heartbeat
+                <Icon
+                  id={'Icon'}
+                  type="HeartFill"
+                  style={{ width: 'clamp(10px, 1vw, 15px)', marginRight: '10px' }}
+                />
+                <a>Heartbeat</a>
               </span>
             </Tab>
 
             <Tab>
               <span>
-                <Icon id={'Icon'} type="Fire" style={{ width: '18px', marginRight: '10px' }} />
-                Popular
+                <Icon
+                  id={'Icon'}
+                  type="Fire"
+                  style={{ width: 'clamp(10px, 1vw, 15px)', marginRight: '10px' }}
+                />
+                <a>Popular</a>
               </span>
             </Tab>
 
             <Tab>
               <span>
-                <Icon id={'Icon'} type="GiftFill" style={{ width: '15px', marginRight: '10px' }} />
-                Optimal
+                <Icon
+                  id={'Icon'}
+                  type="GiftFill"
+                  style={{ width: 'clamp(10px, 1vw, 15px)', marginRight: '10px' }}
+                />
+                <a>Optimal</a>
               </span>
             </Tab>
             <Tab>
               <span>
-                <Icon id={'Icon'} type="SendFill" style={{ width: '15px', marginRight: '10px' }} />
-                Featured
+                <Icon
+                  id={'Icon'}
+                  type="SendFill"
+                  style={{ width: 'clamp(10px, 1vw, 15px)', marginRight: '10px' }}
+                />
+                <a>Featured</a>
               </span>
             </Tab>
             <Tab>
@@ -53,9 +66,9 @@ export const TravelersChoice: FC<TravelersChoiceProps> = (props) => {
                 <Icon
                   id={'Icon'}
                   type="BagHeartFill"
-                  style={{ width: '15px', marginRight: '10px' }}
+                  style={{ width: 'clamp(10px, 1vw, 15px)', marginRight: '10px' }}
                 />
-                Explore
+                <a>Explore</a>
               </span>
             </Tab>
           </TabBarList>
@@ -66,10 +79,7 @@ export const TravelersChoice: FC<TravelersChoiceProps> = (props) => {
 
         <TabPanels>
           <TabPane>
-            <div>TabContent 0</div>
-            <div style={{ width: '800px' }}>
-              <ProductCollection hotGoodsData={goodsList?.data.hotGoodsList || []} />
-            </div>
+            <ProductCard />
           </TabPane>
           <TabPane>TabContent 1</TabPane>
           <TabPane>TabContent 2</TabPane>

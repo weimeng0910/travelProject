@@ -38,7 +38,7 @@ export interface IBanner {
   detail: string;
 }
 
-export interface INewGoods {
+export interface IGoods {
   id: number;
   name: string;
   goods_sn: number;
@@ -131,7 +131,7 @@ export interface IFloorGoods {
 
 export interface IData {
   banner: IBanner[];
-  newGoodsList: INewGoods[];
+  newGoodsList: IGoods[];
   couponList: ICoupon[];
   channel: IChannel[];
   grouponList: IGroupon[];

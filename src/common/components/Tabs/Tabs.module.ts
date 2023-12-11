@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-11-02 13:50:04
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-04 11:43:08
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-12-08 16:56:54
  * @FilePath: /travelProject/src/common/components/Tabs/Tabs.module.ts
  * @Description: Tabs style
  */
@@ -49,15 +49,15 @@ export const TabBarItem = styled.li<VisibleProps>`
     display:block;
     background:  ${Color.colorPamary};
     text-decoration: none;
-    height: clamp(20px, 4vw, 40px);
-    width:clamp(40px, 10vw, 160px);
-    line-height:clamp(20px, 4vw, 40px);
+    height: clamp(20px, 3vw, 40px);
+    width:clamp(26px, 10vw, 160px);
+    line-height:clamp(20px, 3vw, 40px);
     color:#fff;
-    padding: 0 5px 0 5px;
+    padding: 0 4px 0 5px;
     text-align: center;
-    margin: 0 5px 0 18px;
+    margin: 0 4px 0 18px;
     ${media.phone} {
-       a :last-child{
+       a {
         display: none;
        }
       
@@ -68,11 +68,12 @@ export const TabBarItem = styled.li<VisibleProps>`
         position:absolute;
         top: 0;
         border:0 solid ${Color.colorPamary};
-        border-width:clamp(10px, 2vw, 20px) 10px;
+        border-width:clamp(10px, 1.5vw, 20px) 10px;
         /*border-width:clamp(20px, 2vw, 40px) clamp(20px, 2vw, 10px);*/
         width: 0;
         height: 0;
         color:#fff;
+        
       }
     &:before{
         left:-20px;
@@ -111,19 +112,14 @@ export const TabBarItem = styled.li<VisibleProps>`
 `;
 
 export const TabContent = styled.div`
- 
   display: flex;
-  flex: 1;
-  height: 100%;
-  div {
-    flex-shrink: 0;
-    width: 100%;
-    overflow-y: auto;
-  }
+ 
+  width: 100%;
+  
 `;
 export const IconStyle = styled.div`
-  width: 20px;
-  height: 20px;
+  width: clamp(10px, 2vw, 20px);
+  height: clamp(10px, 2vw, 20px);
 
 `;
 

@@ -82,6 +82,7 @@ const User = () => {
 //Header
 export const Header = ({ visible, handleClick }: VisibleProps) => {
   const { data: menuList } = useMenu(); //获取菜单数据
+  console.log(menuList, '003menu');
 
   return (
     <>

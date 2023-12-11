@@ -1,7 +1,7 @@
 /*
  * @Date: 2023/05/30 19:47:42
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-27 12:13:19
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-12-08 12:43:10
  * @FilePath: /travelProject/src/styles/authenticatedApp.module.ts
  * @Description: authenticatedApp-css
  */
@@ -31,8 +31,11 @@ type VisibleProps = {
 /** layout*/
 export const Layout = styled.div`
   ${FlexBox({ direction: 'column', alignContent: 'center' })};
+  
   ${WH({ width: '100vw' })};
   max-width: 100%;
+  height: 100%;
+  
   
  
 
@@ -64,14 +67,13 @@ export const HeaderBox = styled.header`
 `;
 /** main*/
 const tabletNavBottom = `${px2vw(180, 768)}`;
-const phoneNavBottom = `${px2vw(230, 576)}`;
+const phoneNavBottom = `${px2vw(300, 576)}`;
 export const Main = styled.main<VisibleProps>`
   ${FlexBox({ alignContent: 'center' })};
+  flex-grow:1;
   ${Margin({ left: 'auto', right: 'auto' })};
-  ${WH({ width: '100%' })};
+  ${WH({ width: '100%', height: '100%' })};
   margin-top:${px2vw(20)}  ;
-  
-  ${BackgroundColor.backgroundColorFourth}
   flex: 1;
   /* ipad */
   ${media.tablet} {
@@ -88,10 +90,10 @@ export const Footer = styled.footer`
   
   z-index: -2;
   ${WH({ width: '100%' })};
-  max-height: 60px; 
-  ${Margin({ all: 'auto' })}
+  ${Margin({ top: '20px' })}
   border-bottom: solid .3125rem #16a085;
-  ${BackgroundColor.backgroundColorFourth};
+  background-color:#FAFAFA;
+  
   ${media.bigdesktop} {
     height:${px2vw(60, 1280)}  ;
   }

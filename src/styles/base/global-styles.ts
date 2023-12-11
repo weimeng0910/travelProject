@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-05-30 18:51:06
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-10-25 12:02:54
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-12-07 12:00:02
  * @FilePath: /travelProject/src/styles/base/global-styles.ts
  * @Description: Global css 
  */
