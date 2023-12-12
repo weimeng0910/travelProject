@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2022",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "esnext"],
     "allowJs": false,
@@ -9,7 +9,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    //"module": "esnext",
+    "module": "es2022",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,

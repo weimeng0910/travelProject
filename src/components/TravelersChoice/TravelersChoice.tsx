@@ -80,9 +80,11 @@ export const TravelersChoice: FC<{ GoodsData: IData }> = ({ GoodsData }) => {
 
         <TabPanels>
           <TabPane>
-            <ProductCard goodsData={GoodsData?.couponList} />
+            <ProductCard goodsData={GoodsData?.topicList} />
           </TabPane>
-          <TabPane>TabContent 1</TabPane>
+          <TabPane>
+            <ProductCard goodsData={GoodsData?.topicList} />
+          </TabPane>
           <TabPane>TabContent 2</TabPane>
           <TabPane>TabContent 3</TabPane>
           <TabPane>TabContent 4</TabPane>

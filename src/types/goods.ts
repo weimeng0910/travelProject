@@ -108,11 +108,17 @@ export interface IHotGoods {
 
 export interface ITopic {
   id: number;
-  title: string;
+  name: string;
   subtitle: string;
   price: number;
   readCount: string;
-  picUrl: string;
+  pic_url: string;
+  is_top: boolean;
+  is_hot: boolean;
+  retail_price: number;
+  counter_price: number;
+  goods_sn: number;
+
 }
 
 export interface IFloorGoods {

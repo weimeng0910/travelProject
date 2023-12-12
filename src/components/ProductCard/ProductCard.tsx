@@ -16,110 +16,36 @@ export const ProductCard: FC<{ goodsData: Partial<IGoods>[] }> = ({ goodsData })
   return (
     <>
       <Container>
-        <div>
-          <ul>
-            <li>
-              <img src={'images/2023-005.png'} />
-            </li>
-            <li>
-              <h2>Riga Old Town walking tour</h2>
-              <h3>
-                <RoundBox />
-                <RoundBox />
-                <RoundBox />
-                147
-              </h3>
-              <h4>
-                $156
-                <CarouselMoney>/day</CarouselMoney>
-              </h4>
-            </li>
-            <li>
-              <Heartbeat visible={!visible}>
-                <Icon id={'Icon'} type="HeartFill" style={{ width: 'clamp(8px, 2vw, 20px)' }} />
-              </Heartbeat>
-            </li>
-          </ul>
-          <span>view</span>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <img src={'images/2023-005.png'} />
-            </li>
-            <li>
-              <h2>Riga Old Town walking tour</h2>
-              <h3>
-                <RoundBox />
-                <RoundBox />
-                <RoundBox />
-                147
-              </h3>
-              <h4>
-                $156
-                <CarouselMoney>/day</CarouselMoney>
-              </h4>
-            </li>
-            <li>
-              <Heartbeat visible={visible}>
-                <Icon id={'Icon'} type="HeartFill" style={{ width: 'clamp(8px, 2vw, 20px)' }} />
-              </Heartbeat>
-            </li>
-          </ul>
-          <span>view</span>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <img src={'images/2023-005.png'} />
-            </li>
-            <li>
-              <h2>Riga Old Town walking tour</h2>
-              <h3>
-                <RoundBox />
-                <RoundBox />
-                <RoundBox />
-                147
-              </h3>
-              <h4>
-                $156
-                <CarouselMoney>/day</CarouselMoney>
-              </h4>
-            </li>
-            <li>
-              <Heartbeat visible={visible}>
-                <Icon id={'Icon'} type="HeartFill" style={{ width: 'clamp(8px, 2vw, 20px)' }} />
-              </Heartbeat>
-            </li>
-          </ul>
-          <span>view</span>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <img src={'images/2023-005.png'} />
-            </li>
-            <li>
-              <h2>Riga Old Town walking tour</h2>
-              <h3>
-                <RoundBox />
-                <RoundBox />
-                <RoundBox />
-                147
-              </h3>
-              <h4>
-                $156
-                <CarouselMoney>/day</CarouselMoney>
-              </h4>
-            </li>
-            <li>
-              <Heartbeat visible={visible}>
-                <Icon id={'Icon'} type="HeartFill" style={{ width: 'clamp(8px, 2vw, 20px)' }} />
-              </Heartbeat>
-            </li>
-          </ul>
-          <span>view</span>
-        </div>
+        {goodsData.map((item, index) => {
+          return (
+            <div key={index}>
+              <ul>
+                <li>
+                  <img src={item.pic_url} />
+                </li>
+                <li>
+                  <h2>{item.name}</h2>
+                  <h3>
+                    <RoundBox />
+                    <RoundBox />
+                    <RoundBox />
+                    147
+                  </h3>
+                  <h4>
+                    $156
+                    <CarouselMoney>/day</CarouselMoney>
+                  </h4>
+                </li>
+                <li>
+                  <Heartbeat visible={!visible}>
+                    <Icon id={'Icon'} type="HeartFill" style={{ width: 'clamp(8px, 2vw, 20px)' }} />
+                  </Heartbeat>
+                </li>
+              </ul>
+              <span>view</span>
+            </div>
+          );
+        })}
       </Container>
     </>
   );

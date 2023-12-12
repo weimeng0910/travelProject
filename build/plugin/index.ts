@@ -1,9 +1,6 @@
 /*
  * @Date: 2023-09-08 18:20:44
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-28 18:39:29
- * @FilePath: /travelProject/build/plugin/index.ts
- * @Description: Do not edit
+ * @Description: vite.config--createVitePlugins
  */
 import type { Plugin } from 'vite';
 import react from '@vitejs/plugin-react';// 单文件组件支持
@@ -13,9 +10,8 @@ import macrosPlugin from "vite-plugin-babel-macros"
 import svgr from "vite-plugin-svgr";
 import eslintPlugin from 'vite-plugin-eslint';
 import EnvironmentPlugin from "vite-plugin-environment"
-/**
- * vite.config--createVitePlugins
-*/
+
+
 export default function createVitePlugins({ variables }: { variables: any }) {
   const opt = { variables: variables };
   const vitePlugins: (Plugin | Plugin[])[] = [

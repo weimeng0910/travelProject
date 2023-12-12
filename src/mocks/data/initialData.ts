@@ -626,35 +626,37 @@ export const goodsData = {
     "topicList": [
       {
         "id": 264,
-        "title": "设计师们推荐的应季好物",
+        "name": "设计师们推荐的应季好物",
         "subtitle": "原创设计春款系列上新",
         "price": 29.90,
         "readCount": "77.7k",
-        "picUrl": "https://yanxuan.nosdn.127.net/14918201901050274.jpg"
+        'is_top': true,
+        'is_hot': true,
+        "pic_url": 'images/2023-003.png',
       },
       {
         "id": 266,
-        "title": "一条丝巾就能提升时髦度",
+        "name": "一条丝巾就能提升时髦度",
         "subtitle": "不知道大家对去年G20时，严选与国礼制造商一起推出的《凤凰于飞》等几款丝巾是否还...",
         "price": 0.00,
         "readCount": "35.0k",
-        "picUrl": "https://yanxuan.nosdn.127.net/14919007135160213.jpg"
+        "pic_url": 'images/2023-004.png',
       },
       {
         "id": 268,
-        "title": "米饭好吃的秘诀：会呼吸的锅",
+        "name": "米饭好吃的秘诀：会呼吸的锅",
         "subtitle": "今年1月份，我们联系到了日本伊贺地区的长谷园，那里有着180年伊贺烧历史的窑厂。...",
         "price": 0.00,
         "readCount": "33.3k",
-        "picUrl": "https://yanxuan.nosdn.127.net/14920623353130483.jpg"
+        "pic_url": 'images/2023-002.png'
       },
       {
         "id": 271,
-        "title": "选式新懒人",
+        "name": "选式新懒人",
         "subtitle": "懒出格调，懒出好生活。",
         "price": 15.00,
         "readCount": "57.7k",
-        "picUrl": "https://yanxuan.nosdn.127.net/14924199099661697.jpg"
+        "pic_url": 'images/2023-001.png'
       }
     ],
     "floorGoodsList": [

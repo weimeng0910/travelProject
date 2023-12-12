@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-11-02 13:50:04
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-12-08 16:56:54
+ * @LastEditTime: 2023-12-11 18:38:49
  * @FilePath: /travelProject/src/common/components/Tabs/Tabs.module.ts
  * @Description: Tabs style
  */
@@ -56,6 +56,9 @@ export const TabBarItem = styled.li<VisibleProps>`
     padding: 0 4px 0 5px;
     text-align: center;
     margin: 0 4px 0 18px;
+    a{
+      color:#fff;
+    }
     ${media.phone} {
        a {
         display: none;

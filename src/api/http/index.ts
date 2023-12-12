@@ -6,12 +6,13 @@ import qs from "qs";
 //import * as auth from "auth-provider";
 //import { useAuth } from "context/auth-context";
 import { useCallback } from "react";
-
+import { API_URL } from '@/config';
 
 //用于请求的服务器 URL
-//const apiUrl = import.meta.env.VITE_APP_API_URL;
-const apiUrl = process.env.VITE_APP_API_URL;
 
+const apiUrl = API_URL;
+
+console.log(apiUrl, 'url001');
 
 
 //定义配制的类型,token,data并不属于 RequestInit 类型， 所以这里定义的类型要加上
@@ -29,9 +30,10 @@ export const http = async (
   //{ data, token, headers, ...customConfig }: Config = {}
   { data, headers, ...customConfig }: Config = {}
 ) => {
+  const method = customConfig.method || 'GET';
   //定义传入fetch请求中config
   const config = {
-    method: "GET",//默认是GET,后面的...customConfig有其它请求会覆盖
+    method,//默认是GET,后面的...customConfig有其它请求会覆盖
     // `headers` 是即将被发送的自定义请求头
     headers: {
       //Authorization: token ? `Bearer ${token}` : "",//传入toekn
@@ -39,16 +41,22 @@ export const http = async (
     },
     ...customConfig,//options中剩余的其它配制
   };
+
   //对携带的参数进行处理
   //在fetch中get请求中请求的参数是带在url中的，post和put,delete是入在body中的
-  if (config.method.toUpperCase() === "GET") {
+  if (method.toUpperCase() === "GET" || method.toUpperCase() === 'HEAD') {
     //endpoint加上携带的参数，qs.stringify通过这个方法，将要传递的对象转换成字符串，拼接成带参数的请求地址
-    endpoint += data ? `?${qs.stringify(data)}` : '';
+    delete config.body;
+    if (data) {
+      endpoint += `?${qs.stringify(data)}`;
+
+    }
+
   } else {
     //读取传入的数据格式类型，不是表单数据使用JSON库进行格式化
     config.body = JSON.stringify(data || {});
   }
-
+  console.log(`${apiUrl}/${endpoint}`, '00000');
   // axios 和 fetch 的表现不一样，axios可以直接在返回状态不为2xx的时候抛出异常
   return window
     .fetch(`${apiUrl}/${endpoint}`, config)
