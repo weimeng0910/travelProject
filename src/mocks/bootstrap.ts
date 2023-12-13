@@ -1,5 +1,5 @@
 import * as initalData from './data/initialData';
-import { menuDB, sideMenuDB, GoodsDB } from '@/config'
+import { menuDB, sideMenuDB, GoodsDB } from '@/common/constants/config'
 import { ISideMenu, IMenuNode, IRootObject } from './types'
 /**
  * 初始化数据

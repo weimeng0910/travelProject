@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { API_URL, sideMenuDB } from '@/config';
+import { API_URL, sideMenuDB } from '@/common/constants/config';
 import * as db from '../data/sideMenuDb';
 /**
  *  @date 05.07.2023

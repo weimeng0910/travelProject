@@ -27,6 +27,7 @@ export interface IGoodsData {
   pic_url: string;
   is_new: boolean;
   is_hot: boolean;
+  is_heartbeat: boolean;
   Kommentar: number;
   retail_price: number;
   counter_price: number;
@@ -56,8 +57,8 @@ export interface IBanner {
 
 export interface INewGoods {
   id: number;
-  name: string;
   goods_sn: number;
+  name: string;
   category_id: number;
   brand_id: number;
   keywords: string;
@@ -67,6 +68,7 @@ export interface INewGoods {
   pic_url: string;
   is_new: boolean;
   is_hot: boolean;
+  Kommentar: number;
   retail_price: number;
   counter_price: number;
   add_time: string;
@@ -77,12 +79,24 @@ export interface INewGoods {
 
 export interface ICoupon {
   id: number;
+  goods_sn: number;
   name: string;
-  desc: string;
-  tag: string;
-  discount: number;
-  min: number;
-  days: number;
+  category_id: number;
+  brand_id: number;
+  keywords: string;
+  brief: string;
+  is_on_sale: boolean;
+  sort_order: number;
+  pic_url: string;
+  is_new: boolean;
+  is_hot: boolean;
+  Kommentar: number;
+  retail_price: number;
+  counter_price: number;
+  add_time: string;
+  update_tiem: string;
+  deleted_tiem: string;
+  detail: string;
 }
 
 export interface IChannel {
@@ -93,55 +107,116 @@ export interface IChannel {
 
 export interface IGroupon {
   id: number;
+  goods_sn: number;
   name: string;
+  category_id: number;
+  brand_id: number;
+  keywords: string;
   brief: string;
-  picUrl: string;
-  counterPrice: number;
-  retailPrice: number;
-  grouponPrice: number;
-  grouponDiscount: number;
-  grouponMember: number;
+  is_on_sale: boolean;
+  sort_order: number;
+  pic_url: string;
+  is_new: boolean;
+  is_hot: boolean;
+  Kommentar: number;
+  retail_price: number;
+  counter_price: number;
+  add_time: string;
+  update_tiem: string;
+  deleted_tiem: string;
+  detail: string;
 }
 
 export interface IBrand {
   id: number;
+  goods_sn: number;
   name: string;
-  desc: string;
-  picUrl: string;
-  floorPrice: number;
+  category_id: number;
+  brand_id: number;
+  keywords: string;
+  brief: string;
+  is_on_sale: boolean;
+  sort_order: number;
+  pic_url: string;
+  is_new: boolean;
+  is_hot: boolean;
+  Kommentar: number;
+  retail_price: number;
+  counter_price: number;
+  add_time: string;
+  update_tiem: string;
+  deleted_tiem: string;
+  detail: string;
 }
 
 export interface IHotGoods {
   id: number;
+  goods_sn: number;
   name: string;
+  category_id: number;
+  brand_id: number;
+  keywords: string;
   brief: string;
-  picUrl: string;
-  isNew: boolean;
-  isHot: boolean;
-  counterPrice: number;
-  retailPrice: number;
+  is_on_sale: boolean;
+  sort_order: number;
+  pic_url: string;
+  is_new: boolean;
+  is_hot: boolean;
+  Kommentar: number;
+  retail_price: number;
+  counter_price: number;
+  add_time: string;
+  update_tiem: string;
+  deleted_tiem: string;
+  detail: string;
 }
 
 export interface ITopic {
   id: number;
-  title: string;
-  subtitle: string;
-  price: number;
-  readCount: string;
-  picUrl: string;
+  goods_sn: number;
+  name: string;
+  category_id: number;
+  brand_id: number;
+  keywords: string;
+  brief: string;
+  is_on_sale: boolean;
+  sort_order: number;
+  pic_url: string;
+  is_new: boolean;
+  is_hot: boolean;
+  is_heartbeat: boolean;
+  Kommentar: number;
+  retail_price: number;
+  counter_price: number;
+  add_time: string;
+  update_tiem: string;
+  deleted_tiem: string;
+  detail: string;
 }
 
 export interface IFloorGoods {
   name: string;
   goodsList: {
     id: number;
+    goods_sn: number;
     name: string;
+    category_id: number;
+    brand_id: number;
+    keywords: string;
     brief: string;
-    picUrl: string;
-    isNew: boolean;
-    isHot: boolean;
-    counterPrice: number;
-    retailPrice: number;
+    is_on_sale: boolean;
+    sort_order: number;
+    pic_url: string;
+    is_new: boolean;
+    is_hot: boolean;
+    is_heartbeat: boolean;
+    Kommentar: number;
+    retail_price: number;
+    counter_price: number;
+    add_time: string;
+    update_tiem: string;
+    deleted_tiem: string;
+    detail: string;
   }[];
 }
 

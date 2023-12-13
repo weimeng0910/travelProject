@@ -1,6 +1,6 @@
 /*
  * @Date: 2023-12-11 12:00:32
- * @Description: http test
+ * @Description: useHttp test
  */
 import { renderHook, act } from '@testing-library/react';
 import { useHttp } from '@/api';
@@ -33,6 +33,5 @@ describe('useHttp', () => {
         headers: { 'Content-Type': '' },
       });
     }
-    // Assert that the fetch function was called with the correct arguments
   });
 });

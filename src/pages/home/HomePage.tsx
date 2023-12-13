@@ -45,7 +45,7 @@ export const HomePage: FC = () => {
           <BestChoice />
         </BestChoiceBox>
         <TravelersChoiceBox>
-          <TravelersChoice GoodsData={goodsList.data || {}} />
+          <TravelersChoice GoodsData={goodsList?.data.floorGoodsList || {}} />
         </TravelersChoiceBox>
       </MainLayout>
     </Container>

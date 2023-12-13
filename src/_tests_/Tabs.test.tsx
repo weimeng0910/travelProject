@@ -1,36 +1,17 @@
 /*
  * @Date: 2023-11-23 14:08:56
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-29 09:36:12
- * @FilePath: /travelProject/src/components/Tabs/Tabs.test.tsx
  * @Description: Tabs Test
  */
-import React from 'react';
 import { render, RenderResult, fireEvent, screen, waitFor } from '@testing-library/react';
-import { Tabs, Tab, TabBarList, TabPane, TabPanels } from './Tabs';
+import { Tabs, Tab, TabBarList, TabPane, TabPanels } from '../common/components/Tabs/Tabs';
+import { IPropsInter } from '@/types/tabs';
 
-import {
-  IPropsInter,
-  ITabsContextType,
-  ITabProps,
-  ITabBarListProps,
-  ITabPaneProps,
-} from '@/types/tabs';
-/*
- *nanoid Error
- */
-
-/*
- * props type
- */
 const testProps: IPropsInter = {
   defaultIndex: 0,
   onSelect: jest.fn(),
   className: 'test',
 };
-/*
- * props type
- */
+
 const generateTabs = (props: IPropsInter) => {
   return (
     <Tabs {...props}>

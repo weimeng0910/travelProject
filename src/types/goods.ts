@@ -11,6 +11,7 @@ export interface IGoods {
   pic_url: string;
   is_new: boolean;
   is_hot: boolean;
+  is_heartbeat: boolean;
   Kommentar: number;
   retail_price: number;
   counter_price: number;
@@ -29,6 +30,7 @@ export interface IBanner {
   pic_url: string;
   is_new: boolean;
   is_hot: boolean;
+  is_heartbeat: boolean;
   Kommentar: number;
   retail_price: number;
   counter_price: number;
@@ -37,27 +39,6 @@ export interface IBanner {
   deleted_tiem: string;
   detail: string;
 }
-
-//export interface IGoods {
-//  id: number;
-//  name: string;
-//  goods_sn: number;
-//  category_id: number;
-//  brand_id: number;
-//  keywords: string;
-//  brief: string;
-//  is_on_sale: boolean;
-//  sort_order: number;
-//  pic_url: string;
-//  is_new: boolean;
-//  is_hot: boolean;
-//  retail_price: number;
-//  counter_price: number;
-//  add_time: string;
-//  update_tiem: string;
-//  deleted_tiem: string;
-//  detail: string;
-//}
 
 export interface ICoupon {
   id: number;
@@ -91,8 +72,12 @@ export interface IBrand {
   id: number;
   name: string;
   desc: string;
-  picUrl: string;
+  pic_url: string;
   floorPrice: number;
+  is_new: boolean;
+  is_hot: boolean;
+  is_heartbeat: boolean;
+  Kommentar: number;
 }
 
 export interface IHotGoods {
@@ -115,6 +100,7 @@ export interface ITopic {
   pic_url: string;
   is_top: boolean;
   is_hot: boolean;
+  is_heartbeat: boolean;
   retail_price: number;
   counter_price: number;
   goods_sn: number;
@@ -125,13 +111,25 @@ export interface IFloorGoods {
   name: string;
   goodsList: {
     id: number;
+    goods_sn: number;
     name: string;
+    category_id: number;
+    brand_id: number;
+    keywords: string;
     brief: string;
-    picUrl: string;
-    isNew: boolean;
-    isHot: boolean;
-    counterPrice: number;
-    retailPrice: number;
+    is_on_sale: boolean;
+    sort_order: number;
+    pic_url: string;
+    is_new: boolean;
+    is_hot: boolean;
+    is_heartbeat: boolean;
+    Kommentar: number;
+    retail_price: number;
+    counter_price: number;
+    add_time: string;
+    update_tiem: string;
+    deleted_tiem: string;
+    detail: string;
   }[];
 }
 

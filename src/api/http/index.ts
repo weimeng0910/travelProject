@@ -6,14 +6,11 @@ import qs from "qs";
 //import * as auth from "auth-provider";
 //import { useAuth } from "context/auth-context";
 import { useCallback } from "react";
-import { API_URL } from '@/config';
+import { API_URL } from '@/common/constants/config';
 
 //用于请求的服务器 URL
 
 const apiUrl = API_URL;
-
-console.log(apiUrl, 'url001');
-
 
 //定义配制的类型,token,data并不属于 RequestInit 类型， 所以这里定义的类型要加上
 interface Config extends RequestInit {
@@ -28,7 +25,7 @@ interface Config extends RequestInit {
 export const http = async (
   endpoint: string,//url中的endpoint，例如http://localhost:3000/project的project
   //{ data, token, headers, ...customConfig }: Config = {}
-  { data, headers, ...customConfig }: Config = {}
+  { data, token, headers, ...customConfig }: Config = {}
 ) => {
   const method = customConfig.method || 'GET';
   //定义传入fetch请求中config
@@ -36,7 +33,7 @@ export const http = async (
     method,//默认是GET,后面的...customConfig有其它请求会覆盖
     // `headers` 是即将被发送的自定义请求头
     headers: {
-      //Authorization: token ? `Bearer ${token}` : "",//传入toekn
+      Authorization: token ? `Bearer ${token}` : "",//传入toekn
       "Content-Type": data ? "application/json" : "",// 添加携带的数据格式，根据需求填写，传参方式表单
     },
     ...customConfig,//options中剩余的其它配制
@@ -56,7 +53,7 @@ export const http = async (
     //读取传入的数据格式类型，不是表单数据使用JSON库进行格式化
     config.body = JSON.stringify(data || {});
   }
-  console.log(`${apiUrl}/${endpoint}`, '00000');
+
   // axios 和 fetch 的表现不一样，axios可以直接在返回状态不为2xx的时候抛出异常
   return window
     .fetch(`${apiUrl}/${endpoint}`, config)

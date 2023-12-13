@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { API_URL, GoodsDB } from '@/config';
+import { API_URL, GoodsDB } from '@/common/constants/config';
 import * as db from '../data/goodsDB';
 /**
  *  @date 06.06.2023

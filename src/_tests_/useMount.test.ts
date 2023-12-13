@@ -1,9 +1,9 @@
 /*
  * @Date: 2023-12-11 12:03:25
- * @Description: Do not edit
+ * @Description: useEffectOnce test
  */
 import { renderHook, act } from '@testing-library/react';
-import useEffectOnce from './useMount';
+import useEffectOnce from '../common/hooks/useMount/useMount';
 
 describe('Test useEffectOnce', () => {
   const mockEffect = jest.fn();
