@@ -30,7 +30,8 @@ describe('useHttp', () => {
       expect(fetchMock.mock.calls[0][0]).toBe('http://localhost:4000/Goods');
       expect(fetchMock.mock.calls[0][1]).toEqual({
         method: 'GET',
-        headers: { 'Content-Type': '' },
+
+        headers: { "Authorization": "", 'Content-Type': '' },
       });
     }
   });

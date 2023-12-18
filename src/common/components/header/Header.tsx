@@ -81,8 +81,14 @@ const User = () => {
 
 //Header
 export const Header = ({ visible, handleClick }: VisibleProps) => {
-  const { data: menuList } = useMenu(); //获取菜单数据
+  const { data: menuList, isLoading, isError } = useMenu(); //获取菜单数据
   console.log(menuList, '003menu');
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <div>Error loading menu data</div>;
+  }
 
   return (
     <>

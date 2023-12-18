@@ -9,6 +9,7 @@ import { Header } from '@/common/components/header';
 import {
   HomePage,
   DetailPage,
+  DetailListScreen,
   PlaceOrderPage,
   Tickets,
   ShoppinCart,
@@ -38,7 +39,8 @@ export const AuthenticatedAPP: React.FC<VisibleProps> = () => {
         <Main visible={visible}>
           <Routes>
             <Route path="/home" element={<HomePage />} />
-            <Route path="/detail" element={<DetailPage />} />
+            <Route path="/detail" element={<DetailListScreen />} />
+            <Route path="/detail/:touristRouteId/*" element={<DetailPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/tickets" element={<Tickets />} />
             <Route path="/placeOrder" element={<PlaceOrderPage />} />

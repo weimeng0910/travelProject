@@ -4,7 +4,7 @@
  */
 import { useHttp } from '@/api';
 import { useQuery } from '@tanstack/react-query';
-import { IMenu } from '@/types/menu'
+import { IMenu } from '@/types/menu';
 
 export const useMenu = () => {
   const client = useHttp();

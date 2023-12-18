@@ -3,7 +3,7 @@ import { Container, Heartbeat, RoundBox } from './ProductCard.module';
 import { IGoods } from '@/types/goods';
 import { Icon } from '@/common/hooks/Icon';
 import { CarouselMoney } from '@/components/Swiper/SwiperPage.module';
-
+import { Link } from 'react-router-dom';
 /*
  * @Date: 2023-10-13 09:29:37
  * @Description: ProductCard
@@ -19,7 +19,9 @@ export const ProductCard: FC<{ goodsData: Partial<IGoods>[] }> = ({ goodsData })
               <div key={index}>
                 <ul>
                   <li>
-                    <img src={item.pic_url!} />
+                    <Link to={`/detail?name=${String(item.id)}`}>
+                      <img src={item.pic_url!} />
+                    </Link>
                   </li>
                   <li>
                     <h2>{item.name}</h2>
@@ -45,7 +47,9 @@ export const ProductCard: FC<{ goodsData: Partial<IGoods>[] }> = ({ goodsData })
                     </Heartbeat>
                   </li>
                 </ul>
-                <span>view</span>
+                <Link to={`/detail?name=${item.id}`}>
+                  <span>view</span>
+                </Link>
               </div>
             );
           }

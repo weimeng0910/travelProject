@@ -83,8 +83,8 @@ export const Container = styled.div`
           display: flex;
           justify-content:center;
           height: 100%;
-  
           margin:0 auto;
+          align-items:center;
           img{
            align-self: center;
            width: clamp(50px, 15vw, 220px);
