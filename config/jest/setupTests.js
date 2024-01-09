@@ -4,7 +4,7 @@
  */
 
 import '@testing-library/jest-dom';
-
+require('jest-fetch-mock').enableMocks();
 // Mocking Environment Variables and Functions
 process.env.VITE_APP_API_URL = 'http://localhost:4000';
 window.matchMedia = (query) => ({

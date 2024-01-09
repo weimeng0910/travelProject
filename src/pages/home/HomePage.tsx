@@ -12,7 +12,7 @@ import {
   BestChoiceBox,
   TravelersChoiceBox,
 } from './HomePage.module';
-import { SearchPanel } from '@/components/serchPanel';
+import { SearchPage } from '@/components/serchPanel';
 import { SwiperPage } from '@/components/Swiper';
 import { VacationsBar } from '@/components/VacationsBar';
 import { ProductCollection } from '@/components/productCollection';
@@ -22,7 +22,7 @@ import { useGoods } from '@/api';
 
 export const HomePage: FC = () => {
   const { data: goodsList } = useGoods();
-  //console.log(goodsList?.data, '00100');
+  console.log(goodsList?.data.banner, '00100');
   if (!goodsList) {
     return null;
   }
@@ -30,7 +30,7 @@ export const HomePage: FC = () => {
     <Container>
       <MainLayout>
         <SearchlBox>
-          <SearchPanel />
+          <SearchPage />
         </SearchlBox>
         <CarouselBox>
           <SwiperPage dataList={goodsList?.data.banner || []} />

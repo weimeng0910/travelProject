@@ -24,7 +24,7 @@ import {
   Logo,
 } from './header.module';
 import { useMenu } from '@/api'; //data
-//import { ReactComponent as Softwarelogo } from '@/assets/logo.svg';
+import { ErrorBox } from '@/common/hooks/lib';
 
 //导入logo跳转回根路由的方法
 import { resetRoute } from '@/common/hooks';
@@ -87,7 +87,7 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
     return <div>Loading...</div>;
   }
   if (isError) {
-    return <div>Error loading menu data</div>;
+    return <ErrorBox error={isError} />;
   }
 
   return (

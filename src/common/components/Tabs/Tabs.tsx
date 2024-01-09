@@ -1,8 +1,5 @@
 /*
  * @Date: 2023-11-02 13:48:15
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-04 11:43:55
- * @FilePath: /travelProject/src/common/components/Tabs/Tabs.tsx
  * @Description: Tabs components
  */
 import {
@@ -18,13 +15,7 @@ import {
 } from 'react';
 import { TabBar, TabContent, TabBarItem } from './Tabs.module';
 
-import {
-  IPropsInter,
-  ITabsContextType,
-  ITabProps,
-  ITabBarListProps,
-  ITabPaneProps,
-} from '@/types/tabs';
+import { IPropsInter, ITabsContextType, ITabProps, ITabPaneProps } from '@/types/tabs';
 
 /**
  * tabs state context
@@ -70,7 +61,7 @@ export const Tab = (props: ITabProps) => {
 /**
  * tabbarList
  */
-export const TabBarList = (props: ITabBarListProps) => {
+export const TabBarList = (props: React.PropsWithChildren) => {
   const { children } = props;
   const context = useContext(TabsContext);
 

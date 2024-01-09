@@ -19,7 +19,7 @@ export const ProductCard: FC<{ goodsData: Partial<IGoods>[] }> = ({ goodsData })
               <div key={index}>
                 <ul>
                   <li>
-                    <Link to={`/detail?name=${String(item.id)}`}>
+                    <Link to={`/detail/${String(item.id)}`}>
                       <img src={item.pic_url!} />
                     </Link>
                   </li>

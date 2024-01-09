@@ -1,7 +1,7 @@
 /*
  * @Date: 2023-10-18 17:03:02
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-12-08 15:28:23
+ * @LastEditTime: 2024-01-08 11:32:44
  * @FilePath: /travelProject/src/components/BestRestaurants/BestRestaurants.module.ts
  * @Description:BestRestaurants css
  */
@@ -61,7 +61,7 @@ export const Container = styled.div`
       background:url(${TravelerBg})center center no-repeat; 
       background-size: clamp(75px, 30vw, 307px) clamp(60px, 30vw, 290px);
       /*width: 100%;*/
-      background-color:#000;
+     
    }
    div:nth-child(2){
        display: flex;

@@ -1,7 +1,7 @@
 /*
  * @Date: 2023/05/30 19:47:42
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-12-08 12:43:10
+ * @LastEditTime: 2024-01-08 17:44:57
  * @FilePath: /travelProject/src/styles/authenticatedApp.module.ts
  * @Description: authenticatedApp-css
  */
@@ -68,12 +68,13 @@ export const HeaderBox = styled.header`
 /** main*/
 const tabletNavBottom = `${px2vw(180, 768)}`;
 const phoneNavBottom = `${px2vw(300, 576)}`;
+
 export const Main = styled.main<VisibleProps>`
   ${FlexBox({ alignContent: 'center' })};
   flex-grow:1;
   ${Margin({ left: 'auto', right: 'auto' })};
   ${WH({ width: '100%', height: '100%' })};
-  margin-top:${px2vw(20)}  ;
+  margin-top:clamp(5px,1vw,20px);
   flex: 1;
   /* ipad */
   ${media.tablet} {

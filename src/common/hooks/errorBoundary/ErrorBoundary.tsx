@@ -1,3 +1,7 @@
+/*
+ * @Date: 2023-06-07 17:41:50
+ * @Description: Do not edit
+ */
 import React, { Component } from 'react';
 /**
  * @date 2023/06/07
@@ -24,7 +28,10 @@ export class ErrorBoundary extends Component<Props, { error: Error | null }> {
   static getDerivedStateFromError(error: Error) {
     return { error };
   }
-
+  //componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
+  //  // Handle the error or log it
+  //  console.error('Error caught by componentDidCatch:', error, errorInfo);
+  //}
   render() {
     const { error } = this.state;
     const { fallbackRender, children } = this.props;

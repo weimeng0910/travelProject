@@ -1,47 +1,43 @@
 /*
- * @Date: 2023-06-13 11:07:56
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-30 12:13:34
- * @FilePath: /travelProject/src/components/serchPanel/SearchPanel.tsx
+ * @Date: 2023-06-13 14:21:30
  * @Description: SearchPanel
  */
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { Container, SearchBannerBox, SearchInputBox } from './SearchPanel.module';
+import { StyledInput, PrimaryButton } from './SearchPage.module';
 import { SearchOutlined } from '@ant-design/icons';
+type MatchParams = {
+  touristRouteId: string;
+};
 
-import {
-  StyledInput,
-  Container,
-  PrimaryButton,
-  WelcomeText,
-  SearchInputBox,
-} from './SearchPanel.module';
-/**
- * SearchPanel
- */
 export const SearchPanel: React.FC = () => {
+  const { touristRouteId } = useParams<MatchParams>();
+  console.log(touristRouteId, 'useparams001');
+
   return (
     <Container>
-      <WelcomeText>
-        <div>Travel Around The</div>
-        <div></div>
-      </WelcomeText>
-      <SearchInputBox>
-        <div>
-          <div>World</div>
-          <div></div>
-        </div>
-        <div>
-          <StyledInput
-            prefix={<SearchOutlined rev={undefined} />}
-            placeholder="Search Destination"
-            allowClear
-            bordered
-          />
-        </div>
-        <div>
-          <PrimaryButton>Search</PrimaryButton>
-        </div>
-      </SearchInputBox>
+      <SearchBannerBox>
+        <h1>Explore the whole world</h1>
+        <h1>and enjoy its beauty</h1>
+        <SearchInputBox>
+          <div>
+            <div>World</div>
+            <div></div>
+          </div>
+          <div>
+            <StyledInput
+              prefix={<SearchOutlined rev={undefined} />}
+              placeholder="Search Destination"
+              allowClear
+              bordered
+            />
+          </div>
+          <div>
+            <PrimaryButton>Search</PrimaryButton>
+          </div>
+        </SearchInputBox>
+      </SearchBannerBox>
     </Container>
   );
 };

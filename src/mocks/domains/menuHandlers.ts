@@ -9,13 +9,13 @@ export const getMenuHandlers = [
 
   rest.get(`${API_URL}/menu`, async (_req, res, ctx) => {
     //调用写入数据的函数
-    const menuData = await db.menulist(menuDB);
-    if (menuData) {
+    const menuList = await db.menulist(menuDB);
+    if (menuList) {
       return res(
         //延迟两秒返回数据
         //ctx.delay(6000),
         ctx.status(200),
-        ctx.json(menuData)
+        ctx.json(menuList)
       );
     }
     return res(ctx.status(500));

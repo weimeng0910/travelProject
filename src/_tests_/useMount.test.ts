@@ -3,7 +3,7 @@
  * @Description: useEffectOnce test
  */
 import { renderHook, act } from '@testing-library/react';
-import useEffectOnce from '../common/hooks/useMount/useMount';
+import { useEffectOnce } from '@/common/hooks/useMount/useMount';
 
 describe('Test useEffectOnce', () => {
   const mockEffect = jest.fn();
