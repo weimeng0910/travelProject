@@ -1,8 +1,5 @@
 /*
  * @Date: 2023/05/30 19:47:42
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2024-01-08 17:44:57
- * @FilePath: /travelProject/src/styles/authenticatedApp.module.ts
  * @Description: authenticatedApp-css
  */
 import styled from 'styled-components/macro';
@@ -72,10 +69,11 @@ const phoneNavBottom = `${px2vw(300, 576)}`;
 export const Main = styled.main<VisibleProps>`
   ${FlexBox({ alignContent: 'center' })};
   flex-grow:1;
-  ${Margin({ left: 'auto', right: 'auto' })};
-  ${WH({ width: '100%', height: '100%' })};
-  margin-top:clamp(5px,1vw,20px);
   flex: 1;
+  ${WH({ width: '100%', height: 'auto' })};
+  margin-top:clamp(5px,1vw,20px);
+  ${Margin({ left: 'auto', right: 'auto' })};
+  clear: both;
   /* ipad */
   ${media.tablet} {
     margin-top:${(props: VisibleProps) => props.visible ? tabletNavBottom : "2vw"};
@@ -92,21 +90,9 @@ export const Footer = styled.footer`
   z-index: -2;
   ${WH({ width: '100%' })};
   ${Margin({ top: '20px' })}
-  border-bottom: solid .3125rem #16a085;
+  border-top: solid .3125rem #16a085;
   background-color:#FAFAFA;
   
-  ${media.bigdesktop} {
-    height:${px2vw(60, 1280)}  ;
-  }
-  ${media.desktop} {
-    height:${px2vw(60, 1024)}  ;
-  }
-  ${media.tablet} {
-    height:${px2vw(60, 768)}  ; 
-  }
-
-  ${media.phone} {
-    height:${px2vw(60, 576)}  ;
-  }
+  
   
 `;

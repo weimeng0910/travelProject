@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout, HeaderBox, Main, Footer } from '@/styles/authenticatedApp.module';
 import { Header } from '@/common/components/header';
+import { FooterPage } from '@/common/components/footer';
 import {
   HomePage,
   DetailPage,
@@ -50,7 +51,9 @@ export const AuthenticatedAPP: React.FC<VisibleProps> = () => {
             <Route path="/" element={<Navigate to="home" />} />
           </Routes>
         </Main>
-        <Footer>Trending in Travel Summer</Footer>
+        <Footer>
+          <FooterPage />
+        </Footer>
       </Router>
     </Layout>
   );

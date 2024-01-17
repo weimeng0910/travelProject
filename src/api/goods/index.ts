@@ -1,6 +1,6 @@
 /*
  * @Date: 2023-09-04 11:39:42
- * @Description: bannerGoods data request
+ * @Description: Goods data request
  */
 import { useHttp } from '@/api/http';
 import { useQuery } from '@tanstack/react-query';
@@ -11,6 +11,7 @@ import { cleanObject } from '@/common/hooks'
  * @param query Goods string used in request
  * @returns Set of Banner Goods objects used for rendering
  */
+//Get the goodses
 export const useGoods = (param?: Partial<IGoods>) => {
   const client = useHttp();
 
@@ -18,4 +19,14 @@ export const useGoods = (param?: Partial<IGoods>) => {
     client("goods", { data: cleanObject(param || {}) })
   );
 };
-
+//Get the goodsDetail in the id
+export const useGoodsDetail = (id?: number) => {
+  const client = useHttp();
+  return useQuery<IGoods>(
+    ["GoodsDetail", { id }],
+    () => client(`goods/${id}`),
+    {
+      enabled: Boolean(id),
+    }
+  );
+};

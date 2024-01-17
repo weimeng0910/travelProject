@@ -9,6 +9,9 @@ export interface IGoods {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   is_heartbeat: boolean;
@@ -28,6 +31,9 @@ export interface IBanner {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   is_heartbeat: boolean;
@@ -61,6 +67,9 @@ export interface IGroupon {
   name: string;
   brief: string;
   picUrl: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   counterPrice: number;
   retailPrice: number;
   grouponPrice: number;
@@ -73,6 +82,9 @@ export interface IBrand {
   name: string;
   desc: string;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   floorPrice: number;
   is_new: boolean;
   is_hot: boolean;
@@ -82,13 +94,27 @@ export interface IBrand {
 
 export interface IHotGoods {
   id: number;
+  goods_sn: number;
   name: string;
+  category_id: number;
+  brand_id: number;
+  keywords: string;
   brief: string;
-  picUrl: string;
-  isNew: boolean;
-  isHot: boolean;
-  counterPrice: number;
-  retailPrice: number;
+  is_on_sale: boolean;
+  sort_order: number;
+  pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
+  is_new: boolean;
+  is_hot: boolean;
+  Kommentar: number;
+  retail_price: number;
+  counter_price: number;
+  add_time: string;
+  update_tiem: string;
+  deleted_tiem: string;
+  detail: string;
 }
 
 export interface ITopic {
@@ -98,6 +124,9 @@ export interface ITopic {
   price: number;
   readCount: string;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_top: boolean;
   is_hot: boolean;
   is_heartbeat: boolean;
@@ -120,6 +149,9 @@ export interface IFloorGoods {
     is_on_sale: boolean;
     sort_order: number;
     pic_url: string;
+    pic01_url: string;
+    pic02_url: string;
+    Comments: string;
     is_new: boolean;
     is_hot: boolean;
     is_heartbeat: boolean;

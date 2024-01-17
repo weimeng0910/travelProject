@@ -13,7 +13,7 @@ type MatchParams = {
 
 export const SearchPanel: React.FC = () => {
   const { touristRouteId } = useParams<MatchParams>();
-  console.log(touristRouteId, 'useparams001');
+  //console.log(touristRouteId, 'useparams001');
 
   return (
     <Container>

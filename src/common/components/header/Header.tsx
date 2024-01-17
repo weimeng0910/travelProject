@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { nanoid } from 'nanoid';
 import {
   HomeTwoTone,
   GiftTwoTone,
@@ -81,15 +80,15 @@ const User = () => {
 
 //Header
 export const Header = ({ visible, handleClick }: VisibleProps) => {
-  const { data: menuList, isLoading, isError } = useMenu(); //获取菜单数据
-  console.log(menuList, '003menu');
+  const { data: menuList = [], isLoading, isError } = useMenu(); //获取菜单数据
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
   if (isError) {
     return <ErrorBox error={isError} />;
   }
-
+  // console.log(menuList, '001');
   return (
     <>
       <Container>
@@ -109,7 +108,7 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
             <ul>
               {menuList?.map((item) => (
                 <Link key={item.id} to={item.key}>
-                  <li key={nanoid()}>
+                  <li>
                     <span>
                       {iconList[item.key]}
                       {item.label}

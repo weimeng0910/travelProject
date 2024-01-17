@@ -4,8 +4,10 @@
  */
 import { useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
+import { Link } from 'react-router-dom';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
+
+import 'swiper/swiper-bundle.css';
 import {
   Container,
   CarouselDescription,
@@ -43,7 +45,9 @@ export const SwiperPage = <PROPS extends SwiperProps>({ dataList }: PROPS) => {
         {dataList.map((item, index) => {
           return (
             <SwiperSlide style={{ margin: '0' }} key={index}>
-              <CarouseImg src={item.pic_url} />
+              <Link to={`/detail/${String(item.id)}`}>
+                <CarouseImg src={item.pic_url} />
+              </Link>
               <CarouseTitle>{item.name}</CarouseTitle>
               <CarouselDescription>
                 <div>

@@ -1,9 +1,11 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
+
 import { Container, Heartbeat, RoundBox } from './ProductCard.module';
 import { IGoods } from '@/types/goods';
 import { Icon } from '@/common/hooks/Icon';
 import { CarouselMoney } from '@/components/Swiper/SwiperPage.module';
-import { Link } from 'react-router-dom';
+
 /*
  * @Date: 2023-10-13 09:29:37
  * @Description: ProductCard

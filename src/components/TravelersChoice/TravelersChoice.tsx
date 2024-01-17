@@ -14,7 +14,6 @@ type Props = {
 };
 
 export const TravelersChoice: FC<{ GoodsData: IFloorGoods[] }> = ({ GoodsData }) => {
-  //console.log(GoodsData, '004');
   const IconList: Props['type'][] = ['HeartFill', 'Fire', 'GiftFill', 'SendFill', 'BagHeartFill'];
   return (
     <Container>

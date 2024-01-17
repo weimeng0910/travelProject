@@ -25,6 +25,9 @@ export interface IGoodsData {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   is_heartbeat: boolean;
@@ -44,6 +47,9 @@ export interface IBanner {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   Kommentar: number;
@@ -66,6 +72,9 @@ export interface INewGoods {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   Kommentar: number;
@@ -88,6 +97,9 @@ export interface ICoupon {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   Kommentar: number;
@@ -116,6 +128,9 @@ export interface IGroupon {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   Kommentar: number;
@@ -138,6 +153,9 @@ export interface IBrand {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   Kommentar: number;
@@ -160,6 +178,9 @@ export interface IHotGoods {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   Kommentar: number;
@@ -182,6 +203,9 @@ export interface ITopic {
   is_on_sale: boolean;
   sort_order: number;
   pic_url: string;
+  pic01_url: string;
+  pic02_url: string;
+  Comments: string;
   is_new: boolean;
   is_hot: boolean;
   is_heartbeat: boolean;
@@ -207,6 +231,9 @@ export interface IFloorGoods {
     is_on_sale: boolean;
     sort_order: number;
     pic_url: string;
+    pic01_url: string;
+    pic02_url: string;
+    Comments: string;
     is_new: boolean;
     is_hot: boolean;
     is_heartbeat: boolean;

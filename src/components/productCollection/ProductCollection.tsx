@@ -3,20 +3,26 @@
  * @Description: ProductCollection
  */
 import { FC } from 'react';
-import { IHotGoods } from '@/types/goods';
 import { HeartTwoTone } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+
+import { IHotGoods } from '@/types/goods';
 import { Container, HotGoodsBox, ProductBox, Buttondisplay, Heartbeat } from './product.module';
 
 export const ProductCollection: FC<{ hotGoodsData: IHotGoods[] }> = ({ hotGoodsData }) => {
+  console.log(hotGoodsData);
+
   return (
     <Container>
       <HotGoodsBox>
         {hotGoodsData.map((item, _index) => {
-          if (item.isHot) {
+          if (item.is_hot) {
             return (
               <ProductBox key={item.id}>
                 <div>
-                  <img src={item.picUrl} />
+                  <Link to={`/detail/${String(item.id)}`}>
+                    <img src={item.pic_url} />
+                  </Link>
                 </div>
                 <Heartbeat>
                   <HeartTwoTone rev={undefined} />
@@ -24,7 +30,7 @@ export const ProductCollection: FC<{ hotGoodsData: IHotGoods[] }> = ({ hotGoodsD
                 <div>
                   <ul>
                     <li>{item.name}</li>
-                    <li>from $ {item.retailPrice} per adult</li>
+                    <li>from $ {item.retail_price} per adult</li>
                     <li>
                       <Buttondisplay>See more</Buttondisplay>
                       <Buttondisplay>To Cart</Buttondisplay>

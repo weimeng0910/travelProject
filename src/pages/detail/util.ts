@@ -1,18 +1,19 @@
 /*
  * @Date: 2023-12-14 16:23:35
- * @Description: useProductParams
+ * @Description: Do not edit
  */
-//import { useMemo } from "react";
-//import { useUrlQueryParam } from '@/common/hooks/useUrlQueryParam';
-//export const useProductParams = () => {
-//  const [param, setParam] = useUrlQueryParam(["touristRouteId"]);
-//  console.log(param, '001');
+///*
+// * @Date: 2023-12-14 16:23:35
+// * @Description: util
+// */
+//import { useLocation } from 'react-router';
+//import { useGoods } from '@/api/goods';
 
-//  return [
-//    useMemo(
-//      () => ({ ...param, touristRouteId: Number(param.touristRouteId) || undefined }),
-//      [param]
-//    ),
-//    setParam,
-//  ] as const;
+////Get the id in the url
+//export const useProjectIdInUrl = () => {
+//  const { pathname } = useLocation();//这个钩子返回当前location历史对象
+//  const id = pathname.match(/detail\/(\d+)/)?.[1];//用正则表达式取出id
+//  return Number(id);
 //};
+////Get the productDetail in the id
+//export const useProjectInUrl = () => useGoods(useProjectIdInUrl());

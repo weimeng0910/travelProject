@@ -3,6 +3,7 @@
  * @Description: Homepage
  */
 import { FC } from 'react';
+
 import {
   Container,
   MainLayout,
@@ -12,6 +13,8 @@ import {
   BestChoiceBox,
   TravelersChoiceBox,
 } from './HomePage.module';
+
+import { ErrorBox } from '@/common/hooks/lib';
 import { SearchPage } from '@/components/serchPanel';
 import { SwiperPage } from '@/components/Swiper';
 import { VacationsBar } from '@/components/VacationsBar';
@@ -21,11 +24,16 @@ import { BestChoice } from '@/components/BestChoice';
 import { useGoods } from '@/api';
 
 export const HomePage: FC = () => {
-  const { data: goodsList } = useGoods();
-  console.log(goodsList?.data.banner, '00100');
-  if (!goodsList) {
-    return null;
+  const { data: goodsList, isLoading, isError } = useGoods();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
+
+  if (isError || !goodsList) {
+    return <ErrorBox error={isError || 'Failed to fetch data.'} />;
+  }
+  console.log('goodsList:', goodsList.data.hotGoodsList);
   return (
     <Container>
       <MainLayout>
