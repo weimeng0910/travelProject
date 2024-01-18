@@ -72,24 +72,24 @@ export const HotGoodsBox = styled.div`
   `;
 
 export const ProductBox = styled.div`
-  ${BorderRadius({ all: BorderRadiusBase.bordeRadiusBase })};
   position: relative;
   cursor: pointer;
   transition:all .3s;
-  background-color:#fff;
-  
   margin: 0;
-  
+  border-radius:clamp(12px, 1vw, 25px);
+  background-color:#fff;
   & div:first-child{
-    max-width: 360px;
-    width: 360px;
+    width:clamp(160px, 25vw, 380px);
     position: relative;
     overflow: hidden;
     padding-bottom: 56%;
+    
+   
     img{
       ${BorderRadius({ topLeft: BorderRadiusBase.bordeRadiusBase, topRight: BorderRadiusBase.bordeRadiusBase })};
-      ${WH({ width: '100%' })};
       ${Absolute({ top: '0', left: '0' })};
+       width:100%;
+       object-fit:cover;
     }
     
   }
