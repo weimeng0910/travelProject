@@ -1,12 +1,9 @@
 /*
  * @Date: 2023-06-07 17:41:50
- * @Description: Do not edit
+ * @Description: oundary 错误边界
  */
 import React, { Component } from 'react';
-/**
- * @date 2023/06/07
- * @description Boundary 错误边界
- */
+
 //错误边界的实现一定要用class Component
 /**
  * 错误边界目前只在 Class Component 中实现了，没有在 hooks 中实现
@@ -28,10 +25,6 @@ export class ErrorBoundary extends Component<Props, { error: Error | null }> {
   static getDerivedStateFromError(error: Error) {
     return { error };
   }
-  //componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
-  //  // Handle the error or log it
-  //  console.error('Error caught by componentDidCatch:', error, errorInfo);
-  //}
   render() {
     const { error } = this.state;
     const { fallbackRender, children } = this.props;

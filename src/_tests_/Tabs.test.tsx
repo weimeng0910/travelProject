@@ -2,7 +2,7 @@
  * @Date: 2023-11-23 14:08:56
  * @Description: Tabs Test
  */
-import { render, RenderResult, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, RenderResult, fireEvent, waitFor } from '@testing-library/react';
 import { Tabs, Tab, TabBarList, TabPane, TabPanels } from '../common/components/Tabs/Tabs';
 import { IPropsInter } from '@/types/tabs';
 
