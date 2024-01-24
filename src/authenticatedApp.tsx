@@ -4,14 +4,17 @@
  */
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+
+import { useDocumentTitle } from '@/common/hooks/useDocumentTitle';
 import { Layout, HeaderBox, Main, Footer } from '@/styles/authenticatedApp.module';
 import { Header } from '@/common/components/header';
 import { FooterPage } from '@/common/components/footer';
+
 import {
   HomePage,
   DetailPage,
   DetailListScreen,
-  PlaceOrderPage,
+  ReviewPage,
   Tickets,
   ShoppinCart,
   SearchPage,
@@ -28,9 +31,8 @@ export const AuthenticatedAPP: React.FC<VisibleProps> = () => {
   const [visible, setVisible] = useState(false);
   const handleClick = () => {
     setVisible((visible) => !visible);
-    console.log(visible, '001');
   };
-
+  useDocumentTitle('Travelnetwork', true);
   return (
     <Layout>
       <Router>
@@ -44,7 +46,7 @@ export const AuthenticatedAPP: React.FC<VisibleProps> = () => {
             <Route path="/detail/:touristRouteId/*" element={<DetailPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/tickets" element={<Tickets />} />
-            <Route path="/placeOrder" element={<PlaceOrderPage />} />
+            <Route path="/review" element={<ReviewPage />} />
             <Route path="/shoppingCart" element={<ShoppinCart />} />
             <Route path="/favorite" element={<Favoritet />} />
             {/* 重定向到首页*/}

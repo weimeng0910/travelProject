@@ -27,8 +27,8 @@ export const menu = [
   },
   {
     id: 5,
-    label: "Transaction",
-    key: "/placeOrder"
+    label: "Review",
+    key: "/review"
   },
   {
     id: 6,

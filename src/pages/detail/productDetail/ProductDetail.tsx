@@ -4,6 +4,8 @@
  */
 import React from 'react';
 import { Divider } from 'antd';
+
+import { useDocumentTitle } from '@/common/hooks/useDocumentTitle';
 import { IGoods } from '@/types/goods';
 import { RoundBox } from '@/components/ProductCard/ProductCard.module';
 import {
@@ -27,6 +29,8 @@ interface ProductProps {
   goodsData: Partial<IGoods>;
 }
 export const ProductDetail: React.FC<ProductProps> = ({ goodsData }) => {
+  let title = goodsData.name as string;
+  useDocumentTitle(title, true);
   return (
     <div>
       <ProductDetailBox>
