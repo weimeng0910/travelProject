@@ -4,8 +4,15 @@
  */
 import React from 'react';
 import { useDocumentTitle } from '@/common/hooks/useDocumentTitle';
-
+import { UnderConstruction } from '@/common/components/UnderConstruction';
 export const Tickets: React.FC = () => {
   useDocumentTitle('Search hundreds of flight sites at once.', true);
-  return <div>Tickets</div>;
+  return (
+    <div>
+      <h1>Tickets</h1>
+      <div>
+        <UnderConstruction></UnderConstruction>
+      </div>
+    </div>
+  );
 };

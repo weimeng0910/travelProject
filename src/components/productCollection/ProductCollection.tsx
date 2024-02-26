@@ -10,8 +10,6 @@ import { IHotGoods } from '@/types/goods';
 import { Container, HotGoodsBox, ProductBox, Buttondisplay, Heartbeat } from './product.module';
 
 export const ProductCollection: FC<{ hotGoodsData: IHotGoods[] }> = ({ hotGoodsData }) => {
-  console.log(hotGoodsData);
-
   return (
     <Container>
       <HotGoodsBox>

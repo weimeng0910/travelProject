@@ -1,8 +1,17 @@
-import React from 'react';
-/**
- * @date 2023/06/13
- * @description ShoppinCart
+/*
+ * @Date: 2023-06-13 14:21:06
+ * @Description:ShoppinCart
  */
+import React from 'react';
+import { UnderConstruction } from '@/common/components/UnderConstruction';
+
 export const ShoppinCart: React.FC = () => {
-  return <div>ShoppinCart</div>;
+  return (
+    <div>
+      <h1>ShoppinCart</h1>
+      <div>
+        <UnderConstruction></UnderConstruction>
+      </div>
+    </div>
+  );
 };

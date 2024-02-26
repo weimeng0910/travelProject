@@ -33,7 +33,7 @@ export const HomePage: FC = () => {
   if (isError || !goodsList) {
     return <ErrorBox error={isError || 'Failed to fetch data.'} />;
   }
-  console.log('goodsList:', goodsList.data.hotGoodsList);
+
   return (
     <Container>
       <MainLayout>
@@ -41,19 +41,29 @@ export const HomePage: FC = () => {
           <SearchPage />
         </SearchlBox>
         <CarouselBox>
-          <SwiperPage dataList={goodsList?.data.banner || []} />
+          <SwiperPage
+            dataList={Array.isArray(goodsList?.data?.floorGoodsList) ? goodsList?.data?.banner : []}
+          />
         </CarouselBox>
         <div>
           <VacationsBar />
         </div>
         <HotGoodslBox>
-          <ProductCollection hotGoodsData={goodsList?.data.hotGoodsList || []} />
+          <ProductCollection
+            hotGoodsData={
+              Array.isArray(goodsList?.data?.floorGoodsList) ? goodsList?.data?.hotGoodsList : []
+            }
+          />
         </HotGoodslBox>
         <BestChoiceBox>
           <BestChoice />
         </BestChoiceBox>
         <TravelersChoiceBox>
-          <TravelersChoice GoodsData={goodsList?.data.floorGoodsList || {}} />
+          <TravelersChoice
+            GoodsData={
+              Array.isArray(goodsList?.data?.floorGoodsList) ? goodsList?.data?.floorGoodsList : []
+            }
+          />
         </TravelersChoiceBox>
       </MainLayout>
     </Container>

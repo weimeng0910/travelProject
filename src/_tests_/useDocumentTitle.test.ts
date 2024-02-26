@@ -2,7 +2,7 @@
  * @Date: 2024-01-18 12:25:47
  * @Description: useDocumentTitle test
  */
-import { act, renderHook, waitFor } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { useDocumentTitle } from '@/common/hooks/useDocumentTitle';
 // Mock document.title
 //模拟文档标题

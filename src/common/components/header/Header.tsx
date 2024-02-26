@@ -106,16 +106,17 @@ export const Header = ({ visible, handleClick }: VisibleProps) => {
 
           <HeaderCenter visible={visible}>
             <ul>
-              {menuList?.map((item) => (
-                <Link key={item.id} to={item.key}>
-                  <li>
-                    <span>
-                      {iconList[item.key]}
-                      {item.label}
-                    </span>
-                  </li>
-                </Link>
-              ))}
+              {Array.isArray(menuList) &&
+                menuList.map((item) => (
+                  <Link key={item.id} to={item.key}>
+                    <li>
+                      <span>
+                        {iconList[item.key]}
+                        {item.label}
+                      </span>
+                    </li>
+                  </Link>
+                ))}
             </ul>
           </HeaderCenter>
           <HeaderRight visible={visible}>

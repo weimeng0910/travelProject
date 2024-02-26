@@ -19,11 +19,11 @@ afterAll(() => server.close());
 
 describe('http test', () => {
 
-  test('if jest work correctly', () => {
+  it('if jest work correctly', () => {
     expect(true).toBe(true);
   });
 
-  test("http Method to send asynchronous request", async () => {
+  it("http Method to send asynchronous request", async () => {
     const endpoint = "test-endpoint";
     const mockResult = { mockValue: "mock" };
 
