@@ -32,7 +32,7 @@
     "@types/react-datepicker": "^4.15.1",
     "@types/react-slick": "^0.23.10",
     "@types/styled-components": "^5.1.26",
-    "@vitejs/plugin-legacy": "^4.0.3",
+    "@vitejs/plugin-legacy": "^6.1.0",
     "D": "^1.0.0",
     "antd": "4.23",
     "babel-plugin-transform-import-meta": "^2.2.1",
